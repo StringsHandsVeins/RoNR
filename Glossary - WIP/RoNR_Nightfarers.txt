@@ -1,0 +1,56 @@
+
+Revenant
+- Passive HP regeneration
+- Small FP recovery on Hit (-> Small FP recovery on Kill/Summon)
+- Increased Vigor at lvl 1
+- Increased Summons base HP and DMG
+- Increased Summon level gain from levelling up
+- Increased stat gain from levelling up
+
+Wylder
+- Passive HP regeneration
+- Small FP recovery on Hit
+- Increased Vigor at lvl 1
+
+Guardian
+- Passive HP regeneration
+- Small FP recovery on Hit (-> medium FP recovery on Guard-Counter)
+- Increased Vigor at lvl 1
+- Added Ability to charge Guard-Counter Attacks on Heavy Rapiers, Spears & Great Spears
+
+Ironeye
+- Passive HP regeneration
+- Small FP recovery on Hit
+- Increased Vigor at lvl 1
+
+Duchess
+- Passive HP regeneration
+- (Medium FP gain on Crit)
+- Increased Vigor at lvl 1
+
+Recluse
+- Passive HP regeneration
+- Increased Vigor at lvl 1
+- Slightly increased Vigor gain from levelling
+- +10% Damage
+
+Executor
+- Passive HP regeneration
+- Small FP recovery on Hit (-> small FP gain on guard)
+- Increased Vigor at lvl 1
+- Gains Arcane from levelling up
+
+Undertaker
+- Passive HP regeneration
+- Small FP recovery on Hit
+- Increased Vigor at lvl 1
+
+Scholar
+- Passive HP regeneration
+- Small FP recovery on Hit
+- Increased Vigor at lvl 1
+
+Raider
+- Passive HP regeneration
+- Small FP recovery on Hit (-> medium FP gain on taking Damage)
+- Increased Vigor at lvl 1
