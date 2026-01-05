@@ -14,5 +14,7 @@ To access online features with this mod, you need [Nightreign Seamless Coop](htt
 Features:
 
 New Passive Items
+
 Reworked Lootpools
+
 Reworked Weapons
