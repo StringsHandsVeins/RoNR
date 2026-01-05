@@ -8,3 +8,8 @@ https://www.nexusmods.com/eldenringnightreign/mods/424
 This mod requires Mod Engine 3
 To access online features with this mod, you need Nightreign Seamless Coop
 
+Features:
+
+New Passive Items
+Reworked Lootpools
+Reworked Weapons
