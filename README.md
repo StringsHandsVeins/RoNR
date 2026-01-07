@@ -15,7 +15,7 @@ To access online features with this mod, you need [Nightreign Seamless Coop](htt
 
 Features:
 
-New Passive Items
+[New Passive Items](https://github.com/StringsHandsVeins/RoNR/wiki/Items)
 
 Reworked Lootpools
 
