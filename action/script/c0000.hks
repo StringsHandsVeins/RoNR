@@ -2196,6 +2196,8 @@ end
 -- Change flask effect depending on ally heal/gradual heal/fp restore
 -- Gradual and FP Flask can combine normally
 function ExecChangeFlask()
+	-- RoNR SippyDetection
+	act(AddSpEffect, 9026)
     if env(GetSpEffectID, 7010299) == TRUE then
 		-- Has 'Flask Also Heals Allies' effect
         if env(GetSpEffectID, 7010200) == TRUE then
