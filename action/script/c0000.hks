@@ -70,6 +70,10 @@
 -- Identify Unknown env and act calls
 -- Code Cleanup
 -- Add more comments
+------------------------------------------
+-- RoNR: Global Variables
+------------------------------------------
+HEAT = 0
 
 ------------------------------------------
 -- RoNR: State Detection Functions (functional)
@@ -495,6 +499,49 @@ end
 --
 --
 --
+
+------------------------------------------
+-- Shock Lantern
+-- 9054 = Hit Marker
+-- = Shantern Item
+------------------------------------------
+
+-- 
+-- function RoNR_Shantern()
+-- 	if env(GetSpEffectID, ShanternItem) == TRUE and env(GetSpEffectID, 9054) == TRUE then
+-- 		HEAT = HEAT + 100
+-- 		if has Shantern and HEAT > 300 then
+-- 			add act(AddSpEffect, FireBuff)
+-- 		elseif has Shantern and HEAT > 600 then
+-- 			act(AddSpEffect, IgniteBuff)
+--			act(AddSpEffect, FireBuff)		
+-- 		end
+-- 	end
+-- 	if HEAT > 0 then
+-- 		HEAT = HEAT - 1
+--	end
+-- end
+--
+
+------------------------------------------
+-- Fire Band 
+-- 9023 = bandcooldown
+-- 9058 = Charged Hit Marker
+-- = Fire Band Item
+-- = Fire Band Buff
+------------------------------------------
+
+-- 
+-- function RoNR_FireBand()
+-- 	if env(GetSpEffectID, hasfirebanditem) == TRUE and env(GetSpEffectID, 9023) == FALSE then
+-- 		act(AddSpEffect, firebandbuff)
+-- 		end
+-- 	if env(GetSpEffectID, firebandbuff) == TRUE and env(GetSpEffectID, 9058) == TRUE then
+-- 		act(ClearSpEffect, firebandbuff)
+-- 		act(AddSpEffect, 9023)
+-- 	end
+-- end
+
 
 ------------------------------------------
 -- Logic Update Bundle
