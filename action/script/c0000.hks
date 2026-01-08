@@ -480,6 +480,23 @@ function RoNR_Merf()
 end
 
 ------------------------------------------
+-- Infusion
+------------------------------------------
+
+-- function RoNR_Infusion()
+-- hpnow = env(GetHP) GetMaxHP
+-- haskilled and infusionhp < hpnow  ChangeMaxHP hpnow +1
+-- infusion hp = 100 + infusionstacks - 1 * 100
+--
+--
+--
+--
+--
+--
+--
+--
+
+------------------------------------------
 -- Logic Update Bundle
 ------------------------------------------
 
