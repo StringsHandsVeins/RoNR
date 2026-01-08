@@ -17,6 +17,6 @@ Features:
 
 [New Passive Items](https://github.com/StringsHandsVeins/RoNR/wiki/Items)
 
-Reworked Lootpools
+[Reworked Lootpools](Loot-Distribution)  
 
 Reworked Weapons
