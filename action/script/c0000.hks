@@ -483,6 +483,23 @@ function RoNR_Merf()
 	end
 end
 
+-----------------------------------------
+-- Celestial Dial
+-- 71222 = Celedial Behavior Starter
+-- 71021 = Celedial Item
+-- 9027 = AfterCrit1
+-----------------------------------------
+
+--function RoNR_Celedial()
+--	if env(GetSpeffect, 71021) == TRUE and env(GetSpeffect, 9027) == TRUE then
+--		act(AddSpEffect, 71222)
+--	end
+--end
+
+-----------------------------------------
+-- warsurgeons Scalpel
+-----------------------------------------
+
 ------------------------------------------
 -- Infusion
 -- 9054 = Hitmarker
@@ -560,6 +577,7 @@ function RoNR_LogicUpdate()
 	RoNR_Pidol()	
 	RoNR_ATG()
 	RoNR_Merf()
+	RoNR_Celedial()
 	RoNR_GSpot()
 	RoNR_OutofDanger()
 	RoNR_OutofCombat()
