@@ -74,7 +74,7 @@
 -- RoNR: Global Variables
 ------------------------------------------
 HEAT = 0
-
+INFUSION = 0
 ------------------------------------------
 -- RoNR: State Detection Functions (functional)
 -- Apply generic Indicator Speffects referenced by other Speffects
@@ -485,20 +485,21 @@ end
 
 ------------------------------------------
 -- Infusion
+-- 9054 = Hitmarker
 ------------------------------------------
 
 -- function RoNR_Infusion()
--- hpnow = env(GetHP) GetMaxHP
--- haskilled and infusionhp < hpnow  ChangeMaxHP hpnow +1
--- infusion hp = 100 + infusionstacks - 1 * 100
---
---
---
---
---
---
---
---
+-- 	if env(GetSpEffectID, InfusionItem) == TRUE then
+--		INFUSION = INFUSION + 1
+--		act(ClearSpEffect, InfusionItem)
+--	end
+-- 	if env(GetSpEffect, Hitmarker) == TRUE and env(GetSpEffect, Killmarker) == TRUE then
+-- 		Infusionbuff = env(GetMaxHP) + INFUSION
+-- 		act(ChangeMaxHP, Infusionbuff)
+--		act(AddSpEffect, InfusionDisplay)
+--	end
+-- end
+
 
 ------------------------------------------
 -- Shock Lantern
