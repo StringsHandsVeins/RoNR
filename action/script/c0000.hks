@@ -485,16 +485,17 @@ end
 
 -----------------------------------------
 -- Celestial Dial
--- 71222 = Celedial Behavior Starter
+-- 71221 = Celedial StateInfo
 -- 71021 = Celedial Item
--- 9027 = AfterCrit1
 -----------------------------------------
 
---function RoNR_Celedial()
---	if env(GetSpeffect, 71021) == TRUE and env(GetSpeffect, 9027) == TRUE then
---		act(AddSpEffect, 71222)
---	end
---end
+function RoNR_Celedial()
+	if env(GetSpEffectID, 71021) == TRUE then
+		act(AddSpEffect, 71221)
+	elseif env(GetSpEffectID, 71021) == FALSE then
+		act(ClearSpEffect, 71221)
+	end
+end
 
 -----------------------------------------
 -- warsurgeons Scalpel
