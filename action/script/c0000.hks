@@ -513,6 +513,21 @@ function RoNR_Opal()
 	end
 end
 
+------------------------------------------
+-- Warbanner
+-- 712 = Warbanner Item
+-- 713 = Warbanner Activation State Info
+-- 1811 = War Cry
+-- 714 = Warbanner Bullet
+------------------------------------------
+
+function RoNR_Warbanner()
+	if env(GetSpEffectID, 712) == TRUE and env(GetUltimateChargePercent) < 1 then
+		act(AddSpEffect, 713)
+		act(AddSpEffect, 1811)
+		act(AddSpEffect, 714)
+	end
+end
 
 ------------------------------------------
 -- Infusion
@@ -593,6 +608,7 @@ function RoNR_LogicUpdate()
 	RoNR_Merf()
 	RoNR_Celedial()
 	RoNR_Opal()
+	RoNR_Warbanner()
 	RoNR_GSpot()
 	RoNR_OutofDanger()
 	RoNR_OutofCombat()
