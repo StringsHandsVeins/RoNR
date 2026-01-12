@@ -498,8 +498,21 @@ function RoNR_Celedial()
 end
 
 -----------------------------------------
--- warsurgeons Scalpel
+-- Opal
+-- 711 = OpalItem
+-- 9056 = In Danger State
+-- 3510 = Opal On Switch
 -----------------------------------------
+
+function RoNR_Opal()
+	if env(GetSpEffectID, 711) == TRUE then
+		act(AddSpEffect, 3510)
+	end
+	if env(GetSpEffectID, 9056) == TRUE then
+		act(ClearSpEffect, 3510)
+	end
+end
+
 
 ------------------------------------------
 -- Infusion
@@ -579,6 +592,7 @@ function RoNR_LogicUpdate()
 	RoNR_ATG()
 	RoNR_Merf()
 	RoNR_Celedial()
+	RoNR_Opal()
 	RoNR_GSpot()
 	RoNR_OutofDanger()
 	RoNR_OutofCombat()
