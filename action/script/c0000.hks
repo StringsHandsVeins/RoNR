@@ -505,8 +505,13 @@ end
 -----------------------------------------
 
 function RoNR_Opal()
+	local is_damaged = env(HasReceivedAnyDamage)
 	if env(GetSpEffectID, 711) == TRUE then
 		act(AddSpEffect, 3510)
+	end
+	if is_damaged == TRUE then
+		act(AddSpEffect, 9056)
+		act(ClearSpEffect, 3510)
 	end
 	if env(GetSpEffectID, 9056) == TRUE then
 		act(ClearSpEffect, 3510)
