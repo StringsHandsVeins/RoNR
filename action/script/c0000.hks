@@ -575,24 +575,26 @@ end
 --
 
 ------------------------------------------
--- Fire Band 
+-- Bands
 -- 9023 = bandcooldown
--- 9058 = Charged Hit Marker
--- = Fire Band Item
--- = Fire Band Buff
+-- 7118 = Fire Band Item
+-- 7119 = Ice Band Item
+-- 8320408 = Ice Band Buff
+-- 8320412 = Fire Band Buff
 ------------------------------------------
 
--- 
--- function RoNR_FireBand()
--- 	if env(GetSpEffectID, hasfirebanditem) == TRUE and env(GetSpEffectID, 9023) == FALSE then
--- 		act(AddSpEffect, firebandbuff)
--- 		end
--- 	if env(GetSpEffectID, firebandbuff) == TRUE and env(GetSpEffectID, 9058) == TRUE then
--- 		act(ClearSpEffect, firebandbuff)
--- 		act(AddSpEffect, 9023)
--- 	end
--- end
-
+function RoNR_Bands()
+	if env(GetSpEffectID, 7118) == TRUE and env(GetSpEffectID, 9023) == FALSE then
+		act(AddSpEffect, 8320412)
+	end
+	if env(GetSpEffectID, 7119) == TRUE and env(GetSpEffectID, 9023) == FALSE then
+		act(AddSpEffect, 8320408)
+	end
+	if env(GetSpEffectID, 9023) == TRUE then
+		act(ClearSpEffect, 8320408)
+		act(ClearSpEffect, 8320412)		
+	end
+end
 
 ------------------------------------------
 -- Logic Update Bundle
@@ -614,6 +616,7 @@ function RoNR_LogicUpdate()
 	RoNR_Opal()
 	RoNR_Warbanner()
 	RoNR_GSpot()
+	RoNR_Bands()
 	RoNR_OutofDanger()
 	RoNR_OutofCombat()
 end
