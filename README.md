@@ -22,9 +22,9 @@ Features:
 Reworked Weapons
 
 
-Special Thanks
-[El-F0nzo for decompiling, documenting and updating c000.hks](https://github.com/El-Fonz0/EldenRingNightreignHKS/blob/main/c0000.hks)
-The %ServerName% Discord
-Vawser and everyone contributing to [Smithbox](https://github.com/vawser/Smithbox)
-Mr.Gaiety for expanding Guardian's charged guard-counters and having excellent documentation in [Fun Is Allowed](https://www.nexusmods.com/eldenringnightreign/mods/49)
-Exce for playtesting & feedback
+# Special Thanks   
+[El-F0nzo for decompiling, documenting and updating c000.hks](https://github.com/El-Fonz0/EldenRingNightreignHKS/blob/main/c0000.hks)  
+The %ServerName% Discord  
+Vawser and everyone contributing to [Smithbox](https://github.com/vawser/Smithbox)  
+Mr.Gaiety for expanding Guardian's charged guard-counters and having excellent documentation in [Fun Is Allowed](https://www.nexusmods.com/eldenringnightreign/mods/49)  
+Exce for playtesting & feedback  
