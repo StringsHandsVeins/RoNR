@@ -527,8 +527,7 @@ end
 ------------------------------------------
 
 function RoNR_Warbanner()
-	if env(GetSpEffectID, 712) == TRUE and env(GetUltimateChargePercent) < 1 then
-		act(AddSpEffect, 713)
+	if env(GetSpEffectID, 712) == TRUE and env(GetSpEffectID, 713) == TRUE then
 		act(AddSpEffect, 1811)
 		act(AddSpEffect, 714)
 	end
@@ -3385,6 +3384,7 @@ function ExecAttack(r1, r2, l1, l2, b1, b2, is_guard, blend_type, artsr1, artsr2
             ExecEventHalfBlend(Event_PhotoShootStart, blend_type)
         elseif env(GetHeroID) == HERO_ATTACKER then
         end
+		--- Warbanner Activation
     elseif request == ATTACK_REQUEST_ULTRA then
         if env(GetHeroID) == HERO_BALANCE then
             atk_hand = HAND_LEFT
@@ -3395,22 +3395,31 @@ function ExecAttack(r1, r2, l1, l2, b1, b2, is_guard, blend_type, artsr1, artsr2
                 SetVariable("IndexPileBunker", 1)
             end
             ExecEventAllBody("W_PileBunkerStart")
+			act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_TANK then
             ExecEventAllBody("W_DragoonJumpStart")
+			act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_SHOOTER then
             ExecEventAllBody("W_LongBowSnipeStart")
+			act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_SPEED then
             ExecEventAllBody("W_AllHideStart")
+			act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_POWER then
             ExecEventAllBody("W_RockWallAttackStart")
+			act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_NECROMANCER then
             ExecEventAllBody("W_LivingDeadStart")
+			act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_MAGIC then
             ExecEventAllBody("W_BloodMagicStart")
+			act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_TECHNICAL then
             ExecEventAllBody("W_DemonBeastStart")
+			act(AddSpEffect, 713)
 		elseif env(GetHeroID) == HERO_BUFFER then
             ExecEventAllBody("W_JointChainStart")
+			act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_ATTACKER then
 			if env(GetSpEffectID, 709300) == TRUE then
 				SetVariable("IsBonusUlt", 1)
@@ -3419,6 +3428,8 @@ function ExecAttack(r1, r2, l1, l2, b1, b2, is_guard, blend_type, artsr1, artsr2
 			end
 			ATTACKER_ULT_COUNTER = ATTACKER_ULT_COUNTER + 1
             ExecEventAllBody("W_BlinkStakeStart")
+			act(AddSpEffect, 713)
+			--- Warbanner Activation
         end
     elseif request == ATTACK_REQUEST_ARROW_FIRE_RIGHT or request == ATTACK_REQUEST_ARROW_FIRE_RIGHT2 then
         if request == ATTACK_REQUEST_ARROW_FIRE_RIGHT then
