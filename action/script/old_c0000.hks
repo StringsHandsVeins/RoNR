@@ -3,7 +3,7 @@
 -- Decompiled using the DSLuaDecompiler by ElaDiDu (fork from original by katalash)
 -- Curated at: https://github.com/ividyon/EldenRingHKS
 ------------------------------------------
--- Version 10 (For ER:NR HKS last updated in 1.03)
+-- Version 11 (For ER:NR HKS last updated in 1.03.1)
 ------------------------------------------
 -- Changelog:
 -- 2025-06-07 - Exelot: Initial Release
@@ -60,6 +60,8 @@
 -- 2025-12-10 - ccx:
 --				- Fixed an issue where Undertaker’s auto-dodge caused abnormal rolling behavior (during the skill’s active period, dodging in any direction would make you dash toward the enemy).
 --				- Also optimized Duchess’s special dodge logic to make it feel closer to the original experience.
+-- 2025-12-17 - El Fonz0:
+--				- Updated with changes from 1.03.1
 ------------------------------------------
 -- Known issues:
 -- N/A
@@ -68,8 +70,11 @@
 -- Identify Unknown env and act calls
 -- Code Cleanup
 -- Add more comments
-
-
+------------------------------------------
+-- RoNR: Global Variables
+------------------------------------------
+HEAT = 0
+INFUSION = 0
 ------------------------------------------
 -- RoNR: State Detection Functions (functional)
 -- Apply generic Indicator Speffects referenced by other Speffects
@@ -145,6 +150,23 @@ function RoNRGotHit()
 		act(AddSpEffect, 9009)
     end
 end
+
+function RoNR_OutofDanger()
+	if env(GetSpEffectID, 9056) ~= TRUE then
+		act(AddSpEffect, 9010)
+	elseif env(GetSpEffectID, 9056) == TRUE then
+		act(ClearSpEffect, 9010)
+	end
+end
+
+function RoNR_OutofCombat()
+	if env(GetSpEffectID, 9055) ~= TRUE then
+		act(AddSpEffect, 9011)
+	elseif env(GetSpEffectID, 9055) == TRUE then
+		act(ClearSpEffect, 9011)
+	end
+end
+
 
 ------------------------------
 -- non-functional
@@ -461,6 +483,119 @@ function RoNR_Merf()
 	end
 end
 
+-----------------------------------------
+-- Celestial Dial
+-- 71221 = Celedial StateInfo
+-- 71021 = Celedial Item
+-----------------------------------------
+
+function RoNR_Celedial()
+	if env(GetSpEffectID, 71021) == TRUE then
+		act(AddSpEffect, 71221)
+	elseif env(GetSpEffectID, 71021) == FALSE then
+		act(ClearSpEffect, 71221)
+	end
+end
+
+-----------------------------------------
+-- Opal
+-- 711 = OpalItem
+-- 9056 = In Danger State
+-- 3510 = Opal On Switch
+-----------------------------------------
+
+function RoNR_Opal()
+	local is_damaged = env(HasReceivedAnyDamage)
+	if env(GetSpEffectID, 711) == TRUE then
+		act(AddSpEffect, 3510)
+	end
+	if is_damaged == TRUE then
+		act(AddSpEffect, 9056)
+		act(ClearSpEffect, 3510)
+	end
+	if env(GetSpEffectID, 9056) == TRUE then
+		act(ClearSpEffect, 3510)
+	end
+end
+
+------------------------------------------
+-- Warbanner
+-- 712 = Warbanner Item
+-- 713 = Warbanner Activation State Info
+-- 1811 = War Cry
+-- 714 = Warbanner Bullet
+------------------------------------------
+
+function RoNR_Warbanner()
+	if env(GetSpEffectID, 712) == TRUE and env(GetSpEffectID, 713) == TRUE then
+		act(AddSpEffect, 1811)
+		act(AddSpEffect, 714)
+	end
+end
+
+------------------------------------------
+-- Infusion
+-- 9054 = Hitmarker
+------------------------------------------
+
+-- function RoNR_Infusion()
+-- 	if env(GetSpEffectID, InfusionItem) == TRUE then
+--		INFUSION = INFUSION + 1
+--		act(ClearSpEffect, InfusionItem)
+--	end
+-- 	if env(GetSpEffect, Hitmarker) == TRUE and env(GetSpEffect, Killmarker) == TRUE then
+-- 		Infusionbuff = env(GetMaxHP) + INFUSION
+-- 		act(ChangeMaxHP, Infusionbuff)
+--		act(AddSpEffect, InfusionDisplay)
+--	end
+-- end
+
+
+------------------------------------------
+-- Shock Lantern
+-- 9054 = Hit Marker
+-- = Shantern Item
+------------------------------------------
+
+-- 
+-- function RoNR_Shantern()
+-- 	if env(GetSpEffectID, ShanternItem) == TRUE and env(GetSpEffectID, 9054) == TRUE then
+-- 		HEAT = HEAT + 100
+-- 		if has Shantern and HEAT > 300 then
+-- 			add act(AddSpEffect, FireBuff)
+-- 		elseif has Shantern and HEAT > 600 then
+-- 			act(AddSpEffect, IgniteBuff)
+--			act(AddSpEffect, FireBuff)		
+-- 		end
+-- 	end
+-- 	if HEAT > 0 then
+-- 		HEAT = HEAT - 1
+--	end
+-- end
+--
+
+------------------------------------------
+-- Bands
+-- 9023 = bandcooldown
+-- 7118 = Fire Band Item
+-- 7119 = Ice Band Item
+-- 8320408 = Ice Band Buff
+-- 8320412 = Fire Band Buff
+------------------------------------------
+
+function RoNR_Bands()
+	if env(GetSpEffectID, 7118) == TRUE and env(GetSpEffectID, 9023) == FALSE then
+		act(AddSpEffect, 8320412)
+	end
+	if env(GetSpEffectID, 7119) == TRUE and env(GetSpEffectID, 9023) == FALSE then
+		act(AddSpEffect, 8320408)
+	end
+	if env(GetSpEffectID, 9023) == TRUE then
+		act(ClearSpEffect, 8320408)
+		act(ClearSpEffect, 8320412)		
+	end
+end
+
 ------------------------------------------
 -- Logic Update Bundle
 ------------------------------------------
@@ -477,8 +612,15 @@ function RoNR_LogicUpdate()
 	RoNR_Pidol()	
 	RoNR_ATG()
 	RoNR_Merf()
+	RoNR_Celedial()
+	RoNR_Opal()
+	RoNR_Warbanner()
 	RoNR_GSpot()
+	RoNR_Bands()
+	RoNR_OutofDanger()
+	RoNR_OutofCombat()
 end
+
 
 ------------------------------------------
 -- Core: Functions
@@ -1839,6 +1981,14 @@ function IsDemonBeastMode()
     return FALSE
 end
 
+-- Scholar Skill - Analyse
+function IsPhotoShootMode()
+	if env(GetHeroID) == HERO_BUFFER and env(GetSpEffectID, 603080) == TRUE then
+        return TRUE
+    end
+    return FALSE
+end
+
 -- Undertaker Skill - Trance
 function IsTranceMode()
 	if env(GetHeroID) == HERO_ATTACKER and (env(GetSpEffectID, 709000) == TRUE or env(GetSpEffectID, 709010) == TRUE) then
@@ -1872,6 +2022,21 @@ function IsDirectDeath()
         return TRUE
     end
     return FALSE
+end
+
+function ExecRainEffect()
+    if env(GetSpEffectID, 99872) == TRUE or env(GetSpEffectID, 99877) == TRUE then
+        act(AddSpEffect, 99881)
+        return TRUE
+    elseif env(GetSpEffectID, 99871) == TRUE or env(GetSpEffectID, 99876) == TRUE then
+        act(AddSpEffect, 99880)
+        return TRUE
+    elseif env(GetSpEffectID, 99880) == TRUE or env(GetSpEffectID, 99881) == TRUE then
+        act(AddSpEffect, 99882)
+        return TRUE
+    else
+        return FALSE
+    end
 end
 
 function ExecFookShot()
@@ -2019,6 +2184,20 @@ function ExecChangeTranceBlend()
     return FALSE
 end
 
+-- Recluse - Skill Relic
+function ExecElementalAbsorption_TerraMagicus()
+    if env(GetSpEffectID, 7032801) == TRUE then
+        return FALSE
+	-- Absorbed any element
+    elseif env(GetSpEffectID, 706000) == TRUE 
+	  or env(GetSpEffectID, 706001) == TRUE 
+	  or env(GetSpEffectID, 706002) == TRUE 
+	  or env(GetSpEffectID, 706003) == TRUE then
+        act(AddSpEffect, 7032801)
+    end
+    return FALSE
+end
+
 -- Undertaker - Skill
 function ExecTrance()
     if env(GetHeroID) ~= HERO_ATTACKER then
@@ -2138,6 +2317,8 @@ end
 -- Change flask effect depending on ally heal/gradual heal/fp restore
 -- Gradual and FP Flask can combine normally
 function ExecChangeFlask()
+	-- RoNR SippyDetection
+	act(AddSpEffect, 9026)
     if env(GetSpEffectID, 7010299) == TRUE then
 		-- Has 'Flask Also Heals Allies' effect
         if env(GetSpEffectID, 7010200) == TRUE then
@@ -3206,6 +3387,7 @@ function ExecAttack(r1, r2, l1, l2, b1, b2, is_guard, blend_type, artsr1, artsr2
             ExecEventHalfBlend(Event_PhotoShootStart, blend_type)
         elseif env(GetHeroID) == HERO_ATTACKER then
         end
+		--- Warbanner Activation
     elseif request == ATTACK_REQUEST_ULTRA then
         if env(GetHeroID) == HERO_BALANCE then
             atk_hand = HAND_LEFT
@@ -3216,22 +3398,31 @@ function ExecAttack(r1, r2, l1, l2, b1, b2, is_guard, blend_type, artsr1, artsr2
                 SetVariable("IndexPileBunker", 1)
             end
             ExecEventAllBody("W_PileBunkerStart")
+			act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_TANK then
             ExecEventAllBody("W_DragoonJumpStart")
+			act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_SHOOTER then
             ExecEventAllBody("W_LongBowSnipeStart")
+			act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_SPEED then
             ExecEventAllBody("W_AllHideStart")
+			act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_POWER then
             ExecEventAllBody("W_RockWallAttackStart")
+			act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_NECROMANCER then
             ExecEventAllBody("W_LivingDeadStart")
+			act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_MAGIC then
             ExecEventAllBody("W_BloodMagicStart")
+			act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_TECHNICAL then
             ExecEventAllBody("W_DemonBeastStart")
+			act(AddSpEffect, 713)
 		elseif env(GetHeroID) == HERO_BUFFER then
             ExecEventAllBody("W_JointChainStart")
+			act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_ATTACKER then
 			if env(GetSpEffectID, 709300) == TRUE then
 				SetVariable("IsBonusUlt", 1)
@@ -3240,6 +3431,8 @@ function ExecAttack(r1, r2, l1, l2, b1, b2, is_guard, blend_type, artsr1, artsr2
 			end
 			ATTACKER_ULT_COUNTER = ATTACKER_ULT_COUNTER + 1
             ExecEventAllBody("W_BlinkStakeStart")
+			act(AddSpEffect, 713)
+			--- Warbanner Activation
         end
     elseif request == ATTACK_REQUEST_ARROW_FIRE_RIGHT or request == ATTACK_REQUEST_ARROW_FIRE_RIGHT2 then
         if request == ATTACK_REQUEST_ARROW_FIRE_RIGHT then
@@ -4965,6 +5158,9 @@ function ExecJump()
 			SetVariable("IndexSuperJump", 6)
 		elseif env(GetSpEffectID, 98215) == TRUE then
             SetVariable("IndexSuperJump", 7)
+			if IsFookShotMode() == TRUE then
+				ExecFookShotModeEnd()
+			end
         elseif env(GetSpEffectID, 98217) == TRUE then
             SetVariable("IndexSuperJump", 8)
         elseif env(GetSpEffectID, 98218) == TRUE then
@@ -5272,6 +5468,10 @@ function ExecGroundNonCombatAreaEnter(hand, is_force, blend_type, no_reset)
     if IsDemonBeastMode() == TRUE then
         return FALSE
     end
+	if IsPhotoShootMode() == TRUE then
+		ExecEventHalfBlend(Event_PhotoShootFinish, blend_type)
+		return
+	end
     if env(GetSpEffectID, 601000) == TRUE then
         SetVariable("AddNonCombatAreaEnterBlend", 1)
         ExecEventNoReset("W_AddNonCombatAreaEnter")
@@ -6509,7 +6709,7 @@ function ExecDamage(is_parry, is_attackwhileguard)
         ExecEventAllBody("W_DamageMad")
         return TRUE
     end
-	-- Gnoster  Trigger parasite from Faurtis's roar
+	-- Gnoster - Trigger parasite from Faurtis's roar
     if env(GetSpEffectID, 46006) == TRUE 
 	  and (env(GetSpEffectID, 46000) == TRUE 
 	  or env(GetSpEffectID, 46001) == TRUE 
@@ -6523,8 +6723,20 @@ function ExecDamage(is_parry, is_attackwhileguard)
         if damage_level == DAMAGE_LEVEL_NONE then
             if IsNodeActive("SwordArtsOneShot Selector") == TRUE and c_SwordArtsID == 136 then
             elseif IsNodeActive("BloodMagicStart_CMSG") == TRUE and env(GetSpEffectID, 7032900) == TRUE then
-            else
-                damage_level = DAMAGE_LEVEL_SMALL
+            elseif env(GetSpEffectID, 22200) ~= TRUE 
+			  and env(GetSpEffectID, 22201) ~= TRUE 
+			  and env(GetSpEffectID, 22202) ~= TRUE 
+			  and env(GetSpEffectID, 22203) ~= TRUE 
+			  and env(GetSpEffectID, 22204) ~= TRUE 
+			  and env(GetSpEffectID, 22205) ~= TRUE 
+			  and env(GetSpEffectID, 22206) ~= TRUE 
+			  and env(GetSpEffectID, 22207) ~= TRUE 
+			  and env(GetSpEffectID, 22208) ~= TRUE 
+			  and env(GetSpEffectID, 22209) ~= TRUE then
+                if env(GetSpEffectID, 22210) == TRUE then
+                else
+                    damage_level = DAMAGE_LEVEL_SMALL
+                end
             end
         elseif damage_level ~= DAMAGE_LEVEL_SMALL and damage_level ~= DAMAGE_LEVEL_MIDDLE and damage_level == DAMAGE_LEVEL_MINIMUM then
         end
@@ -6953,10 +7165,6 @@ function ExecBirdAct()
     end
     return FALSE
 end
-
---------------------
--- Merf and ATG Logic - 9058 = Charge Attack 
---------------------
 
 function ExecRuneBonus()
 
@@ -9804,6 +10012,7 @@ end
 
 function NearDeathCommonFunction()
     act(SetAllowedThrowDefenseType, 255)
+	SetVariable("IsAutoRevival", 0)
     local damage_type = env(GetReceivedDamageType)
     if damage_type == DAMAGE_TYPE_DEATH_FALLING then
         ExecEventAllBody("W_NearDeathEnd")
@@ -9832,10 +10041,13 @@ function NearDeathCommonFunction()
             return TRUE
         end
 		-- Revive upon Immortal March, Solo Auto Revive, Favor of Noklateo, or Wending Grace
-		-- Or a new thing
+		-- Or Power to Balance the Word
         if env(GetSpEffectID, 705020) == TRUE or env(GetSpEffectID, 6999505) == TRUE 
 		  or env(GetSpEffectID, 6999105) == TRUE or env(GetSpEffectID, 540150) == TRUE
 		  or env(GetSpEffectID, 8970061) == TRUE then
+			if env(GetSpEffectID, 8970061) == TRUE then
+				SetVariable("IsAutoRevival", 1)
+			end
             ExecEventAllBody("W_NearDeathRevival")
             return TRUE
         end
@@ -10989,6 +11201,7 @@ end
 
 function NearDeathStart_onUpdate()
     act(SetAllowedThrowDefenseType, 255)
+	SetVariable("IsAutoRevival", 0)
     local damage_type = env(GetReceivedDamageType)
     if damage_type == DAMAGE_TYPE_DEATH_FALLING then
         ExecEventAllBody("W_NearDeathEnd")
@@ -12066,8 +12279,12 @@ end
 function AttackBothHeavy1Start_onUpdate()
     SPEED_COMBO_NUMBER_BOTH = 1
     ExecTravelMagnification(ATTACK_BOTH_HEAVY1START)
+	ExecGuardBuff()
     act(SetSpecialInterpolation, 0, FALSE)
-    if IsEnableSpecialAttack(HAND_RIGHT) == TRUE and 0 < env(ActionDuration, ACTION_ARM_R2) and 0 < env(ActionDuration, ACTION_ARM_SP_MOVE) and env(GetSpEffectID, 100290) == TRUE then
+    if IsEnableSpecialAttack(HAND_RIGHT) == TRUE 
+	  and 0 < env(ActionDuration, ACTION_ARM_R2) 
+	  and 0 < env(ActionDuration, ACTION_ARM_SP_MOVE) 
+	  and env(GetSpEffectID, 100290) == TRUE then
         ExecEventAllBody("W_AttackBothSpecial1")
         return
     end
@@ -12087,6 +12304,7 @@ end
 function AttackBothHeavy1End_onUpdate()
     SPEED_COMBO_NUMBER_BOTH = 1
     ExecTravelMagnification(ATTACK_BOTH_HEAVY1END)
+	ExecGuardBuff()
     local b1 = "W_AttackBothLightSubStart"
     if g_ComboReset == TRUE then
         b1 = "W_AttackBothLight1"
@@ -12128,7 +12346,11 @@ function AttackBothHeavy1UpEnd_onUpdate()
 end
 
 function AttackBothHeavy2Start_onUpdate()
-    if IsEnableSpecialAttack(HAND_RIGHT) == TRUE and env(ActionDuration, ACTION_ARM_R2) > 0 and env(ActionDuration, ACTION_ARM_SP_MOVE) > 0 and env(GetSpEffectID, 100290) == TRUE then
+	ExecGuardBuff()
+    if IsEnableSpecialAttack(HAND_RIGHT) == TRUE 
+	  and env(ActionDuration, ACTION_ARM_R2) > 0 
+	  and env(ActionDuration, ACTION_ARM_SP_MOVE) > 0 
+	  and env(GetSpEffectID, 100290) == TRUE then
         ExecEventAllBody("W_AttackBothSpecial2")
         return
     end
@@ -12148,7 +12370,11 @@ function AttackBothHeavy2End_onUpdate()
 end
 
 function AttackBothHeavy2UpStart_onUpdate()
-    if IsEnableSpecialAttack(HAND_RIGHT) == TRUE and env(ActionDuration, ACTION_ARM_R2) > 0 and env(ActionDuration, ACTION_ARM_SP_MOVE) > 0 and env(GetSpEffectID, 100290) == TRUE then
+	ExecGuardBuff()
+    if IsEnableSpecialAttack(HAND_RIGHT) == TRUE 
+	  and env(ActionDuration, ACTION_ARM_R2) > 0 
+	  and env(ActionDuration, ACTION_ARM_SP_MOVE) > 0 
+	  and env(GetSpEffectID, 100290) == TRUE then
         ExecEventAllBody("W_AttackBothSpecial2")
         return
     end
@@ -16205,6 +16431,7 @@ function ElementalAbsorptionFinish_Upper_onActivate()
 end
 
 function ElementalAbsorptionFinish_Upper_onUpdate()
+	ExecElementalAbsorption_TerraMagicus()
     local blend_type, lower_state = GetHalfBlendInfo()
     if lower_state == LOWER_IDLE then
         act(LockonSystemUnableToTurnAngle, 45, 45)
@@ -16267,6 +16494,7 @@ function ElementalAbsorption2Finish_Upper_onActivate()
 end
 
 function ElementalAbsorption2Finish_Upper_onUpdate()
+	ExecElementalAbsorption_TerraMagicus()
     local blend_type, lower_state = GetHalfBlendInfo()
     if lower_state == LOWER_IDLE then
         act(LockonSystemUnableToTurnAngle, 45, 45)
@@ -16329,6 +16557,7 @@ function ElementalAbsorption3Finish_Upper_onActivate()
 end
 
 function ElementalAbsorption3Finish_Upper_onUpdate()
+	ExecElementalAbsorption_TerraMagicus()
     local blend_type, lower_state = GetHalfBlendInfo()
     if lower_state == LOWER_IDLE then
         act(LockonSystemUnableToTurnAngle, 45, 45)
@@ -16403,6 +16632,7 @@ function DemonSwordStanceEnd_Upper_onActivate()
 end
 
 function DemonSwordStanceEnd_Upper_onUpdate()
+	ExecGuardBuff()
     local blend_type, lower_state = GetHalfBlendInfo()
     if lower_state == LOWER_IDLE then
         act(LockonSystemUnableToTurnAngle, 45, 45)
@@ -16580,8 +16810,11 @@ function AirUltCommonFunction(act_type)
     if Act_Jump() == TRUE then
         return
     end
-    local height = env(GetFallHeight) / 100
-    if env(IsHamariFallDeath, 12) == TRUE or damage_type == DAMAGE_TYPE_DEATH_FALLING or height >= 150 then
+	if act_type == ULT_DRAGOONJUMP and env(GetSpEffectID, 701505) == FALSE then
+		ExecEventAllBody("W_FallDeath")
+		return TRUE
+	end
+    if env(IsHamariFallDeath, 12) == TRUE or damage_type == DAMAGE_TYPE_DEATH_FALLING then
         ExecEventAllBody("W_FallDeath")
         return TRUE
     end
@@ -20376,6 +20609,16 @@ function Event60491_onActivate()
 end
 
 function Event60491_onUpdate()
+    if EventCommonFunction() == TRUE then
+        return
+    end
+end
+
+function Event60492_onActivate()
+    ResetEventState()
+end
+
+function Event60492_onUpdate()
     if EventCommonFunction() == TRUE then
         return
     end
