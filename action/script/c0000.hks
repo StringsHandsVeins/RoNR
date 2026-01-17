@@ -2879,14 +2879,14 @@ function ExecAttack(r1, r2, l1, l2, b1, b2, is_guard, blend_type, artsr1, artsr2
         end
         if GetEquipType(atk_hand, WEAPON_CATEGORY_STAFF, WEAPON_CATEGORY_SMALL_ARROW, WEAPON_CATEGORY_ARROW, WEAPON_CATEGORY_LARGE_ARROW, WEAPON_CATEGORY_CROSSBOW, WEAPON_CATEGORY_BALLISTA) == FALSE and env(ActionRequest, ACTION_ARM_R2) == TRUE then
             if c_Style == HAND_RIGHT_BOTH or c_Style == HAND_LEFT_BOTH then
-				 -- Guardian Unique Halberd Charged Guard Counter 2H
-                if GetEquipType(atk_hand, WEAPON_CATEGORY_HALBERD) == TRUE and env(GetHeroID) == HERO_TANK then
+				 -- Guardian Unique Halberd Charged Guard Counter 2H - RONR expanded
+                if GetEquipType(atk_hand, WEAPON_CATEGORY_HALBERD, WEAPON_CATEGORY_SPEAR, WEAPON_CATEGORY_LARGE_RAPIER, WEAPON_CATEGORY_LARGE_SPEAR, WEAPON_CATEGORY_LARGE_SWORD, WEAPON_CATEGORY_EXTRALARGE_SWORD) == TRUE and env(GetHeroID) == HERO_TANK then
                     ExecEventAllBody("W_AttackBothHeavyCounterStart")
                 else
                     ExecEventAllBody("W_AttackBothHeavyCounter")
                 end
 			-- Guardian Unique Halberd Charged Guard Counter 1H
-            elseif GetEquipType(HAND_RIGHT, WEAPON_CATEGORY_HALBERD) == TRUE and env(GetHeroID) == HERO_TANK then
+            elseif GetEquipType(HAND_RIGHT, WEAPON_CATEGORY_HALBERD, WEAPON_CATEGORY_SPEAR, WEAPON_CATEGORY_LARGE_RAPIER, WEAPON_CATEGORY_LARGE_SPEAR, WEAPON_CATEGORY_LARGE_SWORD, WEAPON_CATEGORY_EXTRALARGE_SWORD) == TRUE and env(GetHeroID) == HERO_TANK then
                 ExecEventAllBody("W_AttackRightHeavyCounterStart")
             else
                 ExecEventAllBody("W_AttackRightHeavyCounter")
