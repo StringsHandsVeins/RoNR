@@ -19,7 +19,7 @@ Features:
 
 [Reworked Lootpools](https://github.com/StringsHandsVeins/RoNR/wiki/Loot-Distribution)  
 
-Reworked Weapons
+[Reworked Weapons](https://github.com/StringsHandsVeins/RoNR/wiki/Weapons)
 
 
 # Special Thanks   
