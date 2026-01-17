@@ -543,7 +543,6 @@ end
 
 function RoNR_Warbanner()
 	if env(GetSpEffectID, 712) == TRUE and env(GetSpEffectID, 713) == TRUE then
-		act(AddSpEffect, 1811)
 		act(AddSpEffect, 714)
 	end
 end
