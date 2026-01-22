@@ -5842,7 +5842,13 @@ function ExecEvasion(backstep_limit, estep, is_usechainrecover)
         return FALSE
     end
     SetWeightIndex()
-    if env(GetHeroID) == HERO_MAGIC and env(GetSpEffectID, 1800200) == TRUE then
+	-- RoNR: DashSpeffects
+	if env(GetSpEffectID, 715) == TRUE then
+        SetVariable("RollingVariationIndex", ROLLING_CREATEMAGIC_THUNDER)
+	elseif (env(GetSpEffectID, 716) == TRUE then
+        SetVariable("RollingVariationIndex", ROLLING_TRANCE)
+	--
+    elseif env(GetHeroID) == HERO_MAGIC and env(GetSpEffectID, 1800200) == TRUE then
         SetVariable("RollingVariationIndex", ROLLING_CREATEMAGIC_THUNDER)
     elseif IsEnableHighGuard() == TRUE and IsGuard() == TRUE then
         SetVariable("RollingVariationIndex", ROLLING_HIGHGUARD)
