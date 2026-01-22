@@ -215,7 +215,6 @@ function RoNR_InititateDrizzleHelperWylder()
 	if env(GetHeroID) == HERO_BALANCE and env(GetSpEffectID, 71111112) == FALSE then
 		act(AddSpEffect, 71111112)
 		act(AddSpEffect, 9050)
-		act(AddSpEffect, 9021)
 		act(AddSpEffect, 9022)
 		act(AddSpEffect, 9053)
 		act(AddSpEffect, 9059)
@@ -227,7 +226,6 @@ function RoNR_InititateDrizzleHelperGuardian()
 	if env(GetHeroID) == HERO_TANK and env(GetSpEffectID, 71111112) == FALSE then
 		act(AddSpEffect, 71111112)
 		act(AddSpEffect, 9050)
-		act(AddSpEffect, 9021)
 		act(AddSpEffect, 9022)
 		act(AddSpEffect, 9053)
 		act(AddSpEffect, 9059)
@@ -239,7 +237,6 @@ function RoNR_InititateDrizzleHelperIroneye()
 	if env(GetHeroID) == HERO_SHOOTER and env(GetSpEffectID, 71111112) == FALSE then
 		act(AddSpEffect, 71111112)
 		act(AddSpEffect, 9050)
-		act(AddSpEffect, 9021)
 		act(AddSpEffect, 9022)
 		act(AddSpEffect, 9053)
 		act(AddSpEffect, 9059)
@@ -250,7 +247,6 @@ end
 function RoNR_InititateDrizzleHelperDuchess()
 	if env(GetHeroID) == HERO_SPEED and env(GetSpEffectID, 9050) == FALSE then
 		act(AddSpEffect, 9050)
-		act(AddSpEffect, 9021)
 		act(AddSpEffect, 9022)
 		act(AddSpEffect, 9053)
 		act(AddSpEffect, 9059)
@@ -262,7 +258,6 @@ function RoNR_InititateDrizzleHelperRaider()
 	if env(GetHeroID) == HERO_POWER and env(GetSpEffectID, 71111112) == FALSE then
 		act(AddSpEffect, 71111112)
 		act(AddSpEffect, 9050)
-		act(AddSpEffect, 9021)
 		act(AddSpEffect, 9022)
 		act(AddSpEffect, 9053)
 		act(AddSpEffect, 9059)
@@ -274,7 +269,6 @@ function RoNR_InititateDrizzleHelperRevenant()
 	if env(GetHeroID) == HERO_NECROMANCER and env(GetSpEffectID, 71111112) == FALSE then
 		act(AddSpEffect, 71111112)
 		act(AddSpEffect, 9050)
-		act(AddSpEffect, 9021)
 		act(AddSpEffect, 9022)
 		act(AddSpEffect, 9053)
 		act(AddSpEffect, 9059)
@@ -285,7 +279,6 @@ end
 function RoNR_InititateDrizzleHelperRecluse()
 	if env(GetHeroID) == HERO_MAGIC and env(GetSpEffectID, 9050) == FALSE then
 		act(AddSpEffect, 9050)
-		act(AddSpEffect, 9021)
 		act(AddSpEffect, 9022)
 		act(AddSpEffect, 9053)
 		act(AddSpEffect, 9059)
@@ -297,7 +290,6 @@ function RoNR_InititateDrizzleHelperExecutor()
 	if env(GetHeroID) == HERO_TECHNICAL and env(GetSpEffectID, 71111112) == FALSE then
 		act(AddSpEffect, 71111112)
 		act(AddSpEffect, 9050)
-		act(AddSpEffect, 9021)
 		act(AddSpEffect, 9022)
 		act(AddSpEffect, 9053)
 		act(AddSpEffect, 9059)
@@ -309,7 +301,6 @@ function RoNR_InititateDrizzleHelperScholar()
 	if env(GetHeroID) == HERO_BUFFER and env(GetSpEffectID, 71111112) == FALSE then
 		act(AddSpEffect, 71111112)
 		act(AddSpEffect, 9050)
-		act(AddSpEffect, 9021)
 		act(AddSpEffect, 9022)
 		act(AddSpEffect, 9053)
 		act(AddSpEffect, 9059)
@@ -321,7 +312,6 @@ function RoNR_InititateDrizzleHelperNun()
 	if env(GetHeroID) == HERO_ATTACKER and env(GetSpEffectID, 71111112) == FALSE then
 		act(AddSpEffect, 71111112)
 		act(AddSpEffect, 9050)
-		act(AddSpEffect, 9021)
 		act(AddSpEffect, 9022)
 		act(AddSpEffect, 9053)
 		act(AddSpEffect, 9059)
@@ -2967,7 +2957,7 @@ function ExecAttack(r1, r2, l1, l2, b1, b2, is_guard, blend_type, artsr1, artsr2
                 r2 = "W_AttackRightHeavySpecial2Start"
             end
         end
-        ExecEventAllBody(r2)
+        ExecEventAllBody(r2)		
     elseif request == ATTACK_REQUEST_LEFT_LIGHT then
         atk_hand = HAND_LEFT
         guard_hand = HAND_LEFT
@@ -23263,6 +23253,7 @@ function ExecRideAttack(r1, r2, l1, l2)
             return FALSE
         end
         ExecEventAllBody(r2)
+		act(AddSpEffect, 9021)
     elseif env(ActionRequest, ACTION_ARM_L1) == TRUE or env(ActionRequest, ACTION_ARM_L2) == TRUE and is_staff == TRUE then
         act(ResetInputQueue)
         SetVariable("RideAttackHand", HAND_LEFT)
