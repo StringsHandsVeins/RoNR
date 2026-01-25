@@ -212,44 +212,52 @@ end
 ------------------------------------------
 
 function RoNR_InititateDrizzleHelperWylder()
-	if env(GetHeroID) == HERO_BALANCE and env(GetSpEffectID, 71111112) == FALSE then
+	if env(GetHeroID) == HERO_BALANCE and env(GetSpEffectID, 9200) == FALSE then
 		act(AddSpEffect, 71111112)
 		act(AddSpEffect, 9050)
 		act(AddSpEffect, 9022)
 		act(AddSpEffect, 9053)
 		act(AddSpEffect, 9059)
+		-- DrizzleFP Wylder (passive FP regen)
+		act(AddSpEffect, 9200)
 		act(AddSpEffect, 71111114)
 	end
 end
 
 function RoNR_InititateDrizzleHelperGuardian()
-	if env(GetHeroID) == HERO_TANK and env(GetSpEffectID, 71111112) == FALSE then
+	if env(GetHeroID) == HERO_TANK and env(GetSpEffectID, 9201) == FALSE then
 		act(AddSpEffect, 71111112)
 		act(AddSpEffect, 9050)
 		act(AddSpEffect, 9022)
 		act(AddSpEffect, 9053)
 		act(AddSpEffect, 9059)
+		-- DrizzleFP Guardian (Guarding recovers FP)
+		act(AddSpEffect, 9201)
 		act(AddSpEffect, 71111114)
 	end
 end
 
 function RoNR_InititateDrizzleHelperIroneye()
-	if env(GetHeroID) == HERO_SHOOTER and env(GetSpEffectID, 71111112) == FALSE then
+	if env(GetHeroID) == HERO_SHOOTER and env(GetSpEffectID, 9202) == FALSE then
 		act(AddSpEffect, 71111112)
 		act(AddSpEffect, 9050)
 		act(AddSpEffect, 9022)
 		act(AddSpEffect, 9053)
 		act(AddSpEffect, 9059)
+		-- DrizzleFP Ironeye (Final Chain Attack restores FP)
+		act(AddSpEffect, 9202)
 		act(AddSpEffect, 71111114)
 	end
 end
 
 function RoNR_InititateDrizzleHelperDuchess()
-	if env(GetHeroID) == HERO_SPEED and env(GetSpEffectID, 9050) == FALSE then
+	if env(GetHeroID) == HERO_SPEED and env(GetSpEffectID, 9211) == FALSE then
 		act(AddSpEffect, 9050)
 		act(AddSpEffect, 9022)
 		act(AddSpEffect, 9053)
 		act(AddSpEffect, 9059)
+		-- DrizzleFP Duchess (Critical Hits restore FP)
+		act(AddSpEffect, 9211)
 		act(AddSpEffect, 71111114)
 	end
 end
@@ -263,15 +271,21 @@ function RoNR_InititateDrizzleHelperRaider()
 		act(AddSpEffect, 9059)
 		act(AddSpEffect, 71111114)
 	end
+	-- DrizzleFP Raider (Recover FP when taking Damage)
+	if env(HasReceivedAnyDamage) == TRUE and env(GetHeroID) == HERO_POWER then
+	act(AddSpEffect, 9204)
+	end
 end
 
 function RoNR_InititateDrizzleHelperRevenant()
-	if env(GetHeroID) == HERO_NECROMANCER and env(GetSpEffectID, 71111112) == FALSE then
+	if env(GetHeroID) == HERO_NECROMANCER and env(GetSpEffectID, 9205) == FALSE then
 		act(AddSpEffect, 71111112)
 		act(AddSpEffect, 9050)
 		act(AddSpEffect, 9022)
 		act(AddSpEffect, 9053)
 		act(AddSpEffect, 9059)
+		-- DrizzleFP Revenant (restore FP on Kill)
+		act(AddSpEffect, 9205)
 		act(AddSpEffect, 71111114)
 	end
 end
@@ -298,22 +312,26 @@ function RoNR_InititateDrizzleHelperExecutor()
 end
 
 function RoNR_InititateDrizzleHelperScholar()
-	if env(GetHeroID) == HERO_BUFFER and env(GetSpEffectID, 71111112) == FALSE then
+	if env(GetHeroID) == HERO_BUFFER and env(GetSpEffectID, 9207) == FALSE then
 		act(AddSpEffect, 71111112)
 		act(AddSpEffect, 9050)
 		act(AddSpEffect, 9022)
 		act(AddSpEffect, 9053)
 		act(AddSpEffect, 9059)
+		-- DrizzleFP Scholar (thrown items restore FP)
+		act(AddSpEffect, 9207)
 		act(AddSpEffect, 71111114)
 	end
 end
 
 function RoNR_InititateDrizzleHelperNun()
-	if env(GetHeroID) == HERO_ATTACKER and env(GetSpEffectID, 71111112) == FALSE then
+	if env(GetHeroID) == HERO_ATTACKER and env(GetSpEffectID, 9209) == FALSE then
 		act(AddSpEffect, 71111112)
 		act(AddSpEffect, 9050)
 		act(AddSpEffect, 9022)
 		act(AddSpEffect, 9053)
+		-- DrizzleFP Undertaker (Attacks recover FP)
+		act(AddSpEffect, 9209)
 		act(AddSpEffect, 9059)
 		act(AddSpEffect, 71111114)
 	end
