@@ -23,9 +23,9 @@ Features:
 
 
 # Special Thanks   
-[El-F0nzo for decompiling, documenting and updating c000.hks](https://github.com/El-Fonz0/EldenRingNightreignHKS/blob/main/c0000.hks)  
-The %ServerName% Discord  
-Vawser and everyone contributing to [Smithbox](https://github.com/vawser/Smithbox)  
-TerraMag for [SoTE and DS3 Weapons](https://www.nexusmods.com/eldenringnightreign/mods/554?tab=description)  
-Mr.Gaiety for expanding Guardian's charged guard-counters and having excellent documentation in [Fun Is Allowed](https://www.nexusmods.com/eldenringnightreign/mods/49)  
-Exce for playtesting & feedback  
+### El-F0nzo for decompiling, documenting and updating [c000.hks](https://github.com/El-Fonz0/EldenRingNightreignHKS/blob/main/c0000.hks)  
+### Vawser and everyone contributing to [Smithbox](https://github.com/vawser/Smithbox)  
+### TerraMag for [SoTE and DS3 Weapons](https://www.nexusmods.com/eldenringnightreign/mods/554?tab=description)  
+### Mr.Gaiety for expanding Guardian's charged guard-counters and having excellent documentation in [Fun Is Allowed](https://www.nexusmods.com/eldenringnightreign/mods/49)  
+### Exce for playtesting & feedback
+& last but not least the ?ServerName? fromsoft modding discord
