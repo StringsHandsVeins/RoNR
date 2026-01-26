@@ -1,7 +1,7 @@
 ------------------------------------------
 -- Fixed decompiled c0000.hks for ELDEN RING: NIGHTREIGHN
 -- Decompiled using the DSLuaDecompiler by ElaDiDu (fork from original by katalash)
--- Curated at: https://github.com/El-Fonz0/EldenRingNightreignHKS
+-- Curated at: https://github.com/ividyon/EldenRingHKS
 ------------------------------------------
 -- Version 11 (For ER:NR HKS last updated in 1.03.1)
 ------------------------------------------
@@ -62,16 +62,6 @@
 --				- Also optimized Duchess’s special dodge logic to make it feel closer to the original experience.
 -- 2025-12-17 - El Fonz0:
 --				- Updated with changes from 1.03.1
--- 2026-1-11 - El Fonz0
---				- Added some comments on slowing effects and the switching affinity buff relic effect
---				- Noted possibilities on some unk env calls
--- 2026-1-14 - El Fonz0
---				- Noted more env calls and provided some alternate names for some
---				- Changed some env/act call names
---				- Added alternate enums for hero names
---				- Changed github link
--- 2026-01-15 - El Fonz0:
---				- Updated with changes from 1.03.4
 ------------------------------------------
 -- Known issues:
 -- N/A
@@ -84,567 +74,6 @@
 ------------------------------------------
 -- Core: Functions
 ------------------------------------------
-
-------------------------------------------
--- RoNR: Global Variables
-------------------------------------------
-HEAT = 0
-INFUSION = 0
-------------------------------------------
--- RoNR: State Detection Functions (functional)
--- Apply generic Indicator Speffects referenced by other Speffects
-------------------------------------------
-
-function RoNR_TriggerUltimateReady()
-	if env(370) == TRUE then
-		act(2002, 9000)
-	end
-end
-
-function RoNR_TriggerSprint()
-	if GetVariable("MoveSpeedIndex") == 3 then
-		act(AddSpEffect, 9001)
-	end
-end
-
-function RoNR_TriggerOnGuardbreak()
-    if env(GetReceivedDamageType) == DAMAGE_TYPE_GUARDBREAK then
-		act(AddSpEffect, 9002)
-    end
-    return FALSE
-end
-
-function RoNR_TriggerOnAimCam()
-	if env(IsPrecisionShoot) == TRUE then
-		act(AddSpEffect, 9003)
-	end
-end
-
-
-function RoNR_TriggerOnIdle()
-	if GetVariable("MoveSpeedIndex") == 0 then
-		act(AddSpEffect, 9004)
-	end
-end
-
-function RoNROnGuard()
-    if env(GetReceivedDamageType) == DAMAGE_TYPE_GUARD then
-		act(AddSpEffect, 9008)
-    end
-    return FALSE
-end
-
-function RoNRGotHit()
-	local damage_level = env(GetDamageLevel)
-	if damage_level == DAMAGE_LEVEL_MIDDLE then
-		act(AddSpEffect, 9012)
-		act(AddSpEffect, 9009)
-	elseif damage_level == DAMAGE_LEVEL_PUSH then
-		act(AddSpEffect, 9012)
-		act(AddSpEffect, 9009)
-	elseif damage_level == DAMAGE_LEVEL_LARGE then
-		act(AddSpEffect, 9013)
-		act(AddSpEffect, 9009)
-	elseif damage_level == DAMAGE_LEVEL_EXLARGE then
-		act(AddSpEffect, 9014)
-		act(AddSpEffect, 9009)
-	elseif damage_level == DAMAGE_LEVEL_EX_BLAST then
-		act(AddSpEffect, 9015)
-		act(AddSpEffect, 9009)
-	elseif damage_level == DAMAGE_LEVEL_SMALL_BLOW then
-		act(AddSpEffect, 9016)
-		act(AddSpEffect, 9009)
-	elseif damage_level == DAMAGE_LEVEL_UPPER then
-		act(AddSpEffect, 9017)
-		act(AddSpEffect, 9009)
-		elseif damage_level == DAMAGE_LEVEL_FLING then
-		act(AddSpEffect, 9018)
-		act(AddSpEffect, 9009)
-	elseif damage_level == DAMAGE_LEVEL_BREATH then
-		act(AddSpEffect, 9019)
-		act(AddSpEffect, 9009)
-    end
-end
-
-function RoNR_OutofDanger()
-	if env(GetSpEffectID, 9056) ~= TRUE then
-		act(AddSpEffect, 9010)
-	elseif env(GetSpEffectID, 9056) == TRUE then
-		act(ClearSpEffect, 9010)
-	end
-end
-
-function RoNR_OutofCombat()
-	if env(GetSpEffectID, 9055) ~= TRUE then
-		act(AddSpEffect, 9011)
-	elseif env(GetSpEffectID, 9055) == TRUE then
-		act(ClearSpEffect, 9011)
-	end
-end
-
-
-------------------------------
--- non-functional
-------------------------------
-
-function RoNR_TriggerOnHitAttack()
-	if env(IsSwingHitTarget) == TRUE then
-		act(AddSpEffect, 9005)
-	end
-end
-
-function RoNR_TriggerOnRequestAttack()
-	if env(IsThereAnyAtkRequest) == TRUE then
-		act(AddSpEffect, 9006)
-	end
-end
-
-function RoNR_ChanceOnAttackRequest()
-	if env(IsThereAnyAtkRequest) == TRUE and math.random(0,100) > 90 then
-		act(AddSpEffect, 9007)
-	end
-end
-
-------------------------------------------
--- RoNR: Core Effects
--- Apply DrizzleHelper Effects to player
--- 9059 - Crit Detection 
-------------------------------------------
-
-function RoNR_InititateDrizzleHelperWylder()
-	if env(GetHeroID) == HERO_BALANCE and env(GetSpEffectID, 9200) == FALSE then
-		act(AddSpEffect, 71111112)
-		act(AddSpEffect, 9050)
-		act(AddSpEffect, 9022)
-		act(AddSpEffect, 9053)
-		act(AddSpEffect, 9059)
-		-- DrizzleFP Wylder (passive FP regen)
-		act(AddSpEffect, 9200)
-		act(AddSpEffect, 71111114)
-	end
-end
-
-function RoNR_InititateDrizzleHelperGuardian()
-	if env(GetHeroID) == HERO_TANK and env(GetSpEffectID, 9201) == FALSE then
-		act(AddSpEffect, 71111112)
-		act(AddSpEffect, 9050)
-		act(AddSpEffect, 9022)
-		act(AddSpEffect, 9053)
-		act(AddSpEffect, 9059)
-		-- DrizzleFP Guardian (Guarding recovers FP)
-		act(AddSpEffect, 9201)
-		act(AddSpEffect, 71111114)
-	end
-end
-
-function RoNR_InititateDrizzleHelperIroneye()
-	if env(GetHeroID) == HERO_SHOOTER and env(GetSpEffectID, 9202) == FALSE then
-		act(AddSpEffect, 71111112)
-		act(AddSpEffect, 9050)
-		act(AddSpEffect, 9022)
-		act(AddSpEffect, 9053)
-		act(AddSpEffect, 9059)
-		-- DrizzleFP Ironeye (Final Chain Attack restores FP)
-		act(AddSpEffect, 9202)
-		act(AddSpEffect, 71111114)
-	end
-end
-
-function RoNR_InititateDrizzleHelperDuchess()
-	if env(GetHeroID) == HERO_SPEED and env(GetSpEffectID, 9211) == FALSE then
-		act(AddSpEffect, 9050)
-		act(AddSpEffect, 9022)
-		act(AddSpEffect, 9053)
-		act(AddSpEffect, 9059)
-		-- DrizzleFP Duchess (Critical Hits restore FP)
-		act(AddSpEffect, 9211)
-		act(AddSpEffect, 71111114)
-	end
-end
-
-function RoNR_InititateDrizzleHelperRaider()
-	if env(GetHeroID) == HERO_POWER and env(GetSpEffectID, 71111112) == FALSE then
-		act(AddSpEffect, 71111112)
-		act(AddSpEffect, 9050)
-		act(AddSpEffect, 9022)
-		act(AddSpEffect, 9053)
-		act(AddSpEffect, 9059)
-		act(AddSpEffect, 71111114)
-	end
-	-- DrizzleFP Raider (Recover FP when taking Damage)
-	if env(HasReceivedAnyDamage) == TRUE and env(GetHeroID) == HERO_POWER then
-	act(AddSpEffect, 9204)
-	end
-end
-
-function RoNR_InititateDrizzleHelperRevenant()
-	if env(GetHeroID) == HERO_NECROMANCER and env(GetSpEffectID, 9205) == FALSE then
-		act(AddSpEffect, 71111112)
-		act(AddSpEffect, 9050)
-		act(AddSpEffect, 9022)
-		act(AddSpEffect, 9053)
-		act(AddSpEffect, 9059)
-		-- DrizzleFP Revenant (restore FP on Kill)
-		act(AddSpEffect, 9205)
-		act(AddSpEffect, 71111114)
-	end
-end
-
-function RoNR_InititateDrizzleHelperRecluse()
-	if env(GetHeroID) == HERO_MAGIC and env(GetSpEffectID, 9050) == FALSE then
-		act(AddSpEffect, 9050)
-		act(AddSpEffect, 9022)
-		act(AddSpEffect, 9053)
-		act(AddSpEffect, 9059)
-		act(AddSpEffect, 71111114)
-	end
-end
-
-function RoNR_InititateDrizzleHelperExecutor()
-	if env(GetHeroID) == HERO_TECHNICAL and env(GetSpEffectID, 71111112) == FALSE then
-		act(AddSpEffect, 71111112)
-		act(AddSpEffect, 9050)
-		act(AddSpEffect, 9022)
-		act(AddSpEffect, 9053)
-		act(AddSpEffect, 9059)
-		act(AddSpEffect, 71111114)
-	end
-end
-
-function RoNR_InititateDrizzleHelperScholar()
-	if env(GetHeroID) == HERO_BUFFER and env(GetSpEffectID, 9207) == FALSE then
-		act(AddSpEffect, 71111112)
-		act(AddSpEffect, 9050)
-		act(AddSpEffect, 9022)
-		act(AddSpEffect, 9053)
-		act(AddSpEffect, 9059)
-		-- DrizzleFP Scholar (thrown items restore FP)
-		act(AddSpEffect, 9207)
-		act(AddSpEffect, 71111114)
-	end
-end
-
-function RoNR_InititateDrizzleHelperNun()
-	if env(GetHeroID) == HERO_ATTACKER and env(GetSpEffectID, 9209) == FALSE then
-		act(AddSpEffect, 71111112)
-		act(AddSpEffect, 9050)
-		act(AddSpEffect, 9022)
-		act(AddSpEffect, 9053)
-		-- DrizzleFP Undertaker (Attacks recover FP)
-		act(AddSpEffect, 9209)
-		act(AddSpEffect, 9059)
-		act(AddSpEffect, 71111114)
-	end
-end
-
-function RoNR_InitializeDrizzleHelperAll()
-	RoNR_InititateDrizzleHelperWylder()
-	RoNR_InititateDrizzleHelperGuardian()
-	RoNR_InititateDrizzleHelperIroneye()
-	RoNR_InititateDrizzleHelperDuchess()
-	RoNR_InititateDrizzleHelperRaider()
-	RoNR_InititateDrizzleHelperRevenant()
-	RoNR_InititateDrizzleHelperRecluse()
-	RoNR_InititateDrizzleHelperExecutor()
-	RoNR_InititateDrizzleHelperScholar()
-	RoNR_InititateDrizzleHelperNun()
-end
-
-------------------------------------------
--- RoNR: Item Logic
-------------------------------------------
--- Loaded Dice
-------------------------------------------
-
-function RoNR_LoadedDice()
-	local roll_die = 0
-	if env(IsThereAnyAtkRequest) == TRUE and env(GetSpEffectID, 71000029) == TRUE then
-		roll_die = math.random(1,6)
-	 	if roll_die == 1 then
-			act(AddSpEffect, 71000030)
-		elseif roll_die == 2 then
-			act(AddSpEffect, 71000031)
-		elseif roll_die == 3 then
-			act(AddSpEffect, 71000032)
-		elseif roll_die == 4 then
-				act(AddSpEffect, 71000033)
-		elseif roll_die == 5 then
-			act(AddSpEffect, 71000034)
-		elseif roll_die == 6 then
-			act(AddSpEffect, 71000035)
-		else 
-			act(ClearSpEffect, 71000030)
-			act(ClearSpEffect, 71000031)
-			act(ClearSpEffect, 71000032)
-			act(ClearSpEffect, 71000033)
-			act(ClearSpEffect, 71000034)
-			act(ClearSpEffect, 71000035)
-		end
-		
-	end
-end
-
-------------------------------------------
--- Impact Converter
-------------------------------------------
-
---function RoNR_ImpactConverter()
---	if env(GetHeroID) ~= HERO_NONE and env(GetSpEffectID, 71000014) == TRUE then
---		act(AddSpEffect, 71000018)
---		act(AddSpEffect, 71000019)
---		act(AddSpEffect, 71000020)
---	elseif env(GetSpEffectID, 71000014) == FALSE then
---		act(ClearSpEffect, 71000018)
---		act(ClearSpEffect, 71000019)
---	 	act(ClearSpEffect, 71000020)
---	end
---end
-
---function RoNR_TestItem()
---	if env(GetSpEffectID, 70000078) == TRUE then
---		act(AddSpEffect, 3140)
---	elseif env(GetSpEffectID, 70000078) == FALSE then
---		act(ClearSpEffect, 3140)
---	end
---end
-
-------------------------------------------
--- Pyroclasitc Idol
-------------------------------------------
-
-function RoNR_Pidol()
-
-	local proc = 0
-	local damage_level = env(GetDamageLevel)
-	
-	if env(GetSpEffectID, 7112) == TRUE then
-		proc = math.random(1,10)
-		if damage_level == DAMAGE_LEVEL_MIDDLE and proc <= 5 then
-			act(AddSpEffect, 7113)
-		elseif damage_level == DAMAGE_LEVEL_PUSH and proc <= 10 then
-			act(AddSpEffect, 7113)
-		elseif damage_level == DAMAGE_LEVEL_LARGE and proc <= 15 then
-			act(AddSpEffect, 7113)
-		elseif damage_level == DAMAGE_LEVEL_EXLARGE and proc <= 25 then
-			act(AddSpEffect, 7113)
-		elseif damage_level == DAMAGE_LEVEL_EX_BLAST and proc <= 20 then
-			act(AddSpEffect, 7113)
-		elseif damage_level == DAMAGE_LEVEL_SMALL_BLOW and proc <= 5 then
-			act(AddSpEffect, 7113)
-		elseif damage_level == DAMAGE_LEVEL_UPPER and proc <= 35 then
-			act(AddSpEffect, 7113)
-		elseif damage_level == DAMAGE_LEVEL_FLING and proc <= 40 then
-			act(AddSpEffect, 7113)
-		elseif damage_level == DAMAGE_LEVEL_BREATH and proc <= 40 then
-			act(AddSpEffect, 7113)
-		end
-    end
-end
-
-------------------------------------------
--- Gravplate
-------------------------------------------
-
-function RoNR_GSpot()
-
-	local proc = 0
-	local damage_level = env(GetDamageLevel)
-	
-	if env(GetSpEffectID, 7114) == TRUE then
-		proc = math.random(1,10)
-		if damage_level == DAMAGE_LEVEL_MIDDLE and proc <= 2 then
-			act(AddSpEffect, 7115)
-		elseif damage_level == DAMAGE_LEVEL_PUSH and proc <= 5 then
-			act(AddSpEffect, 7115)
-		elseif damage_level == DAMAGE_LEVEL_LARGE and proc <= 7 then
-			act(AddSpEffect, 7115)
-		elseif damage_level == DAMAGE_LEVEL_EXLARGE and proc <= 11 then
-			act(AddSpEffect, 7115)
-		elseif damage_level == DAMAGE_LEVEL_EX_BLAST and proc <= 10 then
-			act(AddSpEffect, 7115)
-		elseif damage_level == DAMAGE_LEVEL_SMALL_BLOW and proc <= 2 then
-			act(AddSpEffect, 7115)
-		elseif damage_level == DAMAGE_LEVEL_UPPER and proc <= 16 then
-			act(AddSpEffect, 7115)
-		elseif damage_level == DAMAGE_LEVEL_FLING and proc <= 20 then
-			act(AddSpEffect, 7115)
-		elseif damage_level == DAMAGE_LEVEL_BREATH and proc <= 20 then
-			act(AddSpEffect, 7115)
-		end
-    end
-end
-
-------------------------------------------
--- Rabbaths Mortar
-------------------------------------------
-
-function RoNR_ATG()
-	local proc = 0
-	if env(GetSpEffectID, 71100007) == TRUE then
-		proc = math.random(1,10)
-		if proc <= 4 then
-			act(ClearSpEffect, 71100007)
-			act(AddSpEffect, 71100009)
-		elseif proc ~= 10 then
-			act(ClearSpEffect, 71100007)
-		end
-	end
-end
-
-------------------------------------------
--- Molten Perforator
-------------------------------------------
-
-function RoNR_Merf()
-	local proc = 0
-	if env(GetSpEffectID, 70000044) == TRUE then
-		proc = math.random(1,10)
-		if proc <= 10 then
-			act(AddSpEffect, 70000045)
-
-		end
-	end
-end
-
------------------------------------------
--- Celestial Dial
--- 71221 = Celedial StateInfo
--- 71021 = Celedial Item
------------------------------------------
-
-function RoNR_Celedial()
-	if env(GetSpEffectID, 71021) == TRUE then
-		act(AddSpEffect, 71221)
-	elseif env(GetSpEffectID, 71021) == FALSE then
-		act(ClearSpEffect, 71221)
-	end
-end
-
------------------------------------------
--- Opal
--- 711 = OpalItem
--- 9056 = In Danger State
--- 3510 = Opal On Switch
------------------------------------------
-
-function RoNR_Opal()
-	local is_damaged = env(HasReceivedAnyDamage)
-	if env(GetSpEffectID, 711) == TRUE then
-		act(AddSpEffect, 3510)
-	end
-	if is_damaged == TRUE then
-		act(AddSpEffect, 9056)
-		act(ClearSpEffect, 3510)
-	end
-	if env(GetSpEffectID, 9056) == TRUE then
-		act(ClearSpEffect, 3510)
-	end
-end
-
-------------------------------------------
--- Warbanner
--- 712 = Warbanner Item
--- 713 = Warbanner Activation State Info
--- 1811 = War Cry
--- 714 = Warbanner Bullet
-------------------------------------------
-
-function RoNR_Warbanner()
-	if env(GetSpEffectID, 712) == TRUE and env(GetSpEffectID, 713) == TRUE then
-		act(AddSpEffect, 714)
-	end
-end
-
-------------------------------------------
--- Infusion
--- 9054 = Hitmarker
-------------------------------------------
-
--- function RoNR_Infusion()
--- 	if env(GetSpEffectID, InfusionItem) == TRUE then
---		INFUSION = INFUSION + 1
---		act(ClearSpEffect, InfusionItem)
---	end
--- 	if env(GetSpEffect, Hitmarker) == TRUE and env(GetSpEffect, Killmarker) == TRUE then
--- 		Infusionbuff = env(GetMaxHP) + INFUSION
--- 		act(ChangeMaxHP, Infusionbuff)
---		act(AddSpEffect, InfusionDisplay)
---	end
--- end
-
-
-------------------------------------------
--- Shock Lantern
--- 9054 = Hit Marker
--- = Shantern Item
-------------------------------------------
-
--- 
--- function RoNR_Shantern()
--- 	if env(GetSpEffectID, ShanternItem) == TRUE and env(GetSpEffectID, 9054) == TRUE then
--- 		HEAT = HEAT + 100
--- 		if has Shantern and HEAT > 300 then
--- 			add act(AddSpEffect, FireBuff)
--- 		elseif has Shantern and HEAT > 600 then
--- 			act(AddSpEffect, IgniteBuff)
---			act(AddSpEffect, FireBuff)		
--- 		end
--- 	end
--- 	if HEAT > 0 then
--- 		HEAT = HEAT - 1
---	end
--- end
---
-
-------------------------------------------
--- Bands
--- 9023 = bandcooldown
--- 7118 = Fire Band Item
--- 7119 = Ice Band Item
--- 8320408 = Ice Band Buff
--- 8320412 = Fire Band Buff
-------------------------------------------
-
-function RoNR_Bands()
-	if env(GetSpEffectID, 7118) == TRUE and env(GetSpEffectID, 9023) == FALSE then
-		act(AddSpEffect, 8320412)
-	end
-	if env(GetSpEffectID, 7119) == TRUE and env(GetSpEffectID, 9023) == FALSE then
-		act(AddSpEffect, 8320408)
-	end
-	if env(GetSpEffectID, 9023) == TRUE then
-		act(ClearSpEffect, 8320408)
-		act(ClearSpEffect, 8320412)		
-	end
-end
-
-------------------------------------------
--- Logic Update Bundle
-------------------------------------------
-
-function RoNR_LogicUpdate()
-	RoNR_TriggerUltimateReady()
-	RoNR_TriggerSprint()
-	RoNR_TriggerOnGuardbreak()
-	RoNR_TriggerOnAimCam()
-	RoNR_TriggerOnIdle()
-	RoNROnGuard()
-	RoNRGotHit()
-	RoNR_InitializeDrizzleHelperAll()
-	RoNR_Pidol()	
-	RoNR_ATG()
-	RoNR_Merf()
-	RoNR_Celedial()
-	RoNR_Opal()
-	RoNR_Warbanner()
-	RoNR_GSpot()
-	RoNR_Bands()
-	RoNR_OutofDanger()
-	RoNR_OutofCombat()
-end
-
------------------------------------------------
-
 function ExecEvent(state)
     ResetRequest()
     hkbFireEvent(state)
@@ -770,23 +199,18 @@ function SetWeightIndex()
 end
 
 function SetSlowFeet()
-    -- Ironjar Aromatic
     if env(GetSpEffectID, 503520) == TRUE then
         return TRUE
     elseif env(GetSpEffectID, 5520) == TRUE then
         return TRUE
-	-- Slug Spit
     elseif env(GetSpEffectID, 425) == TRUE then
         return TRUE
-	-- Duke's Dear Freja Webs
     elseif env(GetSpEffectID, 426) == TRUE then
         return TRUE
     elseif env(GetSpEffectID, 42312) == TRUE then
         return TRUE
-	-- In Swamp
     elseif env(GetSpEffectID, 4101) == TRUE then
         return TRUE
-	-- In Swamp - No Heavy Rolls
     elseif env(GetSpEffectID, 4100) == TRUE then
         return TRUE
     elseif env(GetSpEffectID, 46328) == TRUE or env(GetSpEffectID, 46329) == TRUE then
@@ -1039,9 +463,6 @@ function IsEnableHighGuard()
 	if env(GetSpEffectID, 701540) == TRUE and fuckyou == FALSE then
         return FALSE
     end
---    local is_shield_right = GetEquipType(HAND_RIGHT, WEAPON_CATEGORY_SMALL_SHIELD, WEAPON_CATEGORY_MIDDLE_SHIELD, WEAPON_CATEGORY_LARGE_SHIELD)
---    local is_shield_left = GetEquipType(HAND_LEFT, WEAPON_CATEGORY_SMALL_SHIELD, WEAPON_CATEGORY_MIDDLE_SHIELD, WEAPON_CATEGORY_LARGE_SHIELD)
---    local style = c_Style
     if style == HAND_RIGHT_BOTH then
         if is_shield_right == TRUE then
             return TRUE
@@ -2105,7 +1526,7 @@ function IsDirectDeath()
 		-- Check if player is vs a Night boss/Nightlord
         if env(GetSpEffectID, 102120) == TRUE then
 			-- Check if player doesn't have auto revival from a Wending Grace, Favor of Noklateo, or Solo Revival
-			-- DLC - Check Power to Balance the World
+			-- DLC - Check another effect
             if env(GetSpEffectID, 540155) == FALSE and env(GetSpEffectID, 6999100) == FALSE 
 			  and env(GetSpEffectID, 6999500) == FALSE and env(GetSpEffectID, 8970061) == FALSE then
                 return TRUE
@@ -2171,7 +1592,6 @@ function CalculateKnockbackRate()
     FOOKSHOT_TARGET_DIST = 300
     return
 end
-
 -- Duchess Skill - Restage
 function ExecChangeDejavuBlend()
     if env(GetHeroID) ~= HERO_SPEED then
@@ -2421,8 +1841,6 @@ end
 -- Change flask effect depending on ally heal/gradual heal/fp restore
 -- Gradual and FP Flask can combine normally
 function ExecChangeFlask()
-	-- RoNR SippyDetection
-	act(AddSpEffect, 9026)
     if env(GetSpEffectID, 7010299) == TRUE then
 		-- Has 'Flask Also Heals Allies' effect
         if env(GetSpEffectID, 7010200) == TRUE then
@@ -3081,14 +2499,14 @@ function ExecAttack(r1, r2, l1, l2, b1, b2, is_guard, blend_type, artsr1, artsr2
         end
         if GetEquipType(atk_hand, WEAPON_CATEGORY_STAFF, WEAPON_CATEGORY_SMALL_ARROW, WEAPON_CATEGORY_ARROW, WEAPON_CATEGORY_LARGE_ARROW, WEAPON_CATEGORY_CROSSBOW, WEAPON_CATEGORY_BALLISTA) == FALSE and env(ActionRequest, ACTION_ARM_R2) == TRUE then
             if c_Style == HAND_RIGHT_BOTH or c_Style == HAND_LEFT_BOTH then
-				 -- Guardian Unique Halberd Charged Guard Counter 2H - RONR expanded
-                if GetEquipType(atk_hand, WEAPON_CATEGORY_HALBERD, WEAPON_CATEGORY_SPEAR, WEAPON_CATEGORY_LARGE_RAPIER, WEAPON_CATEGORY_LARGE_SPEAR, WEAPON_CATEGORY_LARGE_SWORD, WEAPON_CATEGORY_EXTRALARGE_SWORD) == TRUE and env(GetHeroID) == HERO_TANK then
+				 -- Guardian Unique Halberd Charged Guard Counter 2H
+                if GetEquipType(atk_hand, WEAPON_CATEGORY_HALBERD) == TRUE and env(GetHeroID) == HERO_TANK then
                     ExecEventAllBody("W_AttackBothHeavyCounterStart")
                 else
                     ExecEventAllBody("W_AttackBothHeavyCounter")
                 end
 			-- Guardian Unique Halberd Charged Guard Counter 1H
-            elseif GetEquipType(HAND_RIGHT, WEAPON_CATEGORY_HALBERD, WEAPON_CATEGORY_SPEAR, WEAPON_CATEGORY_LARGE_RAPIER, WEAPON_CATEGORY_LARGE_SPEAR, WEAPON_CATEGORY_LARGE_SWORD, WEAPON_CATEGORY_EXTRALARGE_SWORD) == TRUE and env(GetHeroID) == HERO_TANK then
+            elseif GetEquipType(HAND_RIGHT, WEAPON_CATEGORY_HALBERD) == TRUE and env(GetHeroID) == HERO_TANK then
                 ExecEventAllBody("W_AttackRightHeavyCounterStart")
             else
                 ExecEventAllBody("W_AttackRightHeavyCounter")
@@ -3970,35 +3388,23 @@ function ExecAttack(r1, r2, l1, l2, b1, b2, is_guard, blend_type, artsr1, artsr2
             elseif env(GetSpEffectID, 700510) == TRUE then
                 SetVariable("IndexPileBunker", 1)
             end
-			-----
-			-- RoNR - Warbanner State
-			-----
             ExecEventAllBody("W_PileBunkerStart")
-				act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_TANK then
             ExecEventAllBody("W_DragoonJumpStart")
-						act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_SHOOTER then
             ExecEventAllBody("W_LongBowSnipeStart")
-						act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_SPEED then
             ExecEventAllBody("W_AllHideStart")
-						act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_POWER then
             ExecEventAllBody("W_RockWallAttackStart")
-						act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_NECROMANCER then
             ExecEventAllBody("W_LivingDeadStart")
-						act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_MAGIC then
             ExecEventAllBody("W_BloodMagicStart")
-						act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_TECHNICAL then
             ExecEventAllBody("W_DemonBeastStart")
-						act(AddSpEffect, 713)
 		elseif env(GetHeroID) == HERO_BUFFER then
             ExecEventAllBody("W_JointChainStart")
-						act(AddSpEffect, 713)
         elseif env(GetHeroID) == HERO_ATTACKER then
 			if env(GetSpEffectID, 709300) == TRUE then
 				SetVariable("IsBonusUlt", 1)
@@ -4007,7 +3413,6 @@ function ExecAttack(r1, r2, l1, l2, b1, b2, is_guard, blend_type, artsr1, artsr2
 			end
 			ATTACKER_ULT_COUNTER = ATTACKER_ULT_COUNTER + 1
             ExecEventAllBody("W_BlinkStakeStart")
-						act(AddSpEffect, 713)
         end
     elseif request == ATTACK_REQUEST_ARROW_FIRE_RIGHT or request == ATTACK_REQUEST_ARROW_FIRE_RIGHT2 then
         if request == ATTACK_REQUEST_ARROW_FIRE_RIGHT then
@@ -4703,9 +4108,6 @@ function IsEnableBackStepCancel(hand)
 end
 
 function IsEnableDualWielding()
---    if c_Style == HAND_RIGHT_BOTH or c_Style == HAND_LEFT_BOTH then
---        return -1
---    end
     local rightKind = env(GetEquipWeaponCategory, HAND_RIGHT)
     local leftKind = env(GetEquipWeaponCategory, HAND_LEFT) 
     local rightSpecialKind = env(GetEquipWeaponSpecialCategoryNumber, HAND_RIGHT)
@@ -6564,12 +5966,7 @@ function ExecEvasion(backstep_limit, estep, is_usechainrecover)
         return FALSE
     end
     SetWeightIndex()
-	----- RoNR: DashSpeffects
-	if env(GetSpEffectID, 715) == TRUE then
-        SetVariable("RollingVariationIndex", ROLLING_CREATEMAGIC_THUNDER)
-	elseif env(GetSpEffectID, 716) == TRUE then
-		SetVariable("RollingVariationIndex", ROLLING_TRANCE)
-    elseif env(GetHeroID) == HERO_MAGIC and env(GetSpEffectID, 1800200) == TRUE then
+    if env(GetHeroID) == HERO_MAGIC and env(GetSpEffectID, 1800200) == TRUE then
         SetVariable("RollingVariationIndex", ROLLING_CREATEMAGIC_THUNDER)
     elseif IsEnableHighGuard() == TRUE and IsGuard() == TRUE then
         SetVariable("RollingVariationIndex", ROLLING_HIGHGUARD)
@@ -7937,32 +7334,6 @@ function ExecRuneBonus()
             act(AddSpEffect, 8970012)
         end
     end
-		-- RoNR ATG 	
-    if env(GetSpEffectID, 9054) == TRUE and env(GetSpEffectID, 8970013) == TRUE then
-        rand = math.random(1, 100)
-        if rand <= 5 then
-            act(AddSpEffect, 711009)
-        end
-    end
-    if env(GetSpEffectID, 9058) == TRUE and env(GetSpEffectID, 8970013) == TRUE then
-        rand = math.random(1, 100)
-        if rand <= 30 then
-            act(AddSpEffect, 711009)
-        end
-    end	
-	-- RoNR Merf
-    if env(GetSpEffectID, 9054) == TRUE and env(GetSpEffectID, 7043) == TRUE then
-        rand = math.random(1, 100)
-        if rand <= 5 then
-            act(AddSpEffect, 7116)
-        end
-    end
-    if env(GetSpEffectID, 9058) == TRUE and env(GetSpEffectID, 7043) == TRUE then
-        rand = math.random(1, 100)
-        if rand <= 30 then
-            act(AddSpEffect, 7116)
-        end
-    end	
 end
 
 -- Handle perma boosts to resists from consuming boluses
@@ -23281,7 +22652,6 @@ function Update()
     if IsDemonSwordMode() == TRUE then
         BanSprint()
     end
-	RoNR_LogicUpdate()
 	if env(GetSpEffectID, 100067) == TRUE then
 		act(SetIsPreciseShootingPossible)
 	end
@@ -24148,7 +23518,6 @@ function ExecRideAttack(r1, r2, l1, l2)
             return FALSE
         end
         ExecEventAllBody(r2)
-		act(AddSpEffect, 9021)
     elseif env(ActionRequest, ACTION_ARM_L1) == TRUE or env(ActionRequest, ACTION_ARM_L2) == TRUE and is_staff == TRUE then
         act(ResetInputQueue)
         SetVariable("RideAttackHand", HAND_LEFT)
@@ -30488,7 +29857,7 @@ SwordArtsCategory = {
 	[281] = {SWORD_ART_DIFF_CAT_DEFAULT, 57},
 	[284] = {SWORD_ART_DIFF_CAT_DEFAULT, SWORD_ART_DIFF_CAT_LARGE_WEAPON, SWORD_ART_DIFF_CAT_POLEARM},
 	[399] = {SWORD_ART_DIFF_CAT_DEFAULT}
-	}
+}
 
 -- Determines which override of a Sword Art animation to play, based on the size or type of the weapon.
 -- The return of this function is processed to a different ID by the cases that use it.
@@ -30831,7 +30200,7 @@ SwordArtPutOppositeWeapon = {
 	[39] = {FALSE, FALSE, TRUE},
 	[40] = {FALSE, FALSE, TRUE},
 	[399] = {FALSE, FALSE, TRUE}
-	}
+}
 
 -- Decides whether to perform a "retrieve weapon" animation after finishing a Weapon Art.
 -- See the above table for reference.
@@ -31061,10 +30430,6 @@ function Contains(tab, val)
     return FALSE
 end
 
--------------------
--- MWTM_
--------------------
-
 function IsWeaponCatalyst(sp_kind)
     local weaponCatalystSpKinds = {
         293, -- Carian Sorcery Sword
@@ -31074,6 +30439,7 @@ function IsWeaponCatalyst(sp_kind)
     end
     return FALSE
 end
+
 ------------------------
 -- Core: Global Variables
 ------------------------
@@ -31188,7 +30554,6 @@ ROLLING_BUFFER = 10
 ROLLING_TRANCE = 11
 ROLLING_TRANCE_ENHANCE = 12
 
--- Alternate enums for Hero names
 HERO_WYLDER = HERO_BALANCE
 HERO_GUARDIAN = HERO_TANK
 HERO_IRONEYE = HERO_SHOOTER
@@ -31717,10 +31082,10 @@ SetElementalDamageCounter = 2091
 
 Mounting = 3000
 PlayRideAnim = 3003
-SetMountHavokVariable = 3004 -- args: <blend anim>, <rate>
+ApplyRideBlend = 3004 -- args: <blend anim>, <rate>
 Dismount = 3005
 AllowMounting = 3006
-SetMountDamageFlag = 3007 -- args: <index>
+ApplyDamageFlag = 3007 -- args: <index>
 
 RequestAIJumpInterupt = 4000
 NotifyAIOfJumpState = 4001
