@@ -618,6 +618,19 @@ function RoNR_Bands()
 	end
 end
 
+-----------------------------------------
+-- RoNR_Pinwheel
+-- 8320418 = Pinwheel Attack Buff
+-- 9010 = Out of Danger Marker
+-- 9055 = In Combat Marker
+-----------------------------------------
+
+function RoNR_Pinwheel()
+	if env(GetSpEffectID, 9055) == FALSE then
+		act(ClearSpEffect, 8320418)
+	end
+end
+
 ------------------------------------------
 -- Logic Update Bundle
 ------------------------------------------
@@ -639,6 +652,7 @@ function RoNR_LogicUpdate()
 	RoNR_Warbanner()
 	RoNR_GSpot()
 	RoNR_Bands()
+	RoNR_Pinwheel()
 	RoNR_OutofDanger()
 	RoNR_OutofCombat()
 end
