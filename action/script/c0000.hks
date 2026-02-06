@@ -475,35 +475,35 @@ function RoNR_GSpot()
 end
 
 ------------------------------------------
--- Rabbaths Mortar
+-- Rabbaths Mortar - disabled here and called in execrunebonus
 ------------------------------------------
 
 function RoNR_ATG()
-	local proc = 0
-	if env(GetSpEffectID, 71100007) == TRUE then
-		proc = math.random(1,10)
-		if proc <= 4 then
-			act(ClearSpEffect, 71100007)
-			act(AddSpEffect, 71100009)
-		elseif proc ~= 10 then
-			act(ClearSpEffect, 71100007)
-		end
-	end
+--	local proc = 0
+--	if env(GetSpEffectID, 71100007) == TRUE then
+--		proc = math.random(1,10)
+--		if proc <= 4 then
+--			act(ClearSpEffect, 71100007)
+--			act(AddSpEffect, 71100009)
+--		elseif proc ~= 10 then
+--			act(ClearSpEffect, 71100007)
+--		end
+--	end
 end
 
 ------------------------------------------
--- Molten Perforator
+-- Molten Perforator - disabled here and called in execrunebonus
 ------------------------------------------
 
 function RoNR_Merf()
-	local proc = 0
-	if env(GetSpEffectID, 70000044) == TRUE then
-		proc = math.random(1,10)
-		if proc <= 10 then
-			act(AddSpEffect, 70000045)
-
-		end
-	end
+--	local proc = 0
+--	if env(GetSpEffectID, 70000044) == TRUE then
+--		proc = math.random(1,10)
+--		if proc <= 10 then
+--			act(AddSpEffect, 70000045)
+--
+--		end
+--	end
 end
 
 -----------------------------------------
@@ -7955,12 +7955,14 @@ function ExecRuneBonus()
     if env(GetSpEffectID, 9054) == TRUE and env(GetSpEffectID, 8970013) == TRUE then
         rand = math.random(1, 100)
         if rand <= 5 then
+			act(ClearSpEffect, 9054)
             act(AddSpEffect, 711009)
         end
     end
     if env(GetSpEffectID, 9058) == TRUE and env(GetSpEffectID, 8970013) == TRUE then
         rand = math.random(1, 100)
         if rand <= 30 then
+			act(ClearSpEffect, 9058)
             act(AddSpEffect, 711009)
         end
     end	
@@ -7968,12 +7970,14 @@ function ExecRuneBonus()
     if env(GetSpEffectID, 9054) == TRUE and env(GetSpEffectID, 7043) == TRUE then
         rand = math.random(1, 100)
         if rand <= 5 then
+			act(ClearSpEffect, 9054)
             act(AddSpEffect, 7116)
         end
     end
     if env(GetSpEffectID, 9058) == TRUE and env(GetSpEffectID, 7043) == TRUE then
         rand = math.random(1, 100)
         if rand <= 30 then
+			act(ClearSpEffect, 9058)
             act(AddSpEffect, 7116)
         end
     end	
