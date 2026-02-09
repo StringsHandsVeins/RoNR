@@ -1121,6 +1121,7 @@ function ExecGuard(event, blend_type, is_demonswordstance)
             local guardindex = env(GetGuardMotionCategory, hand)
             if env(GetHeroID) == HERO_TANK and env(GetSpEffectID, 701530) == TRUE then
                 guardindex = GUARD_STYLE_HIGHGUARD
+			-- RoNR - extra deflect guard motions - or GetEquipType(atk_hand, WEAPON_CATEGORY_KATANA, WEAPON_CATEGORY_SPEAR, WEAPON_CATEGORY_LARGE_CURVEDSWORD, WEAPON_CATEGORY_TWINBLADE, 61)
             elseif IsDemonSwordMode() == TRUE then
                 guardindex = GUARD_STYLE_DEMONSWORD
             elseif kind == WEAPON_CATEGORY_TORCH and style == HAND_RIGHT then
