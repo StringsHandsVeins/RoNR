@@ -632,6 +632,21 @@ function RoNR_Pinwheel()
 end
 
 ------------------------------------------
+-- Cherished Memory
+-- 8320003 - Item ID
+-- 710025 - Chain Attack Behavior that summons the phantom
+------------------------------------------
+
+function RoNR_Memory()
+	if env(GetSpEffectID, 8320003) == TRUE and env(GetSpEffectID, 710025) == FALSE then
+		act(AddSpEffect, 710025)
+	end
+	if env(GetSpEffectID, 8320003) == FALSE then
+		act(ClearSpEffect, 710025)
+	end
+end
+
+------------------------------------------
 -- Logic Update Bundle
 ------------------------------------------
 
@@ -653,6 +668,7 @@ function RoNR_LogicUpdate()
 	RoNR_GSpot()
 	RoNR_Bands()
 	RoNR_Pinwheel()
+	RoNR_Memory()
 	RoNR_OutofDanger()
 	RoNR_OutofCombat()
 end
