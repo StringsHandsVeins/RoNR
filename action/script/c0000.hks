@@ -665,6 +665,11 @@ function RoNR_Bauldron()
 	if env(GetSpEffectID, 8310001) == FALSE then
 		act(ClearSpEffect, 350303)
 	end
+	if env(GetSpEffectID, 3184) == FALSE then
+		act(ClearSpEffect, 3189)
+		act(ClearSpEffect, 3205)
+		act(ClearSpEffect, 3206)
+	end
 	if env(GetSpEffectID, 350304) == TRUE then
 		if env(GetSpEffectID, 3184) == FALSE then
 			act(AddSpEffect, 33184)
