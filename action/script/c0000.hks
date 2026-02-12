@@ -647,6 +647,46 @@ function RoNR_Memory()
 end
 
 ------------------------------------------
+-- Berzerkers Pauldron
+-- 310001 - Item ID
+-- 350303 - Kill Tracker Applier
+-- 350304 - Kill Mark
+-- 3184 - Killstreak
+-- 3189 - Killstate 2
+-- 3205 - Killstate 3
+-- 3206 - Killstate 4
+-- 3207 - FrenzyState
+------------------------------------------
+
+function RoNR_Bauldron()
+	if env(GetSpEffectID, 310001) == TRUE and env(GetSpEffectID, 350303) == FALSE then
+		act(AddSpEffect, 350303)
+	end
+	if env(GetSpEffectID, 8310001) == FALSE then
+		act(ClearSpEffect, 350303)
+	end
+	if env(GetSpEffectID, 350304) == TRUE then
+		if env(GetSpEffectID, 3184) == FALSE then
+			act(AddSpEffect, 33184)
+		elseif env(GetSpEffectID, 3184) == TRUE then
+			if env(GetSpEffectID, 3189) == FALSE then
+				act(AddSpEffect, 3189)
+			elseif env(GetSpEffectID, 3189) == TRUE and env(GetSpEffectID, 3205) == FALSE then
+				act(AddSpEffect, 3205)
+			elseif env(GetSpEffectID, 3189) == TRUE and env(GetSpEffectID, 3205) == TRUE and env(GetSpEffectID, 3206) == FALSE then
+				act(AddSpEffect, 3206)
+			elseif env(GetSpEffectID, 3189) == TRUE and env(GetSpEffectID, 3205) == TRUE and env(GetSpEffectID, 3206) == TRUE then
+				act(ClearSpEffect, 3184)
+				act(ClearSpEffect, 3189)
+				act(ClearSpEffect, 3205)
+				act(ClearSpEffect, 3206)
+				act(AddSpEffect, 3207)				
+			end
+		end
+	end
+end
+
+------------------------------------------
 -- Logic Update Bundle
 ------------------------------------------
 
@@ -669,6 +709,7 @@ function RoNR_LogicUpdate()
 	RoNR_Bands()
 	RoNR_Pinwheel()
 	RoNR_Memory()
+	RoNR_Bauldron()
 	RoNR_OutofDanger()
 	RoNR_OutofCombat()
 end
