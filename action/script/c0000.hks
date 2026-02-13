@@ -659,35 +659,64 @@ end
 ------------------------------------------
 
 function RoNR_Bauldron()
+	-- add kill tracker if bauldron is in inventory
+	-----------------------------------------------
 	if env(GetSpEffectID, 310001) == TRUE and env(GetSpEffectID, 350303) == FALSE then
 		act(AddSpEffect, 350303)
 	end
+	-- remove kill tracker if bauldron is not in inventory
+	------------------------------------------------------
 	if env(GetSpEffectID, 8310001) == FALSE then
 		act(ClearSpEffect, 350303)
 	end
+	-------------------------------------------------------
+	-- Kill Tracker Logic
+	-------------------------------------------------------
+	if env(GetSpEffectID, 350304) == TRUE then
+	-- if no active kill streak, begin killstreak and remove kill tracker
+	---------------------------------------------------------------------
+		if env(GetSpEffectID, 3184) == FALSE then
+			act(ClearSpEffect, 350304)
+			act(AddSpEffect, 3184)
+		-- if killstreak is active, remove kill tracker and
+		---------------------------------------------------
+		elseif env(GetSpEffectID, 3184) == TRUE then
+			act(ClearSpEffect, 350304)
+			-- if no counter, add counter 2, if counter 2, add counter 3, if counter 3, add counter 4, if counter 4, add counter 4
+			----------------------------------------------------------------------------------------------------------------------
+			if env(GetSpEffectID, 3189) == FALSE then
+				act(AddSpEffect, 3189)
+			elseif env(GetSpEffectID, 3189) == TRUE and env(GetSpEffectID, 3205) == FALSE then
+				act (AddSpEffect, 3205)
+			elseif env(GetSpEffectID, 3205) == TRUE and env(GetSpEffectID, 3206) == FALSE then
+				act (AddSpEffect, 3206)
+			else 
+				act (AddSpEffect, 3206)
+			end
+		end
+	end
+	-------------------------------------------------------
 	if env(GetSpEffectID, 3184) == FALSE then
+		-- unsuccessful killstreak
+		-- remove kill counters if killstreak ends
+		------------------------------------------
 		act(ClearSpEffect, 3189)
 		act(ClearSpEffect, 3205)
 		act(ClearSpEffect, 3206)
 	end
-	if env(GetSpEffectID, 350304) == TRUE then
-		if env(GetSpEffectID, 3184) == FALSE then
-			act(AddSpEffect, 33184)
-		elseif env(GetSpEffectID, 3184) == TRUE then
-			if env(GetSpEffectID, 3189) == FALSE then
-				act(AddSpEffect, 3189)
-			elseif env(GetSpEffectID, 3189) == TRUE and env(GetSpEffectID, 3205) == FALSE then
-				act(AddSpEffect, 3205)
-			elseif env(GetSpEffectID, 3189) == TRUE and env(GetSpEffectID, 3205) == TRUE and env(GetSpEffectID, 3206) == FALSE then
-				act(AddSpEffect, 3206)
-			elseif env(GetSpEffectID, 3189) == TRUE and env(GetSpEffectID, 3205) == TRUE and env(GetSpEffectID, 3206) == TRUE then
-				act(ClearSpEffect, 3184)
-				act(ClearSpEffect, 3189)
-				act(ClearSpEffect, 3205)
-				act(ClearSpEffect, 3206)
-				act(AddSpEffect, 3207)				
-			end
-		end
+	if env(GetSpEffectID, 3206) == TRUE then
+		-- successful killstreak
+		-- remove killstreak
+		------------------------
+		act(ClearSpEffect, 3184)
+		-- remove kill counters
+		-----------------------
+		act(ClearSpEffect, 3189)
+		act(ClearSpEffect, 3205)
+		act(ClearSpEffect, 3206)
+		-- add frenzy notifier
+		----------------------
+		act(AddSpEffect, 3207)
 	end
 end
 
