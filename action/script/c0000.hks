@@ -16815,13 +16815,15 @@ function FookShotMove_onUpdate()
     if c_Style == HAND_LEFT_BOTH then
         attackHand = HAND_LEFT
     end
-    local is_large_sword = GetEquipType(attackHand, WEAPON_CATEGORY_LARGE_SWORD)
+    local is_small = GetEquipType(attackHand, WEAPON_CATEGORY_WHIP, WEAPON_CATEGORY_BALLISTA, WEAPON_CATEGORY_CLAW, WEAPON_CATEGORY_CROSSBOW, WEAPON_CATEGORY_LARGE_SHIELD, WEAPON_CATEGORY_MIDDLE_SHIELD, WEAPON_CATEGORY_SMALL_SHIELD, WEAPON_CATEGORY_STAFF, WEAPON_CATEGORY_FIST)
     if env(GetSpEffectID, 700510) == TRUE then
         r1 = "W_AttackRightLightDash"
         r2 = "W_AttackRightHeavyDash"
         b1 = "W_AttackBothDash"
         b2 = "W_AttackBothHeavyDash"
-        if env(GetSpEffectID, 7020000) == TRUE and is_large_sword == TRUE then
+		-- Wylder Skill Follow-Up Relic
+		-- RoNR expanded Skill Arsenal
+        if env(GetSpEffectID, 7020000) == TRUE and is_small == FALSE then
             SetVariable("FookShotAdditionalAttack", 0)
             r1 = "W_FookShotAdditionalAttack"
             b1 = "W_FookShotAdditionalAttack"
