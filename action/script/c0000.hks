@@ -735,6 +735,21 @@ function RoNR_Sprintblades()
 end
 
 ------------------------------------------
+-- GFPauldron
+-- 7044113 - Item (DMG Scaling)
+-- 8600104 - Bullet Maker
+------------------------------------------
+
+function RoNR_GFPauldron()
+	if env(GetSpEffectID, 7044113) == TRUE and env(GetSpEffectID, 8600104) == FALSE then
+		act(AddSpEffect, 8600104)
+	end
+	if env(GetSpEffectID, 7044113) == FALSE then
+		act(ClearSpEffect, 8600104)
+	end
+end
+
+------------------------------------------
 -- Logic Update Bundle
 ------------------------------------------
 
@@ -759,6 +774,7 @@ function RoNR_LogicUpdate()
 	RoNR_Memory()
 	RoNR_Bauldron()
 	RoNR_Sprintblades()
+	RoNR_GFPauldron()
 	RoNR_OutofDanger()
 	RoNR_OutofCombat()
 end
