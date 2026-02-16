@@ -750,6 +750,21 @@ function RoNR_GFPauldron()
 end
 
 ------------------------------------------
+-- Stompers
+-- 710028 - Item (DMG Scaling)
+-- 71122 - Bullet Maker
+-- 9030 - Stompers Cooldown
+------------------------------------------
+
+function RoNR_Stompers()
+	if env(GetSpEffectID, 710028) == TRUE and env(GetSpEffectID, 9030) == FALSE and env(GetReceivedDamageType) == DAMAGE_TYPE_GUARD then
+		act(AddSpEffect, 71122)
+	end
+
+end
+
+
+------------------------------------------
 -- Logic Update Bundle
 ------------------------------------------
 
@@ -772,9 +787,11 @@ function RoNR_LogicUpdate()
 	RoNR_Bands()
 	RoNR_Pinwheel()
 	RoNR_Memory()
+	RoNR_Stompers()
 	RoNR_Bauldron()
 	RoNR_Sprintblades()
 	RoNR_GFPauldron()
+	RoNR_Stompers()
 	RoNR_OutofDanger()
 	RoNR_OutofCombat()
 end
