@@ -763,6 +763,21 @@ function RoNR_Stompers()
 
 end
 
+------------------------------------------
+-- Botem
+-- 700005 - Item (Defense Stacking)
+-- 700003 - AttackEffect
+------------------------------------------
+
+function RoNR_Botem()
+	if env(GetSpEffectID, 700005) == TRUE and env(GetSpEffectID, 700003) == FALSE then
+		act(AddSpEffect, 700003)
+	end
+	if env(GetSpEffectID, 700005) == FALSE then
+		act(ClearSpEffect, 700003)
+	end
+end
+
 
 ------------------------------------------
 -- Logic Update Bundle
@@ -792,6 +807,7 @@ function RoNR_LogicUpdate()
 	RoNR_Sprintblades()
 	RoNR_GFPauldron()
 	RoNR_Stompers()
+	RoNR_Botem()
 	RoNR_OutofDanger()
 	RoNR_OutofCombat()
 end
