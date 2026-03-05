@@ -2294,6 +2294,7 @@ function IsDirectDeath()
 	-- Check if player is solo and some value being 0/2/3
     if env(IsMultiplayer) == FALSE and (env(Unknown389) == 0 or env(Unknown389) == 2 or env(Unknown389) == 3) then
 		-- Check if player is vs a Night boss/Nightlord
+		-- 102120 = Disable Near Death Time Limit
         if env(GetSpEffectID, 102120) == TRUE then
 			-- Check if player doesn't have auto revival from a Wending Grace, Favor of Noklateo, or Solo Revival
 			-- DLC - Check Power to Balance the World
@@ -7516,6 +7517,9 @@ function ExecDeath()
             end
         end
         ExecEventAllBody("W_DeathStart")
+		-- RoNR: Shatter Glass
+		act(ClearSpEffect, 710023)
+		act(AddSpEffect, 3511) --vfx
         return TRUE
     elseif env(IsInvincibleDebugMode) == FALSE 
 	  and (env(GetStateChangeType, CONDITION_TYPE_STONE) == TRUE 
