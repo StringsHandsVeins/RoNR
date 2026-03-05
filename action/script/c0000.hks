@@ -91,6 +91,24 @@
 HEAT = 0
 INFUSION = 0
 ------------------------------------------
+-- Remove Warcry/Barbaric Roar Effects if
+-- 8980200 = Power of the Greater Will
+-- 8980400 = Power of the Golden Order
+-- 8981300 = Power of the Queen
+-- 9150400 = Power of the Golden Lineage
+-- 8980100 = Power of the Full Moon
+-- IsDemonSwordMode() == TRUE
+------------------------------------------
+
+function RoNR_BanRoar()
+	if env(GetSpEffectID, 8980200) == TRUE or env(GetSpEffectID, 8980100) == TRUE or env(GetSpEffectID, 8980400) == TRUE or env(GetSpEffectID, 8981300) == TRUE or env(GetSpEffectID, 9150400) == TRUE or IsDemonSwordMode() == TRUE then
+	act(ClearSpEffect, 1811)
+	-- remove Warcry
+	act(ClearSpEffect, 1681)
+	-- remove barbaric roar
+	end
+end
+------------------------------------------
 -- RoNR: State Detection Functions (functional)
 -- Apply generic Indicator Speffects referenced by other Speffects
 ------------------------------------------
@@ -808,6 +826,7 @@ function RoNR_LogicUpdate()
 	RoNR_GFPauldron()
 	RoNR_Stompers()
 	RoNR_Botem()
+	RoNR_BanRoar()
 	RoNR_OutofDanger()
 	RoNR_OutofCombat()
 end
@@ -1178,6 +1197,8 @@ function IsEnableGuard()
 		elseif sp_kind == 639 then
 			return FALSE
 		elseif sp_kind == 640 then
+			return FALSE
+		elseif sp_kind == 647 then
 			return FALSE
 		end
 	end
@@ -1601,7 +1622,7 @@ function IsStanceArts(arts_id)
     if arts_id == 10 or arts_id == 11 or arts_id == 14 or arts_id == 15 or arts_id == 21 
 	or arts_id == 178 or arts_id == 100 or arts_id == 101 or arts_id == 102 or arts_id == 103 
 	  or arts_id == 104 or arts_id == 105 or arts_id == 106 or arts_id == 107 or arts_id == 108 or arts_id == 337 
-	  or arts_id == 25 or arts_id == 219 or arts_id == 239 or arts_id == 169 or arts_id == 260 or arts_id == 318 or arts_id == 278 or arts_id == 279 or arts_id == 26 or arts_id == 29 or arts_id == 32 or arts_id == 38 or arts_id == 335 or arts_id == 43 or arts_id == 42 then
+	  or arts_id == 25 or arts_id == 219 or arts_id == 239 or arts_id == 169 or arts_id == 260 or arts_id == 318 or arts_id == 278 or arts_id == 279 or arts_id == 26 or arts_id == 29 or arts_id == 32 or arts_id == 38 or arts_id == 335 or arts_id == 43 or arts_id == 42 or arts_id == 47 then
         return TRUE
     else
         return FALSE
@@ -2935,7 +2956,7 @@ function GetAttackRequest(is_guard)
 		end
 		if is_both_right == TRUE then
 			if env(GetSpEffectID, 140) == FALSE and env(GetSpEffectID, 145) == FALSE then
-				if sp_kind == 627 or sp_kind == 249 or sp_kind == 635 or sp_kind == 637 or sp_kind == 639 or sp_kind == 640 then
+				if sp_kind == 627 or sp_kind == 249 or sp_kind == 635 or sp_kind == 637 or sp_kind == 639 or sp_kind == 640 or sp_kind == 647 then
 					if env(GetStamina) <= 0 then
 						return ATTACK_REQUEST_INVALID
 					else
@@ -2958,7 +2979,7 @@ function GetAttackRequest(is_guard)
 				end
 			end
 		elseif style == HAND_LEFT_BOTH then
-			if sp_kind == 627 or sp_kind == 249 or sp_kind == 635 or sp_kind == 637 or sp_kind == 639 or sp_kind == 640 then
+			if sp_kind == 627 or sp_kind == 249 or sp_kind == 635 or sp_kind == 637 or sp_kind == 639 or sp_kind == 640 or sp_kind == 647 then
 				if env(GetSpEffectID, 140) == FALSE and env(GetSpEffectID, 145) == FALSE then
 					if env(GetStamina) <= 0 then
 						return ATTACK_REQUEST_INVALID
@@ -3374,6 +3395,10 @@ function ExecAttack(r1, r2, l1, l2, b1, b2, is_guard, blend_type, artsr1, artsr2
 				end
 			end
         end
+		if env(GetSpEffectID, 100491) == TRUE then
+			ExecEventAllBody("W_SwordArtsOneShotComboEnd")
+			r2 = "W_SwordArtsOneShotComboEnd"
+        end
 		if c_SwordArtsID == 39 then
 			if env(GetSpEffectID, 100051) == TRUE then
 				ExecEventAllBody("W_SwordArtsOneShotComboEnd_2")
@@ -3413,14 +3438,14 @@ function ExecAttack(r1, r2, l1, l2, b1, b2, is_guard, blend_type, artsr1, artsr2
         end
 		if c_SwordArtsID == 30 and env(GetSpEffectID, 100050) == TRUE then
 			local MadKingRand = 0
-            MadKingRand = math.random(0, 2)
-			if MadKingRand == 0 then
+            MadKingRand = math.random(0, 5)
+			if MadKingRand == 0 or MadKingRand == 1 then
 				ExecEventAllBody("W_SwordArtsOneShotComboEnd")
 				r2 = "W_SwordArtsOneShotComboEnd"
-			elseif MadKingRand == 1 then
+			elseif MadKingRand == 2 or MadKingRand == 3 then
 				ExecEventAllBody("W_SwordArtsOneShotShieldLeft")
 				r2 = "W_SwordArtsOneShotShieldLeft"
-			elseif MadKingRand == 2 then
+			elseif MadKingRand == 5 then
 				ExecEventAllBody("W_SwordArtsOneShotShieldBoth")
 				r2 = "W_SwordArtsOneShotShieldBoth"
 			end
@@ -3599,6 +3624,10 @@ function ExecAttack(r1, r2, l1, l2, b1, b2, is_guard, blend_type, artsr1, artsr2
 					b2 = "W_DrawStanceRightAttackHeavy"
 				end
 			end
+        end
+		if env(GetSpEffectID, 100491) == TRUE then
+			ExecEventAllBody("W_SwordArtsOneShotComboEnd")
+			b2 = "W_SwordArtsOneShotComboEnd"
         end
 		if c_SwordArtsID == 39 then
 			if env(GetSpEffectID, 100051) == TRUE then
@@ -4772,7 +4801,7 @@ function GetAttackMaxNumber(hand)
         if env(GetHeroID) == HERO_POWER and kind == WEAPON_CATEGORY_EXTRALARGE_AXHAMMER then
             max_num = 4
         end
-    elseif kind == WEAPON_CATEGORY_TORCH or kind == WEAPON_CATEGORY_LARGE_SWORD or kind == WEAPON_CATEGORY_LARGE_AX or kind == WEAPON_CATEGORY_FLAIL or kind == WEAPON_CATEGORY_SPEAR or kind == WEAPON_CATEGORY_HALBERD or kind == WEAPON_CATEGORY_LARGE_CURVEDSWORD or kind == WEAPON_CATEGORY_SMALL_SHIELD or kind == WEAPON_CATEGORY_MIDDLE_SHIELD or kind == WEAPON_CATEGORY_LARGE_SCYTHE or kind == WEAPON_CATEGORY_WHIP or kind == 61 then
+    elseif kind == WEAPON_CATEGORY_TORCH or kind == WEAPON_CATEGORY_LARGE_SWORD or kind == WEAPON_CATEGORY_LARGE_AX or kind == WEAPON_CATEGORY_FLAIL or kind == WEAPON_CATEGORY_SPEAR or kind == WEAPON_CATEGORY_HALBERD or kind == WEAPON_CATEGORY_LARGE_CURVEDSWORD or kind == WEAPON_CATEGORY_SMALL_SHIELD or kind == WEAPON_CATEGORY_MIDDLE_SHIELD or kind == WEAPON_CATEGORY_LARGE_SCYTHE or kind == WEAPON_CATEGORY_WHI or kind == 61 then
         max_num = 4
     elseif kind == WEAPON_CATEGORY_STRAIGHT_SWORD or kind == WEAPON_CATEGORY_TWINBLADE or kind == WEAPON_CATEGORY_KATANA or kind == WEAPON_CATEGORY_AX or kind == WEAPON_CATEGORY_HAMMER or kind == WEAPON_CATEGORY_LARGE_RAPIER then
         max_num = 5
@@ -4812,7 +4841,7 @@ function GetDualAttackMaxNumber(hand)
     local max_num = 1
     if kind == WEAPON_CATEGORY_EXTRALARGE_SWORD or kind == WEAPON_CATEGORY_EXTRALARGE_AXHAMMER or kind == WEAPON_CATEGORY_LARGE_SPEAR or kind == WEAPON_CATEGORY_LARGE_SWORD or kind == WEAPON_CATEGORY_LARGE_AX or kind == WEAPON_CATEGORY_LARGE_HAMMER or kind == WEAPON_CATEGORY_SPEAR or kind == WEAPON_CATEGORY_HALBERD or kind == WEAPON_CATEGORY_LARGE_CURVEDSWORD or kind == WEAPON_CATEGORY_LARGE_SCYTHE or kind == WEAPON_CATEGORY_WHIP or kind == 61 then
         max_num = 3
-    elseif kind == WEAPON_CATEGORY_TWINBLADE or kind == WEAPON_CATEGORY_KATANA or kind == WEAPON_CATEGORY_AX or kind == WEAPON_CATEGORY_HAMMER or kind == WEAPON_CATEGORY_FLAIL or kind == WEAPON_CATEGORY_LARGE_RAPIER or kind == WEAPON_CATEGORY_SHORT_SWORD or kind == WEAPON_CATEGORY_RAPIER then
+    elseif kind == WEAPON_CATEGORY_TWINBLADE or kind == WEAPON_CATEGORY_AX or kind == WEAPON_CATEGORY_HAMMER or kind == WEAPON_CATEGORY_FLAIL or kind == WEAPON_CATEGORY_LARGE_RAPIER or kind == WEAPON_CATEGORY_SHORT_SWORD or kind == WEAPON_CATEGORY_RAPIER then
         max_num = 4
     elseif kind == WEAPON_CATEGORY_CLAW or kind == WEAPON_CATEGORY_FIST or kind == 58 then
         max_num = 6
@@ -4829,8 +4858,8 @@ function GetDualAttackMaxNumber(hand)
 		else
 			max_num = 4
 		end
-	elseif kind == WEAPON_CATEGORY_STRAIGHT_SWORD then
-		if sp_kind == 640 then
+	elseif kind == WEAPON_CATEGORY_KATANA then
+		if sp_kind == 647 then
 			max_num = 3
 		else
 			max_num = 4
@@ -23632,6 +23661,15 @@ function DS3Dual()
 	elseif bl_sp_kind == 640 then
 		act(AddSpEffect, 100066)
 	end
+	if r_sp_kind == 647 and c_Style ~= HAND_RIGHT_BOTH then
+		act(AddSpEffect, 100065)
+		act(ClearSpEffect, 100066)
+	elseif b_sp_kind == 647 then
+		act(AddSpEffect, 100066)
+		act(ClearSpEffect, 100065)
+	elseif bl_sp_kind == 647 then
+		act(AddSpEffect, 100066)
+	end
 end
 
 heroFootOffsetTables = {
@@ -28206,7 +28244,7 @@ function JumpCommonFunction(jump_type)
             return TRUE
         elseif env(ActionRequest, ACTION_ARM_L1) == TRUE and IsEnableDualWielding() == HAND_RIGHT then
 			if c_Style == HAND_RIGHT_BOTH then
-				if rightSpecialKind == 635 or rightSpecialKind == 249 or rightSpecialKind == 637 or rightSpecialKind == 640 then
+				if rightSpecialKind == 635 or rightSpecialKind == 249 or rightSpecialKind == 637 or rightSpecialKind == 640 or rightSpecialKind == 647 then
 					return FALSE
 				end
 			else
@@ -28249,7 +28287,7 @@ function JumpCommonFunction(jump_type)
             return TRUE
         elseif env(ActionRequest, ACTION_ARM_L1) == TRUE and IsEnableDualWielding() == HAND_RIGHT then
 			if c_Style == HAND_RIGHT_BOTH then
-				if rightSpecialKind == 635 or rightSpecialKind == 249 or rightSpecialKind == 637 or rightSpecialKind == 640 then
+				if rightSpecialKind == 635 or rightSpecialKind == 249 or rightSpecialKind == 637 or rightSpecialKind == 640 or rightSpecialKind == 647 then
 					return FALSE
 				end
 			else
@@ -30538,6 +30576,7 @@ SwordArtsCategory = {
     [4] = {SWORD_ART_DIFF_CAT_DEFAULT, SWORD_ART_DIFF_CAT_LARGE_WEAPON, SWORD_ART_DIFF_CAT_POLEARM},
     [5] = {SWORD_ART_DIFF_CAT_DEFAULT},
     [6] = {SWORD_ART_DIFF_CAT_DEFAULT},
+	[33] = {SWORD_ART_DIFF_CAT_DEFAULT},
 	[41] = {SWORD_ART_DIFF_CAT_DEFAULT},
     [7] = {SWORD_ART_DIFF_CAT_DEFAULT, SWORD_ART_DIFF_CAT_LARGE_WEAPON, SWORD_ART_DIFF_CAT_POLEARM},
     [8] = {SWORD_ART_DIFF_CAT_DEFAULT, SWORD_ART_DIFF_CAT_LARGE_WEAPON, SWORD_ART_DIFF_CAT_POLEARM},
@@ -30553,6 +30592,9 @@ SwordArtsCategory = {
     [15] = {SWORD_ART_DIFF_CAT_DEFAULT},
 	[43] = {SWORD_ART_DIFF_CAT_DEFAULT},
 	[42] = {SWORD_ART_DIFF_CAT_DEFAULT},
+	[47] = {SWORD_ART_DIFF_CAT_DEFAULT},
+	[48] = {SWORD_ART_DIFF_CAT_DEFAULT},
+	[49] = {SWORD_ART_DIFF_CAT_DEFAULT},
     [16] = {SWORD_ART_DIFF_CAT_DEFAULT},
     [17] = {SWORD_ART_DIFF_CAT_DEFAULT},
     [18] = {SWORD_ART_DIFF_CAT_DEFAULT, SWORD_ART_DIFF_CAT_POLEARM},
@@ -30664,7 +30706,7 @@ SwordArtsCategory = {
 	[281] = {SWORD_ART_DIFF_CAT_DEFAULT, 57},
 	[284] = {SWORD_ART_DIFF_CAT_DEFAULT, SWORD_ART_DIFF_CAT_LARGE_WEAPON, SWORD_ART_DIFF_CAT_POLEARM},
 	[399] = {SWORD_ART_DIFF_CAT_DEFAULT}
-	}
+}
 
 -- Determines which override of a Sword Art animation to play, based on the size or type of the weapon.
 -- The return of this function is processed to a different ID by the cases that use it.
@@ -30783,6 +30825,7 @@ SwordArtPutOppositeWeapon = {
     [3] = {TRUE, FALSE, TRUE},
     [5] = {TRUE, FALSE, TRUE},
     [6] = {TRUE, FALSE, TRUE},
+	[33] = {FALSE, FALSE, TRUE},
 	[41] = {TRUE, FALSE, TRUE},
 	[46] = {FALSE, FALSE, FALSE},
 	[35] = {TRUE, FALSE, TRUE},
@@ -30798,6 +30841,9 @@ SwordArtPutOppositeWeapon = {
     [15] = {TRUE, FALSE, TRUE},
 	[43] = {TRUE, FALSE, TRUE},
 	[42] = {TRUE, FALSE, TRUE},
+	[47] = {TRUE, FALSE, TRUE},
+	[48] = {TRUE, FALSE, TRUE},
+	[49] = {FALSE, FALSE, TRUE},
     [16] = {TRUE, FALSE, TRUE},
     [17] = {FALSE, FALSE, FALSE},
     [18] = {TRUE, FALSE, TRUE},
@@ -31007,7 +31053,7 @@ SwordArtPutOppositeWeapon = {
 	[39] = {FALSE, FALSE, TRUE},
 	[40] = {FALSE, FALSE, TRUE},
 	[399] = {FALSE, FALSE, TRUE}
-	}
+}
 
 -- Decides whether to perform a "retrieve weapon" animation after finishing a Weapon Art.
 -- See the above table for reference.
