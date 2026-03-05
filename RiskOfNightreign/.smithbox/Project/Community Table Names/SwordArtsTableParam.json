@@ -1,0 +1,13 @@
+{
+  "Param": "SwordArtsTableParam",
+  "Entries": [
+    {
+      "ID": 700000000,
+      "Name": "Misericorde"
+    },
+    {
+      "ID": 700000001,
+      "Name": "Cinquedea"
+    }
+  ]
+}

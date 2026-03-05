@@ -1,0 +1,205 @@
+{
+  "Param": "MagicTableParam",
+  "Entries": [
+    {
+      "ID": 7000000,
+      "Name": "RoNR-Astrologer"
+    },
+    {
+      "ID": 7000001,
+      "Name": "RoNR-Astrologer 2"
+    },
+    {
+      "ID": 7000002,
+      "Name": "RoNR-Carian Glintblade Staff (light)"
+    },
+    {
+      "ID": 7000003,
+      "Name": "RoNR-Carian Glintblade Staff (heavy)"
+    },
+    {
+      "ID": 7000004,
+      "Name": "RoNR-Dragon Communion Seal(light)"
+    },
+    {
+      "ID": 7000005,
+      "Name": "RoNR-Dragon Communion Seal (heavy)"
+    },
+    {
+      "ID": 7000006,
+      "Name": "RoNR-Crystal Staff (light)"
+    },
+    {
+      "ID": 7000007,
+      "Name": "RoNR-Crystal Staff (heavy)"
+    },
+    {
+      "ID": 7000008,
+      "Name": "RoNR_Gravel Stone Seal"
+    },
+    {
+      "ID": 7000009,
+      "Name": "RoNR_Gravel Stone 2"
+    },
+    {
+      "ID": 7000010,
+      "Name": "RoNR-Meteorite Staff (light)"
+    },
+    {
+      "ID": 7000011,
+      "Name": "RoNR-Meteorite Staff (heavy)"
+    },
+    {
+      "ID": 7000012,
+      "Name": "RoNR-Staff of Loss (light)"
+    },
+    {
+      "ID": 7000013,
+      "Name": "RoNr-Staff of Loss (heavy)"
+    },
+    {
+      "ID": 7000014,
+      "Name": "Crucible Incant Seal [Light]"
+    },
+    {
+      "ID": 7000015,
+      "Name": "Crucible Incant Seal (heavy)"
+    },
+    {
+      "ID": 7000016,
+      "Name": "RoNR_Giant"
+    },
+    {
+      "ID": 7000017,
+      "Name": "RoNR_Giant 2"
+    },
+    {
+      "ID": 7000018,
+      "Name": "RoNR_Golden Order Seal (light)"
+    },
+    {
+      "ID": 7000019,
+      "Name": "RoNR_ Golden Order Seal (heavy)"
+    },
+    {
+      "ID": 7000020,
+      "Name": "RoNR_POD"
+    },
+    {
+      "ID": 7000021,
+      "Name": "RoNR_POD 2"
+    },
+    {
+      "ID": 7000022,
+      "Name": "Carian Regal Scepter 1"
+    },
+    {
+      "ID": 7000023,
+      "Name": "Carian Regal Scepter 2"
+    },
+    {
+      "ID": 7000024,
+      "Name": "Gelmir Staff 1"
+    },
+    {
+      "ID": 7000025,
+      "Name": "Gelmir Staff 2"
+    },
+    {
+      "ID": 7000026,
+      "Name": "Godslayer Seal 1"
+    },
+    {
+      "ID": 7000027,
+      "Name": "Godslayer Seal 2"
+    },
+    {
+      "ID": 7000028,
+      "Name": "Clawmark Seal 1"
+    },
+    {
+      "ID": 7000029,
+      "Name": "Clawmark Seal 2"
+    },
+    {
+      "ID": 7000030,
+      "Name": "Frenzy Seal 1"
+    },
+    {
+      "ID": 7000031,
+      "Name": "Frenzy Seal 2"
+    },
+    {
+      "ID": 7000032,
+      "Name": "RoNR_Erdtree"
+    },
+    {
+      "ID": 7000033,
+      "Name": "RoNR_Erdtree"
+    },
+    {
+      "ID": 7000034,
+      "Name": "RoNR_Academy"
+    },
+    {
+      "ID": 7000035,
+      "Name": "RoNR_Academy 2"
+    },
+    {
+      "ID": 7000036,
+      "Name": "RoNR_Glintblade"
+    },
+    {
+      "ID": 7000037,
+      "Name": "RoNR_Glintblade 2"
+    },
+    {
+      "ID": 7000038,
+      "Name": "RoNR_Gelmir"
+    },
+    {
+      "ID": 7000039,
+      "Name": "RoNR_Gelmir 2"
+    },
+    {
+      "ID": 7000040,
+      "Name": "RoNR_Demihuman"
+    },
+    {
+      "ID": 7000041,
+      "Name": "RoNR_Demihuman 2"
+    },
+    {
+      "ID": 7000043,
+      "Name": "RoNR_Albinauric"
+    },
+    {
+      "ID": 7000042,
+      "Name": "RoNR_Albinauric"
+    },
+    {
+      "ID": 7000044,
+      "Name": "RoNR_Dynasty 1"
+    },
+    {
+      "ID": 7000045,
+      "Name": "RoNR_Dynasty 2"
+    },
+    {
+      "ID": 7000046,
+      "Name": "RoNR_Snowy 1"
+    },
+    {
+      "ID": 7000047,
+      "Name": "RoNR_Snowy 2"
+    },
+    {
+      "ID": 7000048,
+      "Name": "RoNR_Decay"
+    },
+    {
+      "ID": 7000049,
+      "Name": "RoNR_Decay2"
+    }
+  ]
+}

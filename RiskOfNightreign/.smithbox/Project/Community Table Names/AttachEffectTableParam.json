@@ -1,0 +1,17 @@
+{
+  "Param": "AttachEffectTableParam",
+  "Entries": [
+    {
+      "ID": 2000,
+      "Name": "RoNR_WeaponStats (Basic)"
+    },
+    {
+      "ID": 2001,
+      "Name": "RoNR_weaponStats (Catalyst)"
+    },
+    {
+      "ID": 2002,
+      "Name": "RoNR_WeaponCurse"
+    }
+  ]
+}

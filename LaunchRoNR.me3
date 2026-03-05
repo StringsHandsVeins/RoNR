@@ -1,0 +1,14 @@
+profileVersion = "v1"
+
+savefile = "RoNR.sl2"
+
+[[natives]]
+path = "RiskOfNightreign/SeamlessCoop/nrsc.dll"
+load_early = true
+
+[[supports]]
+game = "nightreign"
+
+[[packages]]
+id = "RiskOfNightreign"
+source = "RiskOfNightreign"
