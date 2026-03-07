@@ -1,0 +1,5 @@
+selection: correctStrength: * 1.05;
+selection: correctAgility: * 1.05;
+selection: correctMagic: * 1.05;
+selection: correctFaith: * 1.05;
+selection: correctLuck: * 1.05;
