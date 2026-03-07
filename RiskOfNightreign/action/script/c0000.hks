@@ -809,7 +809,7 @@ function RoNR_Glass()
 	elseif env(GetSpEffectID, 710023) == FALSE then
 		act(ClearSpEffect, 3511)
 	end
-	if env(GetSpEffectID, 710023) == TRUE and env(GetSpEffectID, 3514) == TRUE
+	if env(GetSpEffectID, 710023) == TRUE and env(GetSpEffectID, 3514) == TRUE then
 		act(ClearSpEffect, 710023) --remove brittle shape effect	
 	end
 end
