@@ -12,6 +12,54 @@
     {
       "ID": 2002,
       "Name": "RoNR_WeaponCurse"
+    },
+    {
+      "ID": 20000,
+      "Name": "RoNR_BlackKnifePower+"
+    },
+    {
+      "ID": 20001,
+      "Name": "RoNR_BlackKnifePower++"
+    },
+    {
+      "ID": 20002,
+      "Name": "RoNR_BlackKnifePower+++"
+    },
+    {
+      "ID": 20010,
+      "Name": "RoNR_DMGS +"
+    },
+    {
+      "ID": 20011,
+      "Name": "RoNR_DMGS ++"
+    },
+    {
+      "ID": 20012,
+      "Name": "RoNR_DMGS +++"
+    },
+    {
+      "ID": 20020,
+      "Name": "RoNR_Butch +"
+    },
+    {
+      "ID": 20021,
+      "Name": "RoNR_Butch ++"
+    },
+    {
+      "ID": 20022,
+      "Name": "RoNR_Butch +++"
+    },
+    {
+      "ID": 20030,
+      "Name": "RoNR_Crush +"
+    },
+    {
+      "ID": 20031,
+      "Name": "RoNR_Crush ++"
+    },
+    {
+      "ID": 20032,
+      "Name": "RoNR_Crush +++"
     }
   ]
 }

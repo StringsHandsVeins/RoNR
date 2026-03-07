@@ -10455,11 +10455,11 @@
     },
     {
       "ID": 31000,
-      "Name": "RoNR_Giant-Crusher"
+      "Name": "RoNR_Weapon_Giant-Crusher"
     },
     {
       "ID": 31001,
-      "Name": "RoNR_SacButchKnife"
+      "Name": "RoNR_Weapon_SacButchKnife"
     },
     {
       "ID": 2695,
@@ -10467,7 +10467,7 @@
     },
     {
       "ID": 31002,
-      "Name": "RoNR_BlackKnife"
+      "Name": "RoNR_Weapon_BlackKnife"
     },
     {
       "ID": 2700,
@@ -10475,7 +10475,7 @@
     },
     {
       "ID": 31003,
-      "Name": "RoNR_DarkmoonGS"
+      "Name": "RoNR_Weapon_DarkmoonGS"
     }
   ]
 }
