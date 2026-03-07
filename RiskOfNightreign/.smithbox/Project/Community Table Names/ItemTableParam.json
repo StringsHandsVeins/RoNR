@@ -10460,6 +10460,18 @@
     {
       "ID": 31001,
       "Name": "RoNR_SacButchKnife"
+    },
+    {
+      "ID": 2695,
+      "Name": "RoNR_Pot 1"
+    },
+    {
+      "ID": 31002,
+      "Name": "RoNR_BlackKnife"
+    },
+    {
+      "ID": 2700,
+      "Name": "RoNR_Assassin 1"
     }
   ]
 }
