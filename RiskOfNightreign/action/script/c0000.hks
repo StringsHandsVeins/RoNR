@@ -796,6 +796,23 @@ function RoNR_Botem()
 	end
 end
 
+------------------------------------------
+-- Brittle Shape
+-- 3511 - HP tracking
+-- 3514 - cycle at 1% hp
+-- 710023 - Brittle Shape Item
+------------------------------------------
+
+function RoNR_Glass()
+	if env(GetSpEffectID, 710023) == TRUE then
+		act(AddSpEffect, 3511)
+	elseif env(GetSpEffectID, 710023) == FALSE then
+		act(ClearSpEffect, 3511)
+	end
+	if env(GetSpEffectID, 710023) == TRUE and env(GetSpEffectID, 3514) == TRUE
+		act(ClearSpEffect, 710023) --remove brittle shape effect	
+	end
+end
 
 ------------------------------------------
 -- Logic Update Bundle
@@ -827,6 +844,7 @@ function RoNR_LogicUpdate()
 	RoNR_Stompers()
 	RoNR_Botem()
 	RoNR_BanRoar()
+	RoNR_Glass()
 	RoNR_OutofDanger()
 	RoNR_OutofCombat()
 end
@@ -7517,9 +7535,6 @@ function ExecDeath()
             end
         end
         ExecEventAllBody("W_DeathStart")
-		-- RoNR: Shatter Glass
-		act(ClearSpEffect, 710023) --remove brittle shape effect
-		act(AddSpEffect, 3511) --vfx
         return TRUE
     elseif env(IsInvincibleDebugMode) == FALSE 
 	  and (env(GetStateChangeType, CONDITION_TYPE_STONE) == TRUE 
