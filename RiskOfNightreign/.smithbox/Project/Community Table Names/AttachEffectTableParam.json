@@ -72,6 +72,18 @@
     {
       "ID": 20042,
       "Name": "RoNR_Pulley +++"
+    },
+    {
+      "ID": 20050,
+      "Name": "RoNR_Misbow +"
+    },
+    {
+      "ID": 20051,
+      "Name": "RoNR_Misbow ++"
+    },
+    {
+      "ID": 20052,
+      "Name": "RoNR_Misbow +++"
     }
   ]
 }

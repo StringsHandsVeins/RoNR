@@ -10480,6 +10480,14 @@
     {
       "ID": 31004,
       "Name": "RoNR_Weapon_Pulleybow"
+    },
+    {
+      "ID": 2710,
+      "Name": "RoNR_WingMisbegotten 1"
+    },
+    {
+      "ID": 31005,
+      "Name": "RoNR_Weapon_Misbow"
     }
   ]
 }
