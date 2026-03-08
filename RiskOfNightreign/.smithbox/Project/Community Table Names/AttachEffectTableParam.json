@@ -60,6 +60,18 @@
     {
       "ID": 20032,
       "Name": "RoNR_Crush +++"
+    },
+    {
+      "ID": 20040,
+      "Name": "RoNR_Pulley +"
+    },
+    {
+      "ID": 20041,
+      "Name": "RoNR_Pulley ++"
+    },
+    {
+      "ID": 20042,
+      "Name": "RoNR_Pulley +++"
     }
   ]
 }

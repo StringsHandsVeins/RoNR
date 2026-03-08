@@ -10476,6 +10476,10 @@
     {
       "ID": 31003,
       "Name": "RoNR_Weapon_DarkmoonGS"
+    },
+    {
+      "ID": 31004,
+      "Name": "RoNR_Weapon_Pulleybow"
     }
   ]
 }
