@@ -10495,7 +10495,15 @@
     },
     {
       "ID": 31007,
-      "Name": "RoNR_Weapon_"
+      "Name": "RoNR_Weapon_ParDagg"
+    },
+    {
+      "ID": 31008,
+      "Name": "RoNR_Weapon_ParDagg"
+    },
+    {
+      "ID": 31070,
+      "Name": "RoNR_Weapon_ParDagg"
     }
   ]
 }
