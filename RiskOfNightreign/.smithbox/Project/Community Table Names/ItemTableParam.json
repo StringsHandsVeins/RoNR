@@ -10488,6 +10488,14 @@
     {
       "ID": 31005,
       "Name": "RoNR_Weapon_Misbow"
+    },
+    {
+      "ID": 31006,
+      "Name": "RoNR_Weapon_CrystalKnife"
+    },
+    {
+      "ID": 31007,
+      "Name": "RoNR_Weapon_"
     }
   ]
 }
