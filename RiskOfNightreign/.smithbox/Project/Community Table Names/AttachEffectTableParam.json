@@ -108,6 +108,18 @@
     {
       "ID": 20072,
       "Name": "RoNr_CritGreed +++"
+    },
+    {
+      "ID": 20080,
+      "Name": "RoNR_Deathrill +"
+    },
+    {
+      "ID": 20081,
+      "Name": "RoNR_Deathrill ++"
+    },
+    {
+      "ID": 20082,
+      "Name": "RoNR_Deathrill +++"
     }
   ]
 }

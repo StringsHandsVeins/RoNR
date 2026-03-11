@@ -10504,6 +10504,10 @@
     {
       "ID": 31070,
       "Name": "RoNR_Weapon_ParDagg"
+    },
+    {
+      "ID": 31080,
+      "Name": "RoNR_Weapon_Miscord"
     }
   ]
 }
