@@ -10512,6 +10512,18 @@
     {
       "ID": 31090,
       "Name": "RoNR_Weapon_Cinq"
+    },
+    {
+      "ID": 31100,
+      "Name": "RoNR_Weapon_Reduvia"
+    },
+    {
+      "ID": 2690,
+      "Name": "RoNR_SangNo 1"
+    },
+    {
+      "ID": 2691,
+      "Name": "RoNR_SangNo 2"
     }
   ]
 }
