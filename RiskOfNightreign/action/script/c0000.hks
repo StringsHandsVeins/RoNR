@@ -3296,6 +3296,8 @@ function ExecAttack(r1, r2, l1, l2, b1, b2, is_guard, blend_type, artsr1, artsr2
 					if GetEquipType(atk_hand, WEAPON_CATEGORY_HALBERD, WEAPON_CATEGORY_SPEAR, WEAPON_CATEGORY_LARGE_RAPIER, WEAPON_CATEGORY_LARGE_SPEAR, WEAPON_CATEGORY_LARGE_SWORD, WEAPON_CATEGORY_EXTRALARGE_SWORD) == TRUE or
 					env(GetEquipWeaponSpecialCategoryNumber, atk_hand) == 2310 then
 						ExecEventAllBody("W_AttackBothHeavyCounterStart")
+					else 
+						ExecEventAllBody("W_AttackBothHeavyCounter")
 					end
                 else
                     ExecEventAllBody("W_AttackBothHeavyCounter")
@@ -3305,6 +3307,8 @@ function ExecAttack(r1, r2, l1, l2, b1, b2, is_guard, blend_type, artsr1, artsr2
 				if GetEquipType(HAND_RIGHT, WEAPON_CATEGORY_HALBERD, WEAPON_CATEGORY_SPEAR, WEAPON_CATEGORY_LARGE_RAPIER, WEAPON_CATEGORY_LARGE_SPEAR, WEAPON_CATEGORY_LARGE_SWORD, WEAPON_CATEGORY_EXTRALARGE_SWORD) == TRUE or
 				env(GetEquipWeaponSpecialCategoryNumber, HAND_RIGHT) == 2310 then
 					ExecEventAllBody("W_AttackRightHeavyCounterStart")
+				else
+					ExecEventAllBody("W_AttackRightHeavyCounter")
                 end
             else
                 ExecEventAllBody("W_AttackRightHeavyCounter")
