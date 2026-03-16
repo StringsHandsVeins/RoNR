@@ -132,6 +132,30 @@
     {
       "ID": 20092,
       "Name": "RoNR_BeVit +++"
+    },
+    {
+      "ID": 20100,
+      "Name": "RoNR_Reduvia +"
+    },
+    {
+      "ID": 20101,
+      "Name": "RoNR_Reduvia ++"
+    },
+    {
+      "ID": 20102,
+      "Name": "RoNR_Reduvia +++"
+    },
+    {
+      "ID": 20110,
+      "Name": "RoNR_Glis +"
+    },
+    {
+      "ID": 20111,
+      "Name": "RoNR_Glis ++"
+    },
+    {
+      "ID": 20112,
+      "Name": "RoNR_Glis +++"
     }
   ]
 }

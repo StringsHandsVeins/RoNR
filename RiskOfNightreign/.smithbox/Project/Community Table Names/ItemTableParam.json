@@ -9323,7 +9323,7 @@
     },
     {
       "ID": 20001,
-      "Name": "RoNR_KaidenSellsword 1"
+      "Name": "RoNR_EnemyArmament_KaidenSellsword 1"
     },
     {
       "ID": 20002,
@@ -9359,7 +9359,7 @@
     },
     {
       "ID": 20010,
-      "Name": "RoNR_Bloodhound 1"
+      "Name": "RoNR_EnemyArmament_Bloodhound 1"
     },
     {
       "ID": 20011,
@@ -9379,7 +9379,7 @@
     },
     {
       "ID": 20015,
-      "Name": "RoNR_Nightrider 1"
+      "Name": "RoNR_EnemyArmament_Nightrider 1"
     },
     {
       "ID": 200,
@@ -9471,11 +9471,11 @@
     },
     {
       "ID": 20020,
-      "Name": "RoNR_TreeSentinel 1"
+      "Name": "RoNR_EnemyArmament_TreeSentinel 1"
     },
     {
       "ID": 20021,
-      "Name": "RoNR_TreeSentinel 2"
+      "Name": "RoNR_EnemyArmament_TreeSentinel 2"
     },
     {
       "ID": 20022,
@@ -9491,11 +9491,11 @@
     },
     {
       "ID": 20025,
-      "Name": "RoNR_Gladiator 1 "
+      "Name": "RoNR_EnemyArmament_Gladiator 1 "
     },
     {
       "ID": 20026,
-      "Name": "RoNR_Gladiator 2"
+      "Name": "RoNR_EnemyArmament_Gladiator 2"
     },
     {
       "ID": 20027,
@@ -9511,11 +9511,11 @@
     },
     {
       "ID": 20030,
-      "Name": "RoNR_ErdtreeAvatar 1"
+      "Name": "RoNR_EnemyArmament_ErdtreeAvatar 1"
     },
     {
       "ID": 20031,
-      "Name": "RoNR_ErdtreeAvatar 2"
+      "Name": "RoNR_EnemyArmament_ErdtreeAvatar 2"
     },
     {
       "ID": 20032,
@@ -9531,11 +9531,11 @@
     },
     {
       "ID": 20035,
-      "Name": "RoNR_DraconicSentinel 1"
+      "Name": "RoNR_EnemyArmament_DraconicSentinel 1"
     },
     {
       "ID": 20036,
-      "Name": "RoNR_DraconicSentinel 2"
+      "Name": "RoNR_EnemyArmament_DraconicSentinel 2"
     },
     {
       "ID": 20037,
@@ -9607,11 +9607,11 @@
     },
     {
       "ID": 20040,
-      "Name": "RoNR_BlackBlade 1"
+      "Name": "RoNR_EnemyArmament_BlackBlade 1"
     },
     {
       "ID": 20041,
-      "Name": "RoNR_BlackBlade 2"
+      "Name": "RoNR_EnemyArmament_BlackBlade 2"
     },
     {
       "ID": 20042,
@@ -9627,11 +9627,11 @@
     },
     {
       "ID": 20045,
-      "Name": "RoNR_AncientDragon 1"
+      "Name": "RoNR_EnemyArmament_AncientDragon 1"
     },
     {
       "ID": 20046,
-      "Name": "RoNR_AncientDragon 2"
+      "Name": "RoNR_EnemyArmament_AncientDragon 2"
     },
     {
       "ID": 20047,
@@ -9647,7 +9647,7 @@
     },
     {
       "ID": 20050,
-      "Name": "RoNR_EstocNoble 1"
+      "Name": "RoNR_EnemyArmament_EstocNoble 1"
     },
     {
       "ID": 20051,
@@ -9687,7 +9687,7 @@
     },
     {
       "ID": 20060,
-      "Name": "RoNR_SwordNoble 1"
+      "Name": "RoNR_EnemyArmament_SwordNoble 1"
     },
     {
       "ID": 20061,
@@ -9707,11 +9707,11 @@
     },
     {
       "ID": 20065,
-      "Name": "RoNR_Ordovis 1"
+      "Name": "RoNR_EnemyArmament_Ordovis 1"
     },
     {
       "ID": 20066,
-      "Name": "RoNR_Ordovis 2"
+      "Name": "RoNR_EnemyArmament_Ordovis 2"
     },
     {
       "ID": 20067,
@@ -9727,11 +9727,11 @@
     },
     {
       "ID": 20070,
-      "Name": "RoNR_Siluria 1"
+      "Name": "RoNR_EnemyArmament_Siluria 1"
     },
     {
       "ID": 20071,
-      "Name": "RoNR_Siluria 2"
+      "Name": "RoNR_EnemyArmament_Siluria 2"
     },
     {
       "ID": 20072,
@@ -10267,191 +10267,191 @@
     },
     {
       "ID": 20080,
-      "Name": "RoNR_Devonia 1"
+      "Name": "RoNR_EnemyArmament_Devonia 1"
     },
     {
       "ID": 20085,
-      "Name": "RoNR_BBH 1"
+      "Name": "RoNR_EnemyArmament_BBH 1"
     },
     {
       "ID": 20086,
-      "Name": "RoNR_BBH 2"
+      "Name": "RoNR_EnemyArmament_BBH 2"
     },
     {
       "ID": 20090,
-      "Name": "RoNR_DeathRite 1"
+      "Name": "RoNR_EnemyArmament_DeathRite 1"
     },
     {
       "ID": 20091,
-      "Name": "RoNR_DeathRite 2"
+      "Name": "RoNR_EnemyArmament_DeathRite 2"
     },
     {
       "ID": 20095,
-      "Name": "RoNR_Zamor 1"
+      "Name": "RoNR_EnemyArmament_Zamor 1"
     },
     {
       "ID": 20105,
-      "Name": "RoNR_GraftScion 1"
+      "Name": "RoNR_EnemyArmament_GraftScion 1"
     },
     {
       "ID": 20106,
-      "Name": "RoNR_Graftscion 2"
+      "Name": "RoNR_EnemyArmament_Graftscion 2"
     },
     {
       "ID": 20110,
-      "Name": "RoNR_Omen 1"
+      "Name": "RoNR_EnemyArmament_Omen 1"
     },
     {
       "ID": 20111,
-      "Name": "RoNR_Omen 2"
+      "Name": "RoNR_EnemyArmament_Omen 2"
     },
     {
       "ID": 20115,
-      "Name": "RoNR_Pest 1"
+      "Name": "RoNR_EnemyArmament_Pest 1"
     },
     {
       "ID": 20120,
-      "Name": "RoNR_MagmaWyrm 1"
+      "Name": "RoNR_EnemyArmament_MagmaWyrm 1"
     },
     {
       "ID": 20121,
-      "Name": "RoNR_Magmawyrm 2"
+      "Name": "RoNR_EnemyArmament_Magmawyrm 2"
     },
     {
       "ID": 20130,
-      "Name": "RoNR_Ancestor 1"
+      "Name": "RoNR_EnemyArmament_Ancestor 1"
     },
     {
       "ID": 20131,
-      "Name": "RoNR_Ancestor 2"
+      "Name": "RoNR_EnemyArmament_Ancestor 2"
     },
     {
       "ID": 20135,
-      "Name": "RoNR_DeathKnight 1"
+      "Name": "RoNR_EnemyArmament_DeathKnight 1"
     },
     {
       "ID": 20136,
-      "Name": "RoNR_Deathknight 2"
+      "Name": "RoNR_EnemyArmament_Deathknight 2"
     },
     {
       "ID": 20140,
-      "Name": "RoNR_Abductor 1"
+      "Name": "RoNR_EnemyArmament_Abductor 1"
     },
     {
       "ID": 20145,
-      "Name": "RoNR_Lordsworn 1"
+      "Name": "RoNR_EnemyArmament_Lordsworn 1"
     },
     {
       "ID": 20146,
-      "Name": "RoNR_Lordsworn 2"
+      "Name": "RoNR_EnemyArmament_Lordsworn 2"
     },
     {
       "ID": 20150,
-      "Name": "RoNR_Scorpion 1"
+      "Name": "RoNR_EnemyArmament_Scorpion 1"
     },
     {
       "ID": 20151,
-      "Name": "RoNR_Scorpion 2"
+      "Name": "RoNR_EnemyArmament_Scorpion 2"
     },
     {
       "ID": 20160,
-      "Name": "RoNR_Dragon 1"
+      "Name": "RoNR_EnemyArmament_Dragon 1"
     },
     {
       "ID": 20161,
-      "Name": "RoNR_Dragon 2"
+      "Name": "RoNR_EnemyArmament_Dragon 2"
     },
     {
       "ID": 20165,
-      "Name": "RoNR_Oonze"
+      "Name": "RoNR_EnemyArmament_Oonze 1"
     },
     {
       "ID": 20180,
-      "Name": "RoNR_Cleanrot 1"
+      "Name": "RoNR_EnemyArmament_Cleanrot 1"
     },
     {
       "ID": 20181,
-      "Name": "RoNR_Cleanrot 2"
+      "Name": "RoNR_EnemyArmament_Cleanrot 2"
     },
     {
       "ID": 20175,
-      "Name": "RoNR_FireMonk 1"
+      "Name": "RoNR_EnemyArmament_FireMonk 1"
     },
     {
       "ID": 20176,
-      "Name": "RoNR_FireMonk 2"
+      "Name": "RoNR_EnemyArmament_FireMonk 2"
     },
     {
       "ID": 2585,
-      "Name": "RoNR_Loretta 1"
+      "Name": "RoNR_EnemyArmament_Loretta 1"
     },
     {
       "ID": 2586,
-      "Name": "RoNR_Loretta 2"
+      "Name": "RoNR_EnemyArmament_Loretta 2"
     },
     {
       "ID": 2590,
-      "Name": "RoNR_Astel 1"
+      "Name": "RoNR_EnemyArmament_Astel 1"
     },
     {
       "ID": 2591,
-      "Name": "RoNR_Astel 2"
+      "Name": "RoNR_EnemyArmament_Astel 2"
     },
     {
       "ID": 2595,
-      "Name": "RoNR_Godefrick 1"
+      "Name": "RoNR_EnemyArmament_Godefrick 1"
     },
     {
       "ID": 2596,
-      "Name": "RoNR_Godefrick 2"
+      "Name": "RoNR_EnemyArmament_Godefrick 2"
     },
     {
       "ID": 2610,
-      "Name": "RoNR_Prelate 1"
+      "Name": "RoNR_EnemyArmament_Prelate 1"
     },
     {
       "ID": 2611,
-      "Name": "RoNR_Prelate 2"
+      "Name": "RoNR_EnemyArmament_Prelate 2"
     },
     {
       "ID": 2615,
-      "Name": "RoNR_BigHand 1"
+      "Name": "RoNR_EnemyArmament_BigHand 1"
     },
     {
       "ID": 2616,
-      "Name": "RoNR_BigHand 2"
+      "Name": "RoNR_EnemyArmament_BigHand 2"
     },
     {
       "ID": 2660,
-      "Name": "RoNR_Redmane 1"
+      "Name": "RoNR_EnemyArmament_Redmane 1"
     },
     {
       "ID": 2661,
-      "Name": "RoNR_Redmane 2"
+      "Name": "RoNR_EnemyArmament_Redmane 2"
     },
     {
       "ID": 2620,
-      "Name": "RoNR_BanishedKnight 1"
+      "Name": "RoNR_EnemyArmament_BanishedKnight 1"
     },
     {
       "ID": 2621,
-      "Name": "RoNR_BanishedKnight 2"
+      "Name": "RoNR_EnemyArmament_BanishedKnight 2"
     },
     {
       "ID": 2645,
-      "Name": "RoNR_Fallingstar 1"
+      "Name": "RoNR_EnemyArmament_Fallingstar 1"
     },
     {
       "ID": 2646,
-      "Name": "RoNR_Fallingstar 2"
+      "Name": "RoNR_EnemyArmament_Fallingstar 2"
     },
     {
       "ID": 2630,
-      "Name": "RoNR_Hippo 1"
+      "Name": "RoNR_EnemyArmament_Hippo 1"
     },
     {
       "ID": 2631,
-      "Name": "RoNR_Hippo 2"
+      "Name": "RoNR_EnemyArmament_Hippo 2"
     },
     {
       "ID": 31000,
@@ -10463,7 +10463,7 @@
     },
     {
       "ID": 2695,
-      "Name": "RoNR_Pot 1"
+      "Name": "RoNR_EnemyArmament_Pot 1"
     },
     {
       "ID": 31002,
@@ -10471,7 +10471,7 @@
     },
     {
       "ID": 2700,
-      "Name": "RoNR_Assassin 1"
+      "Name": "RoNR_EnemyArmament_Assassin 1"
     },
     {
       "ID": 31003,
@@ -10483,7 +10483,7 @@
     },
     {
       "ID": 2710,
-      "Name": "RoNR_WingMisbegotten 1"
+      "Name": "RoNR_EnemyArmament_WingMisbegotten 1"
     },
     {
       "ID": 31005,
@@ -10519,11 +10519,15 @@
     },
     {
       "ID": 2690,
-      "Name": "RoNR_SangNo 1"
+      "Name": "RoNR_EnemyArmament_SangNo 1"
     },
     {
       "ID": 2691,
-      "Name": "RoNR_SangNo 2"
+      "Name": "RoNR_EnemyArmament_SangNo 2"
+    },
+    {
+      "ID": 31110,
+      "Name": "RoNR_Weapon_GlintKris"
     }
   ]
 }
