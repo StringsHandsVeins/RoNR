@@ -168,6 +168,18 @@
     {
       "ID": 20122,
       "Name": "RoNR_ScorpSting +++"
+    },
+    {
+      "ID": 20130,
+      "Name": "RoNR_Excise +"
+    },
+    {
+      "ID": 20131,
+      "Name": "RoNR_Excise ++"
+    },
+    {
+      "ID": 20132,
+      "Name": "RoNR_Excise +++"
     }
   ]
 }
