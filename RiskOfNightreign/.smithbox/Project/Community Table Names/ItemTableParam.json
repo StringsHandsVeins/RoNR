@@ -10528,6 +10528,10 @@
     {
       "ID": 31110,
       "Name": "RoNR_Weapon_GlintKris"
+    },
+    {
+      "ID": 31120,
+      "Name": "RoNR_Weapon_ScorpSting"
     }
   ]
 }
