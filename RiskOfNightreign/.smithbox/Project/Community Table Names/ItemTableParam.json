@@ -10536,6 +10536,14 @@
     {
       "ID": 31130,
       "Name": "RoNR_Weapon_RedmaneStrord"
+    },
+    {
+      "ID": 31140,
+      "Name": "RoNR_Weapon_CeleSickle"
+    },
+    {
+      "ID": 2715,
+      "Name": "RoNR_EnemyArmament_Celebrant 1"
     }
   ]
 }

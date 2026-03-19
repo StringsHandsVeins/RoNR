@@ -180,6 +180,18 @@
     {
       "ID": 20132,
       "Name": "RoNR_Excise +++"
+    },
+    {
+      "ID": 20140,
+      "Name": "RoNR_Harvest +"
+    },
+    {
+      "ID": 20141,
+      "Name": "RoNR_Harvest ++"
+    },
+    {
+      "ID": 20142,
+      "Name": "RoNR_Harvest +++"
     }
   ]
 }
