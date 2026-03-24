@@ -10544,6 +10544,42 @@
     {
       "ID": 2715,
       "Name": "RoNR_EnemyArmament_Celebrant 1"
+    },
+    {
+      "ID": 31150,
+      "Name": "RoNR_Weapon_Wakizashi"
+    },
+    {
+      "ID": 31160,
+      "Name": "RoNR_Weapon_Erdagger"
+    },
+    {
+      "ID": 31170,
+      "Name": "RoNR_Weapon_Callblade"
+    },
+    {
+      "ID": 31180,
+      "Name": "RoNR_Weapon_OrnamentSword"
+    },
+    {
+      "ID": 31190,
+      "Name": "RoNR_Weapon_GoldEpi"
+    },
+    {
+      "ID": 2720,
+      "Name": "RoNR_EnemyArmament_MausoleumKnight 1"
+    },
+    {
+      "ID": 2721,
+      "Name": "RoNR_EnemyArmament_MausoleumKnight 2"
+    },
+    {
+      "ID": 31200,
+      "Name": "RoNR_Weapon_NoxSword"
+    },
+    {
+      "ID": 31210,
+      "Name": "RoNR_Weapon_InsepSword"
     }
   ]
 }
