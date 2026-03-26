@@ -192,6 +192,18 @@
     {
       "ID": 20142,
       "Name": "RoNR_Harvest +++"
+    },
+    {
+      "ID": 20160,
+      "Name": "RoNR_Erdagger +"
+    },
+    {
+      "ID": 20161,
+      "Name": "RoNR_Erdagger ++"
+    },
+    {
+      "ID": 20162,
+      "Name": "RoNR_Erdagger +++"
     }
   ]
 }

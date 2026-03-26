@@ -10580,6 +10580,46 @@
     {
       "ID": 31210,
       "Name": "RoNR_Weapon_InsepSword"
+    },
+    {
+      "ID": 31220,
+      "Name": "RoNR_Weapon_CodeSword"
+    },
+    {
+      "ID": 31230,
+      "Name": "RoNR_Weapon_RingSword"
+    },
+    {
+      "ID": 31240,
+      "Name": "RoNR_Weapon_NightFlameSword"
+    },
+    {
+      "ID": 31250,
+      "Name": "RoNR_Weapon_LotholySowrd"
+    },
+    {
+      "ID": 31260,
+      "Name": "RoNR_Weapon_CariaSword"
+    },
+    {
+      "ID": 31270,
+      "Name": "RoNR_Weapon_TrinaSword"
+    },
+    {
+      "ID": 31280,
+      "Name": "RoNR_Weapon_MiqSword"
+    },
+    {
+      "ID": 312890,
+      "Name": "RoNR_Weapon_SlenderSword"
+    },
+    {
+      "ID": 31290,
+      "Name": "RoNR_Weapon_SlenderSword"
+    },
+    {
+      "ID": 31300,
+      "Name": "RoNR_Weapon_WarTalon"
     }
   ]
 }
