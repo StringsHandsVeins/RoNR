@@ -10620,6 +10620,38 @@
     {
       "ID": 31300,
       "Name": "RoNR_Weapon_WarTalon"
+    },
+    {
+      "ID": 31310,
+      "Name": "RoNR_Weapon_CarSorcSword"
+    },
+    {
+      "ID": 31320,
+      "Name": "RoNR_Weapon_SwordLight"
+    },
+    {
+      "ID": 31330,
+      "Name": "RoNR_Weapon_SwordDark"
+    },
+    {
+      "ID": 31340,
+      "Name": "RoNR_Weapon_Gotttwins"
+    },
+    {
+      "ID": 31350,
+      "Name": "RoNR_Weapon_ForkSword"
+    },
+    {
+      "ID": 31360,
+      "Name": "RoNR_Weapon_IronSword"
+    },
+    {
+      "ID": 31370,
+      "Name": "RoNR_Weapon_LordSword"
+    },
+    {
+      "ID": 31380,
+      "Name": "RoNR_Weapon_RedmaneGSword"
     }
   ]
 }
