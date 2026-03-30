@@ -10652,6 +10652,34 @@
     {
       "ID": 31380,
       "Name": "RoNR_Weapon_RedmaneGSword"
+    },
+    {
+      "ID": 31390,
+      "Name": "RoNR_Weapon_LeyKnightSword"
+    },
+    {
+      "ID": 31400,
+      "Name": "RoNR_Weapon_Flerge"
+    },
+    {
+      "ID": 31410,
+      "Name": "RoNR_Weapon_OrdSword"
+    },
+    {
+      "ID": 31420,
+      "Name": "RoNR_Weapon_AlabastSword"
+    },
+    {
+      "ID": 31430,
+      "Name": "RoNR_Weapon_BanishedSword"
+    },
+    {
+      "ID": 31440,
+      "Name": "RoNR_Weapon_RelicSword"
+    },
+    {
+      "ID": 31450,
+      "Name": "RoNR_Weapon_HelSteeple"
     }
   ]
 }

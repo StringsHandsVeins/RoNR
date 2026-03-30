@@ -204,6 +204,18 @@
     {
       "ID": 20162,
       "Name": "RoNR_Erdagger +++"
+    },
+    {
+      "ID": 20440,
+      "Name": "RoNR_RelicSword +"
+    },
+    {
+      "ID": 20441,
+      "Name": "RoNR_RelicSword ++"
+    },
+    {
+      "ID": 20442,
+      "Name": "RoNR_RelicSword +++"
     }
   ]
 }
