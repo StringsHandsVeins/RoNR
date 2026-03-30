@@ -10680,6 +10680,10 @@
     {
       "ID": 31450,
       "Name": "RoNR_Weapon_HelSteeple"
+    },
+    {
+      "ID": 31460,
+      "Name": "RoNR_Weapon_BlasBlade"
     }
   ]
 }

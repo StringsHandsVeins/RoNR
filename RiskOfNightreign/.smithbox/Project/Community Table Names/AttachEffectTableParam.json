@@ -216,6 +216,18 @@
     {
       "ID": 20442,
       "Name": "RoNR_RelicSword +++"
+    },
+    {
+      "ID": 20460,
+      "Name": "RoNR_Blasphemous +"
+    },
+    {
+      "ID": 20461,
+      "Name": "RoNR_Blasphemous ++"
+    },
+    {
+      "ID": 20462,
+      "Name": "RoNR_Blasphemous +++"
     }
   ]
 }
