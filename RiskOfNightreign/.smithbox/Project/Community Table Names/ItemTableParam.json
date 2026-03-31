@@ -10692,6 +10692,14 @@
     {
       "ID": 31480,
       "Name": "RoNR_Weapon_Milosword"
+    },
+    {
+      "ID": 31490,
+      "Name": "RoNR_Weapon_GOGS"
+    },
+    {
+      "ID": 2625,
+      "Name": "RoNR_EnemyArmament_Leonine 1"
     }
   ]
 }
