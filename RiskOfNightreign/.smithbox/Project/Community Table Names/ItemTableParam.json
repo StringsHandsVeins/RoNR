@@ -10684,6 +10684,14 @@
     {
       "ID": 31460,
       "Name": "RoNR_Weapon_BlasBlade"
+    },
+    {
+      "ID": 31470,
+      "Name": "RoNR_Weapon_Maraisword"
+    },
+    {
+      "ID": 31480,
+      "Name": "RoNR_Weapon_Milosword"
     }
   ]
 }
