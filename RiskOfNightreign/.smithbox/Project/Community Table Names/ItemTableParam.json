@@ -10700,6 +10700,14 @@
     {
       "ID": 2625,
       "Name": "RoNR_EnemyArmament_Leonine 1"
+    },
+    {
+      "ID": 31500,
+      "Name": "RoNR_Weapon_Claymore"
+    },
+    {
+      "ID": 31510,
+      "Name": "RoNR_Weapon_DeathPoke"
     }
   ]
 }
