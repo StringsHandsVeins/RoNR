@@ -9163,7 +9163,7 @@
     },
     {
       "ID": 700,
-      "Name": "RoNR_Legendary Item (All)"
+      "Name": "RoNR_Passives_Legendary_POOL"
     },
     {
       "ID": 701,
@@ -9203,7 +9203,7 @@
     },
     {
       "ID": 600,
-      "Name": "RoNR_Rare Item (All)"
+      "Name": "RoNR_Passives_Rare_POOL"
     },
     {
       "ID": 601,
@@ -9219,7 +9219,7 @@
     },
     {
       "ID": 500,
-      "Name": "RoNR_Common Item (All)"
+      "Name": "RoNR_Passives_Common_POOL"
     },
     {
       "ID": 501,
@@ -9987,51 +9987,51 @@
     },
     {
       "ID": 610,
-      "Name": "Rare 0"
+      "Name": "RoNR_Passives_Rare_0"
     },
     {
       "ID": 611,
-      "Name": "Rare 1"
+      "Name": "RoNR_Passives_Rare_1"
     },
     {
       "ID": 612,
-      "Name": "Rare 2"
+      "Name": "RoNR_Passives_Rare_2"
     },
     {
       "ID": 613,
-      "Name": "Rare 3"
+      "Name": "RoNR_Passives_Rare_3"
     },
     {
       "ID": 614,
-      "Name": "Rare 4"
+      "Name": "RoNR_Passives_Rare_4"
     },
     {
       "ID": 615,
-      "Name": "Rare 5"
+      "Name": "RoNR_Passives_Rare_5"
     },
     {
       "ID": 616,
-      "Name": "Rare 6"
+      "Name": "RoNR_Passives_Rare_6"
     },
     {
       "ID": 617,
-      "Name": "Rare 7"
+      "Name": "RoNR_Passives_Rare_7"
     },
     {
       "ID": 618,
-      "Name": "Rare 8"
+      "Name": "RoNR_Passives_Rare_8"
     },
     {
       "ID": 619,
-      "Name": "Rare 9"
+      "Name": "RoNR_Passives_Rare_9"
     },
     {
       "ID": 620,
-      "Name": "Rare 10"
+      "Name": "RoNR_Passives_Rare_10"
     },
     {
       "ID": 621,
-      "Name": "Rare 11"
+      "Name": "RoNR_Passives_Rare_11"
     },
     {
       "ID": 320,
@@ -10043,27 +10043,27 @@
     },
     {
       "ID": 515,
-      "Name": "Common 5"
+      "Name": "RoNR_Passives_Common_5"
     },
     {
       "ID": 514,
-      "Name": "Common 4"
+      "Name": "RoNR_Passives_Common_4"
     },
     {
       "ID": 510,
-      "Name": "Common 0"
+      "Name": "RoNR_Passives_Common_0"
     },
     {
       "ID": 513,
-      "Name": "Common 3"
+      "Name": "RoNR_Passives_Common_3"
     },
     {
       "ID": 512,
-      "Name": "Common 2"
+      "Name": "RoNR_Passives_Common_2"
     },
     {
       "ID": 511,
-      "Name": "Common 1"
+      "Name": "RoNR_Passives_Common_1"
     },
     {
       "ID": 571,
@@ -10179,7 +10179,7 @@
     },
     {
       "ID": 516,
-      "Name": "Common 6"
+      "Name": "RoNR_Passives_Common_6"
     },
     {
       "ID": 622,
@@ -10708,6 +10708,14 @@
     {
       "ID": 31510,
       "Name": "RoNR_Weapon_DeathPoke"
+    },
+    {
+      "ID": 31520,
+      "Name": "RoNR_Weapon_BlackBlade"
+    },
+    {
+      "ID": 2635,
+      "Name": "RoNR_EnemyArmament_"
     }
   ]
 }
