@@ -10716,6 +10716,18 @@
     {
       "ID": 2635,
       "Name": "RoNR_EnemyArmament_"
+    },
+    {
+      "ID": 31530,
+      "Name": "RoNR_Weapon_GaelSword"
+    },
+    {
+      "ID": 2725,
+      "Name": "RoNR_EnemyArmament_Godskins 1"
+    },
+    {
+      "ID": 2726,
+      "Name": "RoNR_EnemyArmament_Godskins 2"
     }
   ]
 }
