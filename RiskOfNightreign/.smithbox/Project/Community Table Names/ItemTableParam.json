@@ -10699,7 +10699,7 @@
     },
     {
       "ID": 2625,
-      "Name": "RoNR_EnemyArmament_Leonine 1"
+      "Name": "RoNR_EnemyArmament_Leonine Common"
     },
     {
       "ID": 31500,
@@ -10728,6 +10728,18 @@
     {
       "ID": 2726,
       "Name": "RoNR_EnemyArmament_Godskins 2"
+    },
+    {
+      "ID": 2626,
+      "Name": "RoNR_EnemyArmament_Leonine Uncommon"
+    },
+    {
+      "ID": 2627,
+      "Name": "RoNR_EnemyArmament_Leonine Rare"
+    },
+    {
+      "ID": 2628,
+      "Name": "RoNR_EnemyArmament_Leonine Legendary"
     }
   ]
 }
