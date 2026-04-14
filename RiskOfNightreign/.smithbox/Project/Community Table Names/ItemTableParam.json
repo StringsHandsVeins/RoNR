@@ -10699,7 +10699,7 @@
     },
     {
       "ID": 2625,
-      "Name": "RoNR_EnemyArmament_Leonine Common"
+      "Name": "RoNR_WeaponPool_Greatswords Common"
     },
     {
       "ID": 31500,
@@ -10731,15 +10731,15 @@
     },
     {
       "ID": 2626,
-      "Name": "RoNR_EnemyArmament_Leonine Uncommon"
+      "Name": "RoNR_WeaponPool_Greatswords Uncommon"
     },
     {
       "ID": 2627,
-      "Name": "RoNR_EnemyArmament_Leonine Rare"
+      "Name": "RoNR_WeaponPool_Greatswords Rare"
     },
     {
       "ID": 2628,
-      "Name": "RoNR_EnemyArmament_Leonine Legendary"
+      "Name": "RoNR_WeaponPool_Greatswords Legendary"
     }
   ]
 }
