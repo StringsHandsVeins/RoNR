@@ -9199,7 +9199,7 @@
     },
     {
       "ID": 1000,
-      "Name": ""
+      "Name": "RoNR_Passives_Mineshaft"
     },
     {
       "ID": 600,
@@ -10740,6 +10740,18 @@
     {
       "ID": 2628,
       "Name": "RoNR_WeaponPool_Greatswords Legendary"
+    },
+    {
+      "ID": 1010,
+      "Name": "RoNR_Passives_FireStructure"
+    },
+    {
+      "ID": 1020,
+      "Name": "RoNR_Passives_MagicStructure"
+    },
+    {
+      "ID": 1030,
+      "Name": "RoNR_Passives_LightningStructure"
     }
   ]
 }
