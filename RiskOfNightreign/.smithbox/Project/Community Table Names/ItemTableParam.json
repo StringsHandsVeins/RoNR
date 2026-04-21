@@ -9199,7 +9199,7 @@
     },
     {
       "ID": 1000,
-      "Name": "RoNR_Passives_Mineshaft"
+      "Name": "RoNR_Passives_Smithing_All"
     },
     {
       "ID": 600,
@@ -10743,15 +10743,91 @@
     },
     {
       "ID": 1010,
-      "Name": "RoNR_Passives_FireStructure"
+      "Name": "RoNR_Passives_Fire_All"
     },
     {
       "ID": 1020,
-      "Name": "RoNR_Passives_MagicStructure"
+      "Name": "RoNR_Passives_Magic_All"
     },
     {
       "ID": 1030,
-      "Name": "RoNR_Passives_LightningStructure"
+      "Name": "RoNR_Passives_Lightning_All"
+    },
+    {
+      "ID": 1040,
+      "Name": "RoNR_Passives_Holy_All"
+    },
+    {
+      "ID": 1050,
+      "Name": "RoNR_Passives_Decay_All"
+    },
+    {
+      "ID": 1060,
+      "Name": "RoNR_Passives_Bleed_All"
+    },
+    {
+      "ID": 1070,
+      "Name": "RoNR_Passives_Sleep_All"
+    },
+    {
+      "ID": 1080,
+      "Name": "RoNR_Passives_Madness_All"
+    },
+    {
+      "ID": 1090,
+      "Name": "RoNR_Passives_Death_All"
+    },
+    {
+      "ID": 1100,
+      "Name": "RoNR_Passives_Frost_All"
+    },
+    {
+      "ID": 1011,
+      "Name": "RoNR_Passives_Fire_Common"
+    },
+    {
+      "ID": 1012,
+      "Name": "RoNR_Passives_Fire_Uncommon"
+    },
+    {
+      "ID": 1013,
+      "Name": "RoNR_Passives_Fire_Rare"
+    },
+    {
+      "ID": 1014,
+      "Name": "RoNR_Passives_Fire_Legendary"
+    },
+    {
+      "ID": 1024,
+      "Name": "RoNR_Passives_Magic_Legendary"
+    },
+    {
+      "ID": 1023,
+      "Name": "RoNR_Passives_Magic_Rare"
+    },
+    {
+      "ID": 1022,
+      "Name": "RoNR_Passives_Magic_Uncommon"
+    },
+    {
+      "ID": 1021,
+      "Name": "RoNR_Passives_Magic_Common"
+    },
+    {
+      "ID": 1034,
+      "Name": "RoNR_Psssives_Lightning_Legendary"
+    },
+    {
+      "ID": 1033,
+      "Name": "RoNR_Psssives_Lightning_Rare"
+    },
+    {
+      "ID": 1032,
+      "Name": "RoNR_Psssives_Lightning_Uncommon"
+    },
+    {
+      "ID": 1031,
+      "Name": "RoNR_Psssives_Lightning_Common"
     }
   ]
 }
