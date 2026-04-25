@@ -10828,6 +10828,134 @@
     {
       "ID": 1031,
       "Name": "RoNR_Psssives_Lightning_Common"
+    },
+    {
+      "ID": 1041,
+      "Name": "RoNR_Passives_Holy_Common"
+    },
+    {
+      "ID": 1042,
+      "Name": "RoNR_Passives_Holy_Uncommon"
+    },
+    {
+      "ID": 1043,
+      "Name": "RoNR_Passives_Holy_Rare"
+    },
+    {
+      "ID": 1051,
+      "Name": "RoNR_Passives_Decay_Common"
+    },
+    {
+      "ID": 1052,
+      "Name": "RoNR_Passives_Decay_Uncommon"
+    },
+    {
+      "ID": 1053,
+      "Name": "RoNR_Passives_Decay_Rare"
+    },
+    {
+      "ID": 1061,
+      "Name": "RoNR_Passives_Bleed_Common"
+    },
+    {
+      "ID": 1062,
+      "Name": "RoNR_Passives_Bleed_Uncommon"
+    },
+    {
+      "ID": 1063,
+      "Name": "RoNR_Passives_Bleed_Rare"
+    },
+    {
+      "ID": 1071,
+      "Name": "RoNR_Passives_Sleep_Common"
+    },
+    {
+      "ID": 1072,
+      "Name": "RoNR_Passives_Sleep_Uncommon"
+    },
+    {
+      "ID": 1073,
+      "Name": "RoNR_Passives_Sleep_Rare"
+    },
+    {
+      "ID": 1074,
+      "Name": "RoNR_Passives_Sleep_Legendary"
+    },
+    {
+      "ID": 1081,
+      "Name": "RoNR_Passives_Madness_Common"
+    },
+    {
+      "ID": 1082,
+      "Name": "RoNR_Passives_Madness_Uncommon"
+    },
+    {
+      "ID": 1083,
+      "Name": "RoNR_Passives_Madness_Rare"
+    },
+    {
+      "ID": 1084,
+      "Name": "RoNR_Passives_Madness_Legendary"
+    },
+    {
+      "ID": 1091,
+      "Name": "RoNR_Passives_Death_Common"
+    },
+    {
+      "ID": 1092,
+      "Name": "RoNR_Passives_Death_Uncommon"
+    },
+    {
+      "ID": 1093,
+      "Name": "RoNR_Passives_Death_Rare"
+    },
+    {
+      "ID": 1094,
+      "Name": "RoNR_Passives_Death_Legendary"
+    },
+    {
+      "ID": 1101,
+      "Name": "RoNR_Passives_Frost_Common"
+    },
+    {
+      "ID": 1102,
+      "Name": "RoNR_Passives_Frost_Uncommon"
+    },
+    {
+      "ID": 1103,
+      "Name": "RoNR_Passives_Frost_Rare"
+    },
+    {
+      "ID": 1104,
+      "Name": "RoNR_Passives_Frost_Legendary"
+    },
+    {
+      "ID": 1001,
+      "Name": "RoNR_Passives_Smithing_Common"
+    },
+    {
+      "ID": 1002,
+      "Name": "RoNR_Passives_Smithing_Uncommon"
+    },
+    {
+      "ID": 1003,
+      "Name": "RoNR_Passives_Smithing_Rare"
+    },
+    {
+      "ID": 1004,
+      "Name": "RoNR_Passives_Smithing_Legendary"
+    },
+    {
+      "ID": 1044,
+      "Name": "RoNR_Passives_Holy_Legendary"
+    },
+    {
+      "ID": 1054,
+      "Name": "RoNR_Passives_Decay_Legendary"
+    },
+    {
+      "ID": 1064,
+      "Name": "RoNR_Passives_Bleed_Legendary"
     }
   ]
 }
