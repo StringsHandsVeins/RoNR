@@ -9163,7 +9163,7 @@
     },
     {
       "ID": 700,
-      "Name": "RoNR_Passives_Legendary_POOL"
+      "Name": "RoNR_Passives_All_Legendary_POOL"
     },
     {
       "ID": 701,
@@ -9203,7 +9203,7 @@
     },
     {
       "ID": 600,
-      "Name": "RoNR_Passives_Rare_POOL"
+      "Name": "RoNR_Passives_All_Rare_POOL"
     },
     {
       "ID": 601,
@@ -9219,7 +9219,7 @@
     },
     {
       "ID": 500,
-      "Name": "RoNR_Passives_Common_POOL"
+      "Name": "RoNR_Passives_All_Common_POOL"
     },
     {
       "ID": 501,
