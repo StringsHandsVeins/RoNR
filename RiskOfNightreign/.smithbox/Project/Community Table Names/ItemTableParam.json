@@ -10775,7 +10775,7 @@
     },
     {
       "ID": 1090,
-      "Name": "RoNR_Passives_Death_All"
+      "Name": "RoNR_Passives_Untyped_All"
     },
     {
       "ID": 1100,
@@ -10899,19 +10899,19 @@
     },
     {
       "ID": 1091,
-      "Name": "RoNR_Passives_Death_Common"
+      "Name": "RoNR_Passives_Untyped_Common"
     },
     {
       "ID": 1092,
-      "Name": "RoNR_Passives_Death_Uncommon"
+      "Name": "RoNR_Passives_Untyped_Uncommon"
     },
     {
       "ID": 1093,
-      "Name": "RoNR_Passives_Death_Rare"
+      "Name": "RoNR_Passives_Untyped_Rare"
     },
     {
       "ID": 1094,
-      "Name": "RoNR_Passives_Death_Legendary"
+      "Name": "RoNR_Passives_Untyped_Legendary"
     },
     {
       "ID": 1101,
@@ -10956,6 +10956,50 @@
     {
       "ID": 1064,
       "Name": "RoNR_Passives_Bleed_Legendary"
+    },
+    {
+      "ID": 1110,
+      "Name": "RoNR_Passives_StatsUp_All"
+    },
+    {
+      "ID": 1111,
+      "Name": "RoNR_Passives_StatsUp_Common"
+    },
+    {
+      "ID": 1112,
+      "Name": "RoNR_Passives_StatsUp_Uncommon"
+    },
+    {
+      "ID": 1113,
+      "Name": "RoNR_Passives_StatsUp_Rare"
+    },
+    {
+      "ID": 1114,
+      "Name": "RoNR_Passives_StatsUp_Legendary"
+    },
+    {
+      "ID": 40000,
+      "Name": "RoNR_Weapons_Common_All"
+    },
+    {
+      "ID": 40001,
+      "Name": "RoNR_Common_Daggers"
+    },
+    {
+      "ID": 40100,
+      "Name": "RoNR_Weapons_Uncommon_All"
+    },
+    {
+      "ID": 40200,
+      "Name": "RoNR_Weapons_Rare_All"
+    },
+    {
+      "ID": 40300,
+      "Name": "RoNR_Weapons_Legendary_All"
+    },
+    {
+      "ID": 40400,
+      "Name": "RoNR_Weapons_Cursed_All"
     }
   ]
 }
