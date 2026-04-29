@@ -10455,7 +10455,7 @@
     },
     {
       "ID": 31000,
-      "Name": "RoNR_Weapon_Giant-Crusher"
+      "Name": "RoNR_Weapons_ALL"
     },
     {
       "ID": 31001,
@@ -11000,6 +11000,18 @@
     {
       "ID": 40400,
       "Name": "RoNR_Weapons_Cursed_All"
+    },
+    {
+      "ID": 40101,
+      "Name": "RoNR_Weapons_Uncommon_Daggers"
+    },
+    {
+      "ID": 40201,
+      "Name": "RoNR_Weapons_Rare_Daggers"
+    },
+    {
+      "ID": 40301,
+      "Name": "RoNR_Weapons_Legendary_Daggers"
     }
   ]
 }
