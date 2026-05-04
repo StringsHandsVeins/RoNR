@@ -11012,6 +11012,18 @@
     {
       "ID": 40301,
       "Name": "RoNR_Weapons_Legendary_Daggers"
+    },
+    {
+      "ID": 40202,
+      "Name": "RoNR_Weapons_Rare_StrSwords"
+    },
+    {
+      "ID": 40102,
+      "Name": "RoNR_Weapons_Uncommon_StrSwords"
+    },
+    {
+      "ID": 40302,
+      "Name": "RoNR_Weapons_Legendary_StrSwords"
     }
   ]
 }
