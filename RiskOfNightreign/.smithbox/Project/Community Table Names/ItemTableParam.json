@@ -11024,6 +11024,18 @@
     {
       "ID": 40302,
       "Name": "RoNR_Weapons_Legendary_StrSwords"
+    },
+    {
+      "ID": 40103,
+      "Name": "RoNR_Weapons_Uncommon_Greatswords"
+    },
+    {
+      "ID": 40203,
+      "Name": "RoNR_Weapons_Rare_Greatswords"
+    },
+    {
+      "ID": 40303,
+      "Name": "RoNR_Weapons_Legendary_Greatswords"
     }
   ]
 }
