@@ -10979,7 +10979,7 @@
     },
     {
       "ID": 40000,
-      "Name": "RoNR_Weapons_Common_All"
+      "Name": "RoNR_Weapons_Common_All_Unused"
     },
     {
       "ID": 40001,
@@ -11036,6 +11036,18 @@
     {
       "ID": 40303,
       "Name": "RoNR_Weapons_Legendary_Greatswords"
+    },
+    {
+      "ID": 40109,
+      "Name": "RoNR_Weapons_Uncommon_Spears"
+    },
+    {
+      "ID": 40209,
+      "Name": "RoNR_Weapons_Rare_Spears"
+    },
+    {
+      "ID": 40309,
+      "Name": "RoNR_Weapons_Legendary_Spears"
     }
   ]
 }
