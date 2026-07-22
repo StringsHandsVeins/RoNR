@@ -8776,6 +8776,294 @@
     {
       "ID": 440005053,
       "Name": "Unique Untyped Ballista"
+    },
+    {
+      "ID": 1000,
+      "Name": "RoNR_SmithingUpgrades_Parent"
+    },
+    {
+      "ID": 1004,
+      "Name": "RoNR_smithingUpgrades_Legendary"
+    },
+    {
+      "ID": 1003,
+      "Name": "RoNR_SmithingUpgrades_Rare"
+    },
+    {
+      "ID": 1002,
+      "Name": "RoNR_SmithingUpgrades_Uncommon"
+    },
+    {
+      "ID": 1001,
+      "Name": "RoNR_SmithingUpgrades_Common"
+    },
+    {
+      "ID": 1010,
+      "Name": "RoNR_FireUpgrades_Parent"
+    },
+    {
+      "ID": 1011,
+      "Name": "RoNR_FireUpgrades_1"
+    },
+    {
+      "ID": 1012,
+      "Name": "RoNR_FireUpgrades_2"
+    },
+    {
+      "ID": 1013,
+      "Name": "RoNR_FireUpgrades_3"
+    },
+    {
+      "ID": 1014,
+      "Name": "RoNR_FireUpgrades_4"
+    },
+    {
+      "ID": 1020,
+      "Name": "RoNR_MagicUpgrades_Parent"
+    },
+    {
+      "ID": 1021,
+      "Name": "RoNR_MagicUpgrades_1"
+    },
+    {
+      "ID": 1022,
+      "Name": "RoNR_MagicUpgrades_2"
+    },
+    {
+      "ID": 1023,
+      "Name": "RoNR_MagicUpgrades_3"
+    },
+    {
+      "ID": 1024,
+      "Name": "RoNR_MagicUpgrades_4"
+    },
+    {
+      "ID": 1030,
+      "Name": "RoNR_LightningUpgrades_Parent"
+    },
+    {
+      "ID": 1031,
+      "Name": "RoNR_LightningUpgrades_1"
+    },
+    {
+      "ID": 1032,
+      "Name": "RoNR_LightningUpgrades_2"
+    },
+    {
+      "ID": 1033,
+      "Name": "RoNR_LightningUpgrades_3"
+    },
+    {
+      "ID": 1034,
+      "Name": "RoNR_LightningUpgrades_4"
+    },
+    {
+      "ID": 1040,
+      "Name": "RoNR_HolyUpgrades_Parent"
+    },
+    {
+      "ID": 1041,
+      "Name": "RoNR_HolyUpgrades_1"
+    },
+    {
+      "ID": 1042,
+      "Name": "RoNR_HolyUpgrades_2"
+    },
+    {
+      "ID": 1043,
+      "Name": "RoNR_HolyUpgrades_3"
+    },
+    {
+      "ID": 1044,
+      "Name": "RoNR_HolyUpgrades_4"
+    },
+    {
+      "ID": 1050,
+      "Name": "RoNR_DecayUpgrades_Parent"
+    },
+    {
+      "ID": 1051,
+      "Name": "RoNR_DecayUpgrades_1"
+    },
+    {
+      "ID": 1052,
+      "Name": "RoNR_DecayUpgrades_2"
+    },
+    {
+      "ID": 1053,
+      "Name": "RoNR_DecayUpgrades_3"
+    },
+    {
+      "ID": 1054,
+      "Name": "RoNR_DecayUpgrades_4"
+    },
+    {
+      "ID": 1060,
+      "Name": "RoNR_BloodUpgrades_Parent"
+    },
+    {
+      "ID": 1061,
+      "Name": "RoNR_BloodUpgrades_1"
+    },
+    {
+      "ID": 1062,
+      "Name": "RoNR_BloodUpgrades_2"
+    },
+    {
+      "ID": 1063,
+      "Name": "RoNR_BloodUpgrades_3"
+    },
+    {
+      "ID": 1064,
+      "Name": "RoNR_BloodUpgrades_4"
+    },
+    {
+      "ID": 1070,
+      "Name": "RoNR_SleepUpgrades_Parent"
+    },
+    {
+      "ID": 1071,
+      "Name": "RoNR_SleepUpgrades_1"
+    },
+    {
+      "ID": 1072,
+      "Name": "RoNR_SleepUpgrades_2"
+    },
+    {
+      "ID": 1073,
+      "Name": "RoNR_SleepUpgrades_3"
+    },
+    {
+      "ID": 1074,
+      "Name": "RoNR_SleepUpgrades_4"
+    },
+    {
+      "ID": 1080,
+      "Name": "RoNR_MadnessUpgrades_Parent"
+    },
+    {
+      "ID": 1081,
+      "Name": "RoNR_MadnessUpgrades_1"
+    },
+    {
+      "ID": 1082,
+      "Name": "RoNR_MadnessUpgrades_2"
+    },
+    {
+      "ID": 1083,
+      "Name": "RoNR_MadnessUpgrades_3"
+    },
+    {
+      "ID": 1084,
+      "Name": "RoNR_MadnessUpgrades_4"
+    },
+    {
+      "ID": 1100,
+      "Name": "RoNR_FrostUpgrades_Parent"
+    },
+    {
+      "ID": 1101,
+      "Name": "RoNR_FrostUpgrades_1"
+    },
+    {
+      "ID": 1102,
+      "Name": "RoNR_FrostUpgrades_2"
+    },
+    {
+      "ID": 1103,
+      "Name": "RoNR_FrostUpgrades_3"
+    },
+    {
+      "ID": 1104,
+      "Name": "RoNR_FrostUpgrades_4"
+    },
+    {
+      "ID": 1090,
+      "Name": "RoNR_UntypedUpgrades_Parent"
+    },
+    {
+      "ID": 1091,
+      "Name": "RoNR_UntypedUpgrades_1"
+    },
+    {
+      "ID": 1092,
+      "Name": "RoNR_UntypedUpgrades_2"
+    },
+    {
+      "ID": 1093,
+      "Name": "RoNR_UntypedUpgrades_3"
+    },
+    {
+      "ID": 1094,
+      "Name": "RoNR_UntypedUpgrades_4"
+    },
+    {
+      "ID": 1110,
+      "Name": "RoNR_StatsUpgrades_Parent"
+    },
+    {
+      "ID": 1111,
+      "Name": "RoNR_StatsUpgrades_1"
+    },
+    {
+      "ID": 1112,
+      "Name": "RoNR_StatsUpgrades_2"
+    },
+    {
+      "ID": 1113,
+      "Name": "RoNR_StatsUpgrades_3"
+    },
+    {
+      "ID": 1114,
+      "Name": "RoNR_StatsUpgrades_4"
+    },
+    {
+      "ID": 500,
+      "Name": "RoNR_Passives_Common_Parent"
+    },
+    {
+      "ID": 600,
+      "Name": "RoNR_Passives_Rare_Parent"
+    },
+    {
+      "ID": 700,
+      "Name": "RoNR_Passives_Legendary"
+    },
+    {
+      "ID": 40101,
+      "Name": "RoNR_Uncommon_Daggers"
+    },
+    {
+      "ID": 40000,
+      "Name": "RoNR_CommonWeapons_Parent"
+    },
+    {
+      "ID": 40100,
+      "Name": "RoNR_UncommonWeapons_Parent"
+    },
+    {
+      "ID": 40200,
+      "Name": "RoNR_RareWeapons_Parent"
+    },
+    {
+      "ID": 40300,
+      "Name": "RoNR_LegendaryWeapons_Parent"
+    },
+    {
+      "ID": 40001,
+      "Name": "RoNR_Common_Daggers"
+    },
+    {
+      "ID": 40002,
+      "Name": "RoNR_Common_StrSwords"
+    },
+    {
+      "ID": 40201,
+      "Name": "RoNR_Rare_Daggers"
+    },
+    {
+      "ID": 40301,
+      "Name": "RoNR_Legendary_Daggers"
     }
   ]
 }
