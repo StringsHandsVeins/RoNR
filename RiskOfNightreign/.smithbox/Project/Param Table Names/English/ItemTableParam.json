@@ -9064,6 +9064,102 @@
     {
       "ID": 40301,
       "Name": "RoNR_Legendary_Daggers"
+    },
+    {
+      "ID": 31000,
+      "Name": "RoNR_Weapons_Parent"
+    },
+    {
+      "ID": 40003,
+      "Name": "RoNR_Common_Greatswords"
+    },
+    {
+      "ID": 40004,
+      "Name": "RoNR_Common_XLSwords"
+    },
+    {
+      "ID": 40005,
+      "Name": "RoNR_Common_CurveSwords"
+    },
+    {
+      "ID": 40006,
+      "Name": "RoNR_Common_GCurvSwords"
+    },
+    {
+      "ID": 40007,
+      "Name": "RoNR_Common_Rapiers"
+    },
+    {
+      "ID": 40008,
+      "Name": "RoNR_Common_HeavyRapiers"
+    },
+    {
+      "ID": 40009,
+      "Name": "RoNR_Common_Spears"
+    },
+    {
+      "ID": 40010,
+      "Name": "RoNR_Commmon_Greatspears"
+    },
+    {
+      "ID": 40011,
+      "Name": "RoNR_Common_Axes"
+    },
+    {
+      "ID": 40012,
+      "Name": "RoNR_Common_Greataxes"
+    },
+    {
+      "ID": 40013,
+      "Name": "RoNR_Common_Hammers"
+    },
+    {
+      "ID": 40014,
+      "Name": "RoNR_Common_Greathammers"
+    },
+    {
+      "ID": 40015,
+      "Name": "RoNR_Common_Colossals"
+    },
+    {
+      "ID": 40016,
+      "Name": "RoNR_Common_Scythes"
+    },
+    {
+      "ID": 40017,
+      "Name": "RoNR_Common_Whips"
+    },
+    {
+      "ID": 40018,
+      "Name": "RoNR_Common_Fists"
+    },
+    {
+      "ID": 40019,
+      "Name": "RoNR_Common_Claws"
+    },
+    {
+      "ID": 40020,
+      "Name": "RoNR_Common_Bows"
+    },
+    {
+      "ID": 40021,
+      "Name": "RoNR_Common_Greatbows"
+    },
+    {
+      "ID": 40022,
+      "Name": "RoNR_Common_Crossbows"
+    },
+    {
+      "ID": 40023,
+      "Name": "RoNR_Common_LGS"
+    },
+    {
+      "ID": 40025,
+      "Name": "RoNR_Common_Catalysts"
+    },
+    {
+      "ID": 40024,
+      "Name": "RoNR_Common_BackhandBlade"
     }
   ]
 }
