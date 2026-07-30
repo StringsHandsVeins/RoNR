@@ -9160,6 +9160,38 @@
     {
       "ID": 40024,
       "Name": "RoNR_Common_BackhandBlade"
+    },
+    {
+      "ID": 40104,
+      "Name": "RoNR_UncommonWeapons_XLSwords"
+    },
+    {
+      "ID": 40204,
+      "Name": "RoNR_RareWeapons_XLSwords"
+    },
+    {
+      "ID": 40207,
+      "Name": "RoNR_RareWeapons_Rapiers"
+    },
+    {
+      "ID": 40307,
+      "Name": "RoNR_LegendaryWeapons_Rapiers"
+    },
+    {
+      "ID": 40107,
+      "Name": "RoNR_UncommonWeapons_Rapiers"
+    },
+    {
+      "ID": 40308,
+      "Name": "RoNR_LegendaryWeapons_HeavyRapiers"
+    },
+    {
+      "ID": 40208,
+      "Name": "RoNR_RareWeapons_HeavyRapiers"
+    },
+    {
+      "ID": 40108,
+      "Name": "RoNR_UncommonWeapons_HeavyRapiers"
     }
   ]
 }
