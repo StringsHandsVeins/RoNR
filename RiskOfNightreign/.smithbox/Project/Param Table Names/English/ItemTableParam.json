@@ -9240,6 +9240,18 @@
     {
       "ID": 40316,
       "Name": "RoNR_Legendary_Scythe+Pole"
+    },
+    {
+      "ID": 40115,
+      "Name": "RoNR_Uncommon_Colossal"
+    },
+    {
+      "ID": 40215,
+      "Name": "RoNR_Rare_Colossal"
+    },
+    {
+      "ID": 40315,
+      "Name": "RoNR_Legendary_Colossal"
     }
   ]
 }
