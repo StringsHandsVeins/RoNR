@@ -9123,7 +9123,7 @@
     },
     {
       "ID": 40016,
-      "Name": "RoNR_Common_Scythes"
+      "Name": "RoNR_Common_Scythes+Poles"
     },
     {
       "ID": 40017,
@@ -9151,7 +9151,7 @@
     },
     {
       "ID": 40023,
-      "Name": "RoNR_Common_LGS"
+      "Name": "RoNR_Common_LGS+Kat"
     },
     {
       "ID": 40025,
@@ -9192,6 +9192,54 @@
     {
       "ID": 40108,
       "Name": "RoNR_UncommonWeapons_HeavyRapiers"
+    },
+    {
+      "ID": 40117,
+      "Name": "RoNR_UncommonWeapon_Whips"
+    },
+    {
+      "ID": 40217,
+      "Name": "RoNR_RareWeapon_Whips"
+    },
+    {
+      "ID": 40317,
+      "Name": "RoNR_LegendaryWeapon_Whips"
+    },
+    {
+      "ID": 40106,
+      "Name": "RoNR_UncommonWeapon_CuGreatsword"
+    },
+    {
+      "ID": 40206,
+      "Name": "RoNR_Rareweapon_GreatCurves"
+    },
+    {
+      "ID": 40306,
+      "Name": "RoNR_Legendaryweapon_CurvedGreatsword"
+    },
+    {
+      "ID": 40123,
+      "Name": "RoNR_Uncommon_LGS+Kat"
+    },
+    {
+      "ID": 40223,
+      "Name": "RoNR_RareWeapon_LGS+Kat"
+    },
+    {
+      "ID": 40323,
+      "Name": "RoNR_LegendaryWeapon_LGS+Kat"
+    },
+    {
+      "ID": 40116,
+      "Name": "RoNR_Uncommon_Scythe+Pole"
+    },
+    {
+      "ID": 40216,
+      "Name": "RoNR_Rare_Scythe+Pole"
+    },
+    {
+      "ID": 40316,
+      "Name": "RoNR_Legendary_Scythe+Pole"
     }
   ]
 }
