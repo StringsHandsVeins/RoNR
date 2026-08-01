@@ -9288,6 +9288,42 @@
     {
       "ID": 40311,
       "Name": "RoNR_Legendary_Axe"
+    },
+    {
+      "ID": 40105,
+      "Name": "RoNR_Uncommon_CuSword"
+    },
+    {
+      "ID": 40205,
+      "Name": "RoNR_Rare_CuSword"
+    },
+    {
+      "ID": 40305,
+      "Name": "RoNR_Legendary_CuSword"
+    },
+    {
+      "ID": 40113,
+      "Name": "RoNR_Uncommon_Hammer"
+    },
+    {
+      "ID": 40213,
+      "Name": "RoNR_Rare_Hammer"
+    },
+    {
+      "ID": 40313,
+      "Name": "RoNR_Legendary_Hammer"
+    },
+    {
+      "ID": 40114,
+      "Name": "RoNR_Uncommon_GrHam"
+    },
+    {
+      "ID": 40214,
+      "Name": "RoNR_Rare_GrHam"
+    },
+    {
+      "ID": 40314,
+      "Name": "RoNR_Legendary_GrHam"
     }
   ]
 }
