@@ -9252,6 +9252,42 @@
     {
       "ID": 40315,
       "Name": "RoNR_Legendary_Colossal"
+    },
+    {
+      "ID": 40120,
+      "Name": "RoNR_Uncommon_Bows"
+    },
+    {
+      "ID": 40220,
+      "Name": "RoNR_Rare_Bows"
+    },
+    {
+      "ID": 40320,
+      "Name": "RoNR_Legendary_Bows"
+    },
+    {
+      "ID": 40112,
+      "Name": "RoNR_Uncommon_GrAx"
+    },
+    {
+      "ID": 40212,
+      "Name": "RoNR_Rare_GrAx"
+    },
+    {
+      "ID": 40312,
+      "Name": "RoNR_Legendary_GrAx"
+    },
+    {
+      "ID": 40111,
+      "Name": "RoNR_Uncommon_Axe"
+    },
+    {
+      "ID": 40211,
+      "Name": "RoNR_Rare_axe"
+    },
+    {
+      "ID": 40311,
+      "Name": "RoNR_Legendary_Axe"
     }
   ]
 }
