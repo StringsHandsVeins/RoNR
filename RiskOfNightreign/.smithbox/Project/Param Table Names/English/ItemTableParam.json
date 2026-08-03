@@ -9067,7 +9067,7 @@
     },
     {
       "ID": 31000,
-      "Name": "RoNR_Weapons_Parent"
+      "Name": "RoNR_WeaponsAll_Parent"
     },
     {
       "ID": 40003,
@@ -9324,6 +9324,22 @@
     {
       "ID": 40314,
       "Name": "RoNR_Legendary_GrHam"
+    },
+    {
+      "ID": 31010,
+      "Name": "RoNR_WeaponsUNC+_Parent"
+    },
+    {
+      "ID": 40110,
+      "Name": "RoNR_Uncommon_GRSpears"
+    },
+    {
+      "ID": 40210,
+      "Name": "RoNR_RareGRSpears"
+    },
+    {
+      "ID": 40310,
+      "Name": "RoNR_Legendary_GRSpears"
     }
   ]
 }
