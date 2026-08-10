@@ -9340,6 +9340,22 @@
     {
       "ID": 40310,
       "Name": "RoNR_Legendary_GRSpears"
+    },
+    {
+      "ID": 40419,
+      "Name": ""
+    },
+    {
+      "ID": 40119,
+      "Name": "RoNR_Uncommon_Claws"
+    },
+    {
+      "ID": 40219,
+      "Name": "RoNR_Rare_Claws"
+    },
+    {
+      "ID": 40319,
+      "Name": "RoNR_Legendary_Claws"
     }
   ]
 }
