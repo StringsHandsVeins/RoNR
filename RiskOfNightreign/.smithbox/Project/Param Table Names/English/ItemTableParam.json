@@ -9356,6 +9356,22 @@
     {
       "ID": 40319,
       "Name": "RoNR_Legendary_Claws"
+    },
+    {
+      "ID": 40102,
+      "Name": "RoNR_Uncommon_StrSword"
+    },
+    {
+      "ID": 40202,
+      "Name": "RoNR_Rare_StrSword"
+    },
+    {
+      "ID": 40302,
+      "Name": "RoNR_Legendary_Strsword"
+    },
+    {
+      "ID": 40304,
+      "Name": "RoNR_Legendary_XLsword"
     }
   ]
 }
