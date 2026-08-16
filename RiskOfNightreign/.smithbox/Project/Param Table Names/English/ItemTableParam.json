@@ -9372,6 +9372,18 @@
     {
       "ID": 40304,
       "Name": "RoNR_Legendary_XLsword"
+    },
+    {
+      "ID": 40103,
+      "Name": "RoNR_Uncommon_Greatsword"
+    },
+    {
+      "ID": 40203,
+      "Name": "RoNR_Rare_Greatsword"
+    },
+    {
+      "ID": 40303,
+      "Name": "RoNR_Legendary_Greatsword"
     }
   ]
 }
